@@ -131,7 +131,7 @@ export default function ProjectPreview() {
               />
             </a>
             <a
-              href="mailto:tejassraman@example.com"
+              href="mailto:tejassraman@gmail.com"
               className="hover:scale-110 transition-transform"
             >
               <img
