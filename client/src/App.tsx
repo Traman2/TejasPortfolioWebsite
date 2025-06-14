@@ -6,7 +6,7 @@ function App() {
           Coming Soon
         </h1>
         <p className="text-white text-lg mt-4 opacity-80">
-          Currently building the site. Please be patient
+          Currently building the site. Final version will be released on July 2025
         </p>
       </div>
     </div>
