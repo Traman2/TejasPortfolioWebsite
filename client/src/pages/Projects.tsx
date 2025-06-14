@@ -31,7 +31,7 @@ export default function Project() {
               className="w-[30px] h-[30px]"
             />
             <span
-              className={`font-bold text-white text-[18px] font-(family-name:--font-lalezar) ml-3 transition-all duration-300 ease-in-out transform ${
+              className={`font-bold text-white text-[18px] font-(family-name:--font-lalezar) ml-1 transition-all duration-300 ease-in-out transform ${
                 solid ? "translate-x-0 opacity-100" : "translate-x-0 opacity-100 sm:-translate-x-4 sm:opacity-0"
               }`}
             >
@@ -39,7 +39,7 @@ export default function Project() {
             </span>
           </div>
           <div className="bg-[#1E6286]/90 rounded-[40px] px-4 py-2">
-            <div className="flex space-x-4 font-semibold">
+            <div className="flex space-x-4 font-medium">
               <button
                 className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px]`}
                 onClick={() => homeHandler()}

@@ -31,7 +31,7 @@ export default function Contact() {
               className="w-[30px] h-[30px]"
             />
             <span
-              className={`font-medium text-white text-[18px] font-(family-name:--font-lalezar) ml-3 transition-all duration-300 ease-in-out transform ${
+              className={`font-medium text-white text-[18px] font-(family-name:--font-lalezar) ml-1 transition-all duration-300 ease-in-out transform ${
                 solid ? "translate-x-0 opacity-100" : "translate-x-0 opacity-100 sm:-translate-x-4 sm:opacity-0"
               }`}
             >
