@@ -25,6 +25,24 @@ export default function ProjectPreview() {
             <div className="space-y-6">
               <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-full sm:w-[550px]">
                 <h3 className="text-white text-2xl sm:text-3xl font-semibold mb-4">
+                  Automated Banker
+                </h3>
+                <div className="flex flex-wrap gap-2 max-w-[400px]">
+                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
+                    React
+                  </span>
+                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
+                    TailwindCSS
+                  </span>
+                </div>
+                <p className="text-white mt-4">
+                  Full stack app that uses mongodb and react for route
+                  management ...
+                </p>
+              </div>
+              
+              <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-full sm:w-[550px]">
+                <h3 className="text-white text-2xl sm:text-3xl font-semibold mb-4">
                   TaskMasterAI
                 </h3>
                 <div className="flex flex-wrap gap-2 max-w-[480px]">
@@ -56,24 +74,6 @@ export default function ProjectPreview() {
                 <p className="text-white mt-4">
                   TaskMasterAI is a social platform designed for students to
                   connect ...
-                </p>
-              </div>
-
-              <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-full sm:w-[550px]">
-                <h3 className="text-white text-2xl sm:text-3xl font-semibold mb-4">
-                  Automated Banker
-                </h3>
-                <div className="flex flex-wrap gap-2 max-w-[400px]">
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    React
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    TailwindCSS
-                  </span>
-                </div>
-                <p className="text-white mt-4">
-                  Full stack app that uses mongodb and react for route
-                  management ...
                 </p>
               </div>
 
