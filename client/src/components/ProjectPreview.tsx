@@ -9,7 +9,7 @@ export default function ProjectPreview() {
 
   return (
     <>
-      <div className="max-w-[900px] mx-auto mt-20 mb-25">
+      <div className="max-w-[900px] mx-auto mt-20 mb-25 font-(family-name:--font-konkhmer)">
         <div className="flex flex-col sm:flex-row justify-between items-start px-4 sm:px-6 md:px-8">
           <div className="w-full sm:w-auto">
             <div className="flex items-center space-x-4 mb-8">

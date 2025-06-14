@@ -36,7 +36,7 @@ export default function Home() {
               className="w-[30px] h-[30px]"
             />
             <span
-              className={`font-bold text-white text-[18px] ml-3 transition-all duration-300 ease-in-out transform ${
+              className={`font-bold text-white text-[18px] ml-1 transition-all duration-300 ease-in-out transform font-(family-name:--font-lalezar) ${
                 solid ? "translate-x-0 opacity-100" : "translate-x-0 opacity-100 sm:-translate-x-4 sm:opacity-0"
               }`}
             >
@@ -46,19 +46,19 @@ export default function Home() {
           <div className="bg-[#1E6286]/90 rounded-[40px] px-4 py-2">
             <div className="flex space-x-4 font-semibold">
               <button
-                className={`text-white cursor-pointer hover:text-gray-200 px-2 py-1 rounded-[30px] bg-[#0096C7]`}
+                className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px] bg-[#0096C7]`}
                 onClick={() => homeHandler()}
               >
                 Home
               </button>
               <button
-                className="text-white cursor-pointer hover:text-gray-200 px-2 py-1 rounded-[30px]"
+                className="text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px]"
                 onClick={() => projectHandler()}
               >
                 Project
               </button>
               <button
-                className={`text-white cursor-pointer hover:text-gray-200 px-2 py-1 rounded-[30px]`}
+                className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px]`}
                 onClick={() => contactHandler()}
               >
                 Contact Me

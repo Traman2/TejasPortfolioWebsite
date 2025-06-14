@@ -8,15 +8,15 @@ export default function Hero() {
               <div className="flex-1 text-center sm:text-left">
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <h1 className="text-white text-4xl sm:text-5xl font-bold">👋, I'm</h1>
-                    <h2 className="text-white text-4xl sm:text-5xl font-bold">
+                    <h1 className="text-white text-4xl sm:text-5xl font-bold font-(family-name:--font-jaro)">👋, I'm</h1>
+                    <h2 className="text-white text-4xl sm:text-5xl font-bold font-(family-name:--font-jaro)">
                       Tejas Raman
                     </h2>
                   </div>
-                  <p className="text-white text-xl sm:text-2xl font-semibold">
+                  <p className="text-white text-xl sm:text-2xl font-semibold font-(family-name:--font-lalezar)">
                     Learn, Code, Create
                   </p>
-                  <ul className="text-white space-y-2 max-w-[400px] font-semibold mx-auto sm:mx-0">
+                  <ul className="text-white space-y-2 max-w-[400px] font-(family-name:--font-konkhmer) font-semibold mx-auto sm:mx-0">
                     <li className="flex items-start sm:items-center">
                       <span className="mr-2 mt-1.5 sm:mt-0">•</span>
                       <span>CS Major @ UT Dallas</span>
