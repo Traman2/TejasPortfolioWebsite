@@ -17,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#0F3462] flex flex-col">
+    <div className="min-h-screen w-full bg-[#0F3462] flex flex-col" onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}>
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">
         <div className="max-w-[900px] mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-between px-4 sm:px-6 md:px-8 space-y-4 sm:space-y-0">
           <div
