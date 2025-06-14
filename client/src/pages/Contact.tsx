@@ -38,22 +38,22 @@ export default function Contact() {
               Tejas Raman
             </span>
           </div>
-          <div className="bg-[#1E6286]/90 rounded-[40px] px-4 py-2">
-            <div className="flex space-x-4 font-medium">
+          <div className="bg-[#1E6286]/90 rounded-[40px] px-3 py-2">
+            <div className="flex space-x-2 font-medium">
               <button
-                className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px]`}
+                className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-3 py-1 rounded-[30px]`}
                 onClick={() => homeHandler()}
               >
                 Home
               </button>
               <button
-                className="text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px]"
+                className="text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-3 py-1 rounded-[30px]"
                 onClick={() => projectHandler()}
               >
                 Project
               </button>
               <button
-                className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-2 py-1 rounded-[30px] bg-[#0096C7]`}
+                className={`text-white cursor-pointer font-(family-name:--font-lalezar) hover:text-gray-200 px-3 py-1 rounded-[30px] bg-[#0096C7]`}
                 onClick={() => contactHandler()}
               >
                 Contact Me
