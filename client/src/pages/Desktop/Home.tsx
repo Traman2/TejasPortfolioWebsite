@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Hero from "../components/Hero";
-import ProjectPreview from "../components/ProjectPreview";
-import Footer from "../components/Footer";
+import Hero from "../../components/DesktopComponents/Hero";
+import ProjectPreview from "../../components/DesktopComponents/ProjectPreview";
+import Footer from "../../components/DesktopComponents/Footer";
 
 export default function Home() {
   const [solid, setSolid] = useState(false);

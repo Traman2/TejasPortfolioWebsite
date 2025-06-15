@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
+import Footer from "../../components/DesktopComponents/Footer";
 
 export default function Project() {
   const [solid, setSolid] = useState(false);
