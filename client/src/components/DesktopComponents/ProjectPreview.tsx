@@ -25,7 +25,7 @@ export default function ProjectPreview() {
             <div className="space-y-6">
               <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-[550px]">
                 <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                  Automated Banker
+                  Bank Simulator
                 </h3>
                 <div className="flex flex-wrap gap-2 max-w-[400px]">
                   <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">

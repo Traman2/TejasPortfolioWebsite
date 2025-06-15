@@ -8,6 +8,7 @@ import DesktopContact from "./pages/Desktop/Contact";
 import MobileHome from "./pages/Mobile/MobileHome";
 import MobileProject from "./pages/Mobile/MobileProjects";
 import MobileContact from "./pages/Mobile/MobileContact";
+import Maintenance from "./Maintaince";
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,25 +20,31 @@ export default function App() {
   }, []);
 
 
-  return isMobile ? (
+  // return isMobile ? (
+  //   <>
+  //     <Router>
+  //       <Routes>
+  //         <Route path="" element={<MobileHome/>} />
+  //         <Route path="Project" element={<MobileProject/>} />
+  //         <Route path="Contact" element={<MobileContact/>} />
+  //       </Routes>
+  //     </Router>
+  //   </>
+  // ) : (
+  //   <>
+  //   <Router>
+  //       <Routes>
+  //         <Route path="" element={<DesktopHome/>} />
+  //         <Route path="Project" element={<DesktopProject/>} />
+  //         <Route path="Contact" element={<DesktopContact/>} />
+  //       </Routes>
+  //     </Router>
+  //   </>
+  // );
+
+  return (
     <>
-      <Router>
-        <Routes>
-          <Route path="" element={<MobileHome/>} />
-          <Route path="Project" element={<MobileProject/>} />
-          <Route path="Contact" element={<MobileContact/>} />
-        </Routes>
-      </Router>
+      <Maintenance/>
     </>
-  ) : (
-    <>
-    <Router>
-        <Routes>
-          <Route path="" element={<DesktopHome/>} />
-          <Route path="Project" element={<DesktopProject/>} />
-          <Route path="Contact" element={<DesktopContact/>} />
-        </Routes>
-      </Router>
-    </>
-  );
+  )
 }
