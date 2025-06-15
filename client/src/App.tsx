@@ -1,5 +1,7 @@
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // import DesktopHome from "./pages/Desktop/Home";
 // import DesktopProject from "./pages/Desktop/Projects";
@@ -44,6 +46,8 @@ export default function App() {
 
   return (
     <>
+      <Analytics/>
+      <SpeedInsights />
       <Maintenance/>
     </>
   )
