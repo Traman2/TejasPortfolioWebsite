@@ -1,19 +1,19 @@
+import MobileAbout from "../../components/MobileComponents/MobileAbout";
+import MobileFooter from "../../components/MobileComponents/MobileFooter";
+import MobileHero from "../../components/MobileComponents/MobileHero";
 import MobileNavbar from "../../components/MobileComponents/MobileNavbar";
+import MobileProjectPreview from "../../components/MobileComponents/MobileProjectPreview";
 
 export default function MobileHome() {
   return (
     <div className="min-h-screen w-full bg-[#0F3462] flex flex-col">
       <MobileNavbar />
-      <main className="flex-grow flex items-center justify-center p-5 mt-16">
-        <div className="w-full p-8 rounded-xl shadow-lg flex flex-col items-center bg-[#1E6286]">
-          <h1 className="text-4xl font-bold text-[#CAF0F8] text-center">
-            Mobile View Coming Soon
-          </h1>
-          <p className="text-white text-base mt-4 opacity-80 text-center">
-            Currently working on some changes
-          </p>
-        </div>
+      <main className="flex flex-col items-center mt-29 px-4">
+        <MobileHero/>
+        <MobileAbout/>
+        <MobileProjectPreview/>
       </main>
+      <MobileFooter/>
     </div>
   );
 }
