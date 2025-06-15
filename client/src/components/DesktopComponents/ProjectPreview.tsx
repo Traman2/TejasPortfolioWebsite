@@ -43,6 +43,9 @@ export default function ProjectPreview() {
                   <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
                     MongoDB
                   </span>
+                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
+                    JwT Tokens
+                  </span>
                 </div>
                 <p className="text-white mt-4">
                   Full stack app that uses mongodb and react for route
@@ -75,8 +78,7 @@ export default function ProjectPreview() {
                   </span>
                 </div>
                 <p className="text-white mt-4">
-                  Full stack app that uses mongodb and react for route
-                  management ...
+                  A student workflow/time management web app that uses Mong ...
                 </p>
               </div>
 
@@ -99,8 +101,8 @@ export default function ProjectPreview() {
                   </span>
                 </div>
                 <p className="text-white mt-4">
-                  Full stack app that uses mongodb and react for route
-                  management ...
+                  Personal Web Portfolio to showcase academic achivements
+                  and ...
                 </p>
               </div>
             </div>

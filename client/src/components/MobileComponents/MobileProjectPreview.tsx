@@ -37,8 +37,8 @@ export default function MobileProjectPreview() {
               </span>
             </div>
             <p className="text-white mt-3 text-sm">
-              Full stack app that uses mongodb and react for route management
-              ...
+              Full stack app that uses mongodb and react for route
+              management ...
             </p>
           </div>
 
@@ -67,8 +67,7 @@ export default function MobileProjectPreview() {
               </span>
             </div>
             <p className="text-white mt-3 text-sm">
-              Full stack app that uses mongodb and react for route management
-              ...
+              A student workflow/time management web app that uses Mong ...
             </p>
           </div>
 
@@ -91,8 +90,8 @@ export default function MobileProjectPreview() {
               </span>
             </div>
             <p className="text-white mt-3 text-sm">
-              Full stack app that uses mongodb and react for route management
-              ...
+              Personal Web Portfolio to showcase academic achivements
+              and ...
             </p>
           </div>
         </div>
