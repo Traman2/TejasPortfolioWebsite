@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import nodemailer from "nodemailer";
+import serverless from "serverless-http";
 
 dotenv.config();
 const app = express();
-const PORT = 3000;
 
 app.use(cors({ origin: "https://tejasraman.com" }));
 app.use(express.json());
