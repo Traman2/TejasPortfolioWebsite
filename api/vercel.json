@@ -1,0 +1,15 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "dest": "./index.js"
+    },
+    {
+      "src": "/contact",
+      "methods": [
+        "POST"
+      ],
+      "dest": "./index.js"
+    }
+  ]
+}
