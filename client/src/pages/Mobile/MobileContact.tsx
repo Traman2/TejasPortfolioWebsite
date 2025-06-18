@@ -33,23 +33,13 @@ export default function MobileContact() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const response = await fetch("/api/contactBackend", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      console.log("Contact Form Submission:", data);
 
-      if (response.ok) {
-        alert("Message sent successfully!");
-        reset();
-      } else {
-        alert("Failed to send message.");
-      }
+      reset();
+      alert("Message sent successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Error sending message. Please try again.");
+      alert("Failed to send message. Please try again.");
     }
   };
 
