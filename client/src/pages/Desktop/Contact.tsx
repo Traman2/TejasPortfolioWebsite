@@ -47,13 +47,23 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      console.log("Contact Form Submission:", data);
+      const response = await fetch("/server/contactBackend", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-      reset();
-      alert("Message sent successfully!");
+      if (response.ok) {
+        alert("Message sent successfully!");
+        reset();
+      } else {
+        alert("Failed to send message.");
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Failed to send message. Please try again.");
+      alert("Error sending message. Please try again.");
     }
   };
 
@@ -76,7 +86,9 @@ export default function Contact() {
             />
             <span
               className={`font-medium text-white text-[18px] ml-1 transition-all duration-300 ease-in-out transform font-(family-name:--font-lalezar) ${
-                solid ? "translate-x-0 opacity-100 pt-0.5" : "-translate-x-4 opacity-0"
+                solid
+                  ? "translate-x-0 opacity-100 pt-0.5"
+                  : "-translate-x-4 opacity-0"
               }`}
             >
               Tejas Raman

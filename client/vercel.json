@@ -1,5 +1,6 @@
 {
+  "rootDirectory": "client",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/server/(.*)", "destination": "/server/$1" }
   ]
 }
