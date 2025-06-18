@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Footer from "../../components/DesktopComponents/Footer";
+import axios from "axios";
 
 const contactFormSchema = z.object({
   name: z
@@ -46,15 +47,22 @@ export default function Contact() {
   };
 
   const onSubmit = async (data: ContactFormData) => {
-    try {
-      console.log("Contact Form Submission:", data);
-
-      reset();
-      alert("Message sent successfully!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to send message. Please try again.");
-    }
+    axios
+      .post(`http://localhost:3000/contact`, 
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(() => {
+        reset();
+        console.log("Message sent successfully");
+      })
+      .catch((error) => {
+        console.error("Upload error: ", error);
+      })
   };
 
   return (

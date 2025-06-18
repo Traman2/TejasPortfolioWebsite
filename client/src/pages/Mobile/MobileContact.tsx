@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import MobileFooter from "../../components/MobileComponents/MobileFooter";
 import MobileNavbar from "../../components/MobileComponents/MobileNavbar";
+import axios from "axios";
 
 const contactSchema = z.object({
   name: z
@@ -32,15 +33,19 @@ export default function MobileContact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    try {
-      console.log("Contact Form Submission:", data);
-
-      reset();
-      alert("Message sent successfully!");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to send message. Please try again.");
-    }
+    axios
+      .post(`http://localhost:3000/contact`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        reset();
+        console.log("Message sent successfully");
+      })
+      .catch((error) => {
+        console.error("Upload error: ", error);
+      });
   };
 
   return (
