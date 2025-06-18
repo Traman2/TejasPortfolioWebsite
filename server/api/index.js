@@ -1,10 +1,16 @@
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
 import nodemailer from "nodemailer";
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
-  }
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+app.use(cors({ origin: "https://tejasraman.com" }));
+app.use(express.json());
+
+app.post("/", async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -23,7 +29,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USER,
-      subject: `New Contact Form from ${name} - ${email}`,
+      subject: `New Contact Form from ${name}`,
       html: `
         <h3>Contact Form Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
@@ -37,4 +43,10 @@ export default async function handler(req, res) {
     console.error("Nodemailer error:", error);
     res.status(500).json({ success: false, message: "Failed to send email" });
   }
-}
+})
+
+app.listen(PORT, () => {
+    console.log(`Server running on PORT ${PORT}...`)
+})
+
+export default app;
