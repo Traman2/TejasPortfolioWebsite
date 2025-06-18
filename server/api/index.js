@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({origin: "https://tejasraman.com"}));
 app.get("/", async (req, res) => {
   res.send("Mail Server running successfully")
 })
