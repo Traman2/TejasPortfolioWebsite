@@ -1,20 +1,10 @@
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
 import nodemailer from "nodemailer";
-import serverless from "serverless-http";
 
-dotenv.config();
-const app = express();
-
-app.use(cors({ origin: "https://tejasraman.com" }));
-app.use(express.json());
-
-app.get("/", async (req, res) => {
-  res.send("Server running...");
-});
-
-app.post("/contact", async (req, res) => {
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+  
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -26,8 +16,8 @@ app.post("/contact", async (req, res) => {
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
     await transporter.sendMail({
@@ -39,7 +29,7 @@ app.post("/contact", async (req, res) => {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong><br>${message}</p>
-      `
+      `,
     });
 
     res.status(200).json({ success: true, message: "Email sent successfully" });
@@ -47,6 +37,4 @@ app.post("/contact", async (req, res) => {
     console.error("Nodemailer error:", error);
     res.status(500).json({ success: false, message: "Failed to send email" });
   }
-});
-
-export default serverless(app);
+}
