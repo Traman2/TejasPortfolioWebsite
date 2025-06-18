@@ -49,4 +49,4 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-module.exports = serverless(app);
+export default serverless(app);
