@@ -33,7 +33,7 @@ export default function MobileContact() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      const response = await fetch("/server/contactBackend", {
+      const response = await fetch("/api/contactBackend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
