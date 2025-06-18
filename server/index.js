@@ -10,6 +10,10 @@ const PORT = 3000;
 app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
+app.get("/", async (req, res) => {
+  res.send("Server running...");
+})
+
 app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
