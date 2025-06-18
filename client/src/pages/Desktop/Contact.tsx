@@ -1,10 +1,30 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import Footer from "../../components/DesktopComponents/Footer";
+
+const contactFormSchema = z.object({
+  name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
+  email: z.string().min(1, "Email is required").email("Please enter a valid email address"),
+  message: z.string().min(1, "Message is required").min(10, "Message must be at least 10 characters")
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const [solid, setSolid] = useState(false);
   const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema)
+  });
 
   const projectHandler = () => {
     navigate("/Project");
@@ -14,6 +34,19 @@ export default function Contact() {
   };
   const contactHandler = () => {
     navigate("/Contact");
+  };
+
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      console.log("Contact Form Submission:", data);
+      
+      reset();
+      alert("Message sent successfully!");
+
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send message. Please try again.");
+    }
   };
 
   return (
@@ -62,20 +95,88 @@ export default function Contact() {
           </div>
         </div>
       </nav>
-      <main className="flex-grow pt-45">
-        <div className="max-w-[900px] mx-auto p-5">
-          <div className="p-14 rounded-xl shadow-lg flex flex-col items-center bg-[#1E6286]">
-            <h1
-              className="text-5xl font-bold text-[#CAF0F8]"
-            >
-              Contact Form Coming Soon
+      
+      <div className="flex-1 flex items-center justify-center pt-20">
+        <div className="max-w-[800px] w-full px-8">
+          <div className="text-center mb-8">
+            <h1 className="text-white text-3xl font-bold mb-2">
+              Contact Me
             </h1>
-            <p className="text-white text-lg mt-4 opacity-80">
-              Currently working on some changes
-            </p>
+            <h2 className="text-white text-xl">
+              tejassraman@gmail.com
+            </h2>
+          </div>
+          
+          <div className="bg-[#1E6286]/80 rounded-lg p-8">
+            <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+              <div className="flex space-x-4">
+                <div className="flex-1">
+                  <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    {...register("name")}
+                    className={`w-full px-4 py-3 border-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-0 ${
+                      errors.name ? "border-red-500" : "border-[#0096C7]"
+                    }`}
+                    placeholder="Your name"
+                  />
+                  {errors.name && (
+                    <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+                  )}
+                </div>
+                <div className="flex-1">
+                  <label htmlFor="email" className="block text-white text-sm font-medium mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    {...register("email")}
+                    className={`w-full px-4 py-3 border-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-0 ${
+                      errors.email ? "border-red-500" : "border-[#0096C7]"
+                    }`}
+                    placeholder="Your email"
+                  />
+                  {errors.email && (
+                    <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+                  )}
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-white text-sm font-medium mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  {...register("message")}
+                  className={`w-full px-4 py-3 border-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-0 resize-none ${
+                    errors.message ? "border-red-500" : "border-[#0096C7]"
+                  }`}
+                  placeholder="Your message"
+                ></textarea>
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+                )}
+              </div>
+              
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="bg-[#0096C7] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#0077A3] transition-colors duration-200"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-      </main>
+      </div>
+      
       <footer className="mt-auto">
         <Footer/>
       </footer>

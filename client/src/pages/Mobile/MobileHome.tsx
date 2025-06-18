@@ -1,8 +1,8 @@
-import MobileAbout from "../../components/MobileComponents/MobileAbout";
+import MobileAbout from "../../components/MobileComponents/MobileHome/MobileAbout";
 import MobileFooter from "../../components/MobileComponents/MobileFooter";
-import MobileHero from "../../components/MobileComponents/MobileHero";
+import MobileHero from "../../components/MobileComponents/MobileHome/MobileHero";
 import MobileNavbar from "../../components/MobileComponents/MobileNavbar";
-import MobileProjectPreview from "../../components/MobileComponents/MobileProjectPreview";
+import MobileProjectPreview from "../../components/MobileComponents/MobileHome/MobileProjectPreview";
 
 export default function MobileHome() {
   return (
