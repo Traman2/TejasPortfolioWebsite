@@ -36,19 +36,19 @@ const sendMailHandler = async (req, res) => {
         <div style="padding: 30px; background-color: #174259;">
             <h3 style="color: white; margin-top: 0; margin-bottom: 20px; font-size: 20px;">Contact Form Submission</h3>
             
-            <div style="background-color: #30B4A5; padding: 20px; border-radius: 6px; margin-bottom: 15px;">
+            <div style="background-color: rgba(255, 255, 255, 0.25); padding: 20px; border-radius: 6px; margin-bottom: 15px;">
                 <p style="color: white; margin: 0; font-size: 16px;">
                     <strong style="color: #e0e0e0;">Name:</strong> ${name}
                 </p>
             </div>
             
-            <div style="background-color: #30B4A5; padding: 20px; border-radius: 6px; margin-bottom: 15px;">
+            <div style="background-color: rgba(255, 255, 255, 0.25); padding: 20px; border-radius: 6px; margin-bottom: 15px;">
                 <p style="color: white; margin: 0; font-size: 16px;">
                     <strong style="color: #e0e0e0;">Email:</strong> <span style="color: #ADE8F4; text-decoration: none !important;">${email}</span>
                 </p>
             </div>
             
-            <div style="background-color: #30B4A5; padding: 20px; border-radius: 6px;">
+            <div style="background-color: rgba(255, 255, 255, 0.25); padding: 20px; border-radius: 6px;">
                 <p style="color: white; margin: 0 0 10px 0; font-size: 16px;">
                     <strong style="color: #e0e0e0;">Message:</strong>
                 </p>
