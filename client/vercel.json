@@ -1,8 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/api/contactBackend",
-      "destination": "/server/contactBackend.js"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
