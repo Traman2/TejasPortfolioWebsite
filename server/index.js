@@ -50,6 +50,4 @@ app.post("/contact", async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on PORT ${PORT}...`)
-})
+export const handler = serverless(app);

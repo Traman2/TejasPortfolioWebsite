@@ -9,6 +9,12 @@
   "routes": [
     {
       "src": "/contact",
+      "methods": ["POST"],
+      "dest": "./index.js"
+    },
+    {
+      "src": "/",
+      "methods": ["GET"],
       "dest": "./index.js"
     }
   ]
