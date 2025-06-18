@@ -6,9 +6,18 @@ import { z } from "zod";
 import Footer from "../../components/DesktopComponents/Footer";
 
 const contactFormSchema = z.object({
-  name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
-  email: z.string().min(1, "Email is required").email("Please enter a valid email address"),
-  message: z.string().min(1, "Message is required").min(10, "Message must be at least 10 characters")
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .min(2, "Name must be at least 2 characters"),
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address"),
+  message: z
+    .string()
+    .min(1, "Message is required")
+    .min(10, "Message must be at least 10 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -21,9 +30,9 @@ export default function Contact() {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema)
+    resolver: zodResolver(contactFormSchema),
   });
 
   const projectHandler = () => {
@@ -39,10 +48,9 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     try {
       console.log("Contact Form Submission:", data);
-      
+
       reset();
       alert("Message sent successfully!");
-
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to send message. Please try again.");
@@ -50,7 +58,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#0F3462] flex flex-col" onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}>
+    <div
+      className=" fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462] flex flex-col"
+      onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}
+    >
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">
         <div className="max-w-[900px] mx-auto flex flex-row items-center justify-between px-6 space-y-0">
           <div
@@ -95,23 +106,22 @@ export default function Contact() {
           </div>
         </div>
       </nav>
-      
+
       <div className="flex-1 flex items-center justify-center pt-20">
         <div className="max-w-[800px] w-full px-8">
           <div className="text-center mb-8">
-            <h1 className="text-white text-3xl font-bold mb-2">
-              Contact Me
-            </h1>
-            <h2 className="text-white text-xl">
-              tejassraman@gmail.com
-            </h2>
+            <h1 className="text-white text-3xl font-bold mb-2">Contact Me</h1>
+            <h2 className="text-white text-xl">tejassraman@gmail.com</h2>
           </div>
-          
+
           <div className="bg-[#1E6286]/80 rounded-lg p-8">
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex space-x-4">
                 <div className="flex-1">
-                  <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-white text-sm font-medium mb-2"
+                  >
                     Name
                   </label>
                   <input
@@ -124,11 +134,16 @@ export default function Contact() {
                     placeholder="Your name"
                   />
                   {errors.name && (
-                    <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.name.message}
+                    </p>
                   )}
                 </div>
                 <div className="flex-1">
-                  <label htmlFor="email" className="block text-white text-sm font-medium mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-white text-sm font-medium mb-2"
+                  >
                     Email
                   </label>
                   <input
@@ -141,13 +156,18 @@ export default function Contact() {
                     placeholder="Your email"
                   />
                   {errors.email && (
-                    <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.email.message}
+                    </p>
                   )}
                 </div>
               </div>
-              
+
               <div>
-                <label htmlFor="message" className="block text-white text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-white text-sm font-medium mb-2"
+                >
                   Message
                 </label>
                 <textarea
@@ -160,10 +180,12 @@ export default function Contact() {
                   placeholder="Your message"
                 ></textarea>
                 {errors.message && (
-                  <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.message.message}
+                  </p>
                 )}
               </div>
-              
+
               <div className="text-center">
                 <button
                   type="submit"
@@ -176,9 +198,9 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      
+
       <footer className="mt-auto">
-        <Footer/>
+        <Footer />
       </footer>
     </div>
   );

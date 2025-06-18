@@ -5,9 +5,18 @@ import MobileFooter from "../../components/MobileComponents/MobileFooter";
 import MobileNavbar from "../../components/MobileComponents/MobileNavbar";
 
 const contactSchema = z.object({
-  name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
-  email: z.string().min(1, "Email is required").email("Please enter a valid email"),
-  message: z.string().min(1, "Message is required").min(10, "Message must be at least 10 characters"),
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .min(2, "Name must be at least 2 characters"),
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email"),
+  message: z
+    .string()
+    .min(1, "Message is required")
+    .min(10, "Message must be at least 10 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -25,10 +34,9 @@ export default function MobileContact() {
   const onSubmit = async (data: ContactFormData) => {
     try {
       console.log("Contact Form Submission:", data);
-      
+
       reset();
       alert("Message sent successfully!");
-
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to send message. Please try again.");
@@ -38,7 +46,7 @@ export default function MobileContact() {
   return (
     <div className="min-h-screen w-full bg-[#0F3462] flex flex-col">
       <MobileNavbar />
-      
+
       <div className="flex-1 px-6 py-8 mt-20">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-2">Contact Me</h1>
@@ -56,7 +64,9 @@ export default function MobileContact() {
                   className="w-full px-4 py-3 bg-transparent border-2 border-[#0096C7] rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:border-white transition-colors"
                 />
                 {errors.name && (
-                  <p className="text-red-400 text-sm mt-1">{errors.name.message}</p>
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.name.message}
+                  </p>
                 )}
               </div>
 
@@ -68,7 +78,9 @@ export default function MobileContact() {
                   className="w-full px-4 py-3 bg-transparent border-2 border-[#0096C7] rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:border-white transition-colors"
                 />
                 {errors.email && (
-                  <p className="text-red-400 text-sm mt-1">{errors.email.message}</p>
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -81,7 +93,9 @@ export default function MobileContact() {
                 className="w-full px-4 py-3 bg-transparent border-2 border-[#0096C7] rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:border-white transition-colors resize-none"
               />
               {errors.message && (
-                <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
+                <p className="text-red-400 text-sm mt-1">
+                  {errors.message.message}
+                </p>
               )}
             </div>
 
@@ -95,8 +109,8 @@ export default function MobileContact() {
           </div>
         </form>
       </div>
-      
-      <MobileFooter/>
+
+      <MobileFooter />
     </div>
   );
 }

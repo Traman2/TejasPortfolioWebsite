@@ -17,8 +17,10 @@ export default function Project() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#0F3462] flex flex-col" onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}>
-      <nav className="fixed top-0 w-full p-4 z-50 mt-2">
+<div
+      className=" fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462] flex flex-col"
+      onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}
+    >      <nav className="fixed top-0 w-full p-4 z-50 mt-2">
         <div className="max-w-[900px] mx-auto flex flex-row items-center justify-between px-6 space-y-0">
           <div
             className={`flex items-center space-x-2 rounded-2xl px-2 py-2 ${
