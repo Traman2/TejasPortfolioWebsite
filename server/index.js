@@ -1,10 +1,20 @@
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
 import nodemailer from "nodemailer";
+import serverless from "serverless-http";
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+dotenv.config();
+const app = express();
 
+app.use(cors({ origin: "https://tejasraman.com" }));
+app.use(express.json());
+
+app.get("/", async (req, res) => {
+  res.send("Server running...");
+});
+
+app.post("/contact", async (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
@@ -34,7 +44,9 @@ export default async function handler(req, res) {
 
     res.status(200).json({ success: true, message: "Email sent successfully" });
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error("Nodemailer error:", error);
     res.status(500).json({ success: false, message: "Failed to send email" });
   }
-}
+});
+
+module.exports = serverless(app);
