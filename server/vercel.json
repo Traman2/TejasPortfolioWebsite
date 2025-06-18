@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/sendMail.js",
+      "src": "server/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/sendMail",
-      "dest": "server/sendMail.js"
+      "src": "/contact",
+      "dest": "server/index.js"
     }
   ]
 }
