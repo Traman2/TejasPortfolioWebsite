@@ -38,7 +38,7 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full p-4 z-50">
+      <nav className="fixed top-0 w-full p-2 z-50">
         <div className="flex items-center justify-between">
           <div className={`flex items-center space-x-2 rounded-2xl px-2 py-2 ${showName ? "bg-[#174259]/90" : "bg-transparent"}`}>
             <img

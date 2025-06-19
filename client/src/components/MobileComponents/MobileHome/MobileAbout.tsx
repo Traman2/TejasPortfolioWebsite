@@ -1,11 +1,11 @@
 export default function MobileAbout() {
   return (
     <>
-      <div className="w-[300px] flex flex-col items-center mt-10">
-        <h2 className="text-[#ADE8F4] text-[22px] font-['Lalezar'] text-left w-full">
+      <div className="w-[90vw] flex flex-col items-center mt-10">
+        <h2 className="text-[#ADE8F4] text-3xl font-['Lalezar'] text-left w-full">
           Learn, Code, Create
         </h2>
-        <ul className="text-[#ADE8F4] text-sm mt-4 space-y-2 w-full">
+        <ul className="text-[#ADE8F4] text-base font-semibold mt-4 space-y-2 w-full">
           <li className="flex items-start">
             <span className="mr-2">•</span>
             <span>CS Major @ UT Dallas</span>

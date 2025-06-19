@@ -9,7 +9,7 @@ export default function ProjectPreview() {
 
   return (
     <>
-      <div className="max-w-[900px] mx-auto mt-20 mb-25">
+      <div className="max-w-[900px] mx-auto mt-18 mb-25">
         <div className="flex flex-row justify-between items-start px-6">
           <div className="w-auto">
             <div className="flex items-center space-x-4 mb-8">
@@ -18,7 +18,7 @@ export default function ProjectPreview() {
                 alt="Projects"
                 className="w-12 h-12"
               />
-              <h2 className="text-white text-5xl font-(family-name:--font-lalezar)">
+              <h2 className="text-white text-5xl font-(family-name:--font-lalezar) mt-2">
                 Projects
               </h2>
             </div>

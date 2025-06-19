@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Hero from "../../components/DesktopComponents/Hero";
-import ProjectPreview from "../../components/DesktopComponents/ProjectPreview";
+import Hero from "../../components/DesktopComponents/DesktopHome/Hero";
+import ProjectPreview from "../../components/DesktopComponents/DesktopHome/ProjectPreview";
 import Footer from "../../components/DesktopComponents/Footer";
 
 export default function Home() {

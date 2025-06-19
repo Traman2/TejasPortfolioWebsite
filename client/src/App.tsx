@@ -21,29 +21,31 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return isMobile ? (
+  return (
     <>
       <Analytics />
       <SpeedInsights />
-      <Router>
-        <Routes>
-          <Route path="" element={<MobileHome />} />
-          <Route path="Project" element={<MobileProject />} />
-          <Route path="Contact" element={<MobileContact />} />
-        </Routes>
-      </Router>
-    </>
-  ) : (
-    <>
-      <Analytics />
-      <SpeedInsights />
-      <Router>
-        <Routes>
-          <Route path="" element={<DesktopHome />} />
-          <Route path="Project" element={<DesktopProject />} />
-          <Route path="Contact" element={<DesktopContact />} />
-        </Routes>
-      </Router>
+      {isMobile ? (
+        <>
+          <Router>
+            <Routes>
+              <Route path="" element={<MobileHome />} />
+              <Route path="Project" element={<MobileProject />} />
+              <Route path="Contact" element={<MobileContact />} />
+            </Routes>
+          </Router>
+        </>
+      ) : (
+        <>
+          <Router>
+            <Routes>
+              <Route path="" element={<DesktopHome />} />
+              <Route path="Project" element={<DesktopProject />} />
+              <Route path="Contact" element={<DesktopContact />} />
+            </Routes>
+          </Router>
+        </>
+      )}
     </>
   );
 
