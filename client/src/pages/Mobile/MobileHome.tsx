@@ -19,7 +19,7 @@ export default function MobileHome() {
         <MobileAbout />
         <hr className="w-[60%] mx-auto border-t-1 border-white mt-26" />
         <MobileConnect />
-        <hr className="w-[60%] mx-auto border-t-1 border-white mb-8 mt-26" />
+        <hr className="w-[60%] mx-auto border-t-1 border-white mb-8 mt-22" />
         <MobileProjectPreview />
       </main>
       <MobileFooter />
