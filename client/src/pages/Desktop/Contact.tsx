@@ -27,6 +27,7 @@ export default function Contact() {
   const [solid, setSolid] = useState(false);
   const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
+  const [sending, setSending] = useState(false);
   const {
     register,
     handleSubmit,
@@ -47,6 +48,7 @@ export default function Contact() {
   };
 
   const onSubmit = async (data: ContactFormData) => {
+    setSending(true);
     axios
       .post(`https://tejas-portfolio-website-2v7v.vercel.app/`, data, {
         headers: {
@@ -55,8 +57,9 @@ export default function Contact() {
       })
       .then(() => {
         setSuccess(true);
+        setSending(false);
         reset();
-        setTimeout(() => setSuccess(false), 5000);
+        setTimeout(() => setSuccess(false), 2000);
         console.log("Message sent successfully");
       })
       .catch((error) => {
@@ -119,16 +122,27 @@ export default function Contact() {
       <div className="flex-1 flex items-center justify-center pt-20">
         <div className="max-w-[800px] w-full px-8">
           <div className="text-center mb-8">
-            <h1 className="text-white text-3xl font-bold mb-2">Contact Me</h1>
-            <h2 className="text-white text-xl">tejassraman@gmail.com</h2>
+            <h1 className="text-white text-3xl font-(family-name:--font-jaro) mb-2">
+              Contact Me
+            </h1>
+            <h2 className="text-white text-xl font-(family-name:--font-lalezar)">
+              tejassraman@gmail.com
+            </h2>
           </div>
 
+          {success && (
+            <div className="bg-[#6d6c9e] border-2 border-green-400 text-[#61be3b] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+              Message sent successfully 🎉
+            </div>
+          )}
+
+          {sending && (
+            <div className="bg-[#6d6c9e] border-2 border-gray-400 text-[#b0faff] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+              Message Uploading...
+            </div>
+          )}
+
           <div className="bg-[#1E6286] rounded-lg p-8">
-            {success && (
-              <div className="bg-[#6d6c9e] border border-green-400 text-[#61be3b] px-4 py-3 rounded-lg mb-4 text-center font-bold">
-                Message sent successfully 🎉
-              </div>
-            )}
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex space-x-4">
                 <div className="flex-1">

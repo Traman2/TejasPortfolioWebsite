@@ -76,9 +76,9 @@ export default function Project() {
               alt="Projects"
               className="w-12 h-12"
             />
-            <h1 className="text-white text-5xl font-bold mb-1">Projects</h1>
+            <h1 className="text-white text-5xl font-(family-name:--font-jaro) mb-1">Projects</h1>
           </div>
-          <h2 className="text-white text-2xl font-normal mb-6 text-center">
+          <h2 className="text-white text-2xl font-(family-name:--font-lalezar) mb-6 text-center">
             Showcase of Projects I've Worked On and Contributed To
           </h2>
           <hr className="w-full border-t-1 border-white mb-8" />

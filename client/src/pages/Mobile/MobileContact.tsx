@@ -25,7 +25,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function MobileContact() {
   const [success, setSuccess] = useState(false);
-
+  const [sending, setSending] = useState(false);
   const {
     register,
     handleSubmit,
@@ -36,6 +36,7 @@ export default function MobileContact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    setSending(true);
     axios
       .post(`https://tejas-portfolio-website-2v7v.vercel.app/`, data, {
         headers: {
@@ -44,6 +45,7 @@ export default function MobileContact() {
       })
       .then(() => {
         setSuccess(true);
+        setSending(false);
         reset();
         setTimeout(() => setSuccess(false), 5000);
         console.log("Message sent successfully");
@@ -59,8 +61,8 @@ export default function MobileContact() {
 
       <div className="flex-1 px-6 py-8 mt-20">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Contact Me</h1>
-          <h2 className="text-white text-xl">tejassraman@gmail.com</h2>
+          <h1 className="text-3xl font-(family-name:--font-jaro) text-white mb-2">Contact Me</h1>
+          <h2 className="text-white text-xl font-(family-name:--font-lalezar)">tejassraman@gmail.com</h2>
         </div>
 
         {success && (
@@ -68,6 +70,13 @@ export default function MobileContact() {
             Message sent successfully 🎉
           </div>
         )}
+
+        {sending && (
+          <div className="bg-[#6d6c9e] border border-gray-400 text-[#b0faff] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+            Message Uploading...
+          </div>
+        )}
+
         <form onSubmit={handleSubmit(onSubmit)} className="w-full">
           <div className="bg-[#1E6286] bg-opacity-80 rounded-lg p-6 space-y-4">
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">

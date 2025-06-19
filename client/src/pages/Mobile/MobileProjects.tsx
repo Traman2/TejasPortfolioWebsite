@@ -13,9 +13,9 @@ export default function MobileProjects() {
               alt="Projects"
               className="w-10 h-10"
             />
-            <h1 className="text-white text-4xl font-bold mb-0.5">Projects</h1>
+            <h1 className="text-white text-4xl mb-0.5 font-(family-name:--font-jaro)">Projects</h1>
           </div>
-          <h2 className="text-white text-2xl font-normal mb-5 text-center">
+          <h2 className="text-white text-2xl font-(family-name:--font-lalezar) mb-5 text-center">
             Showcase of Projects I've Worked On and Contributed To
           </h2>
           <hr className="w-[60%] mx-auto border-t-1 border-white mb-7" />
