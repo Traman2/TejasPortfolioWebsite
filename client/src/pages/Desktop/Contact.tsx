@@ -26,7 +26,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 export default function Contact() {
   const [solid, setSolid] = useState(false);
   const navigate = useNavigate();
-
+  const [success, setSuccess] = useState(false);
   const {
     register,
     handleSubmit,
@@ -48,21 +48,20 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     axios
-      .post(`https://tejas-portfolio-website-2v7v.vercel.app/`, 
-        data,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
+      .post(`https://tejas-portfolio-website-2v7v.vercel.app/`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then(() => {
+        setSuccess(true);
         reset();
+        setTimeout(() => setSuccess(false), 5000);
         console.log("Message sent successfully");
       })
       .catch((error) => {
         console.error("Upload error: ", error);
-      })
+      });
   };
 
   return (
@@ -84,7 +83,9 @@ export default function Contact() {
             />
             <span
               className={`font-medium text-white text-[18px] ml-1 transition-all duration-300 ease-in-out transform font-(family-name:--font-lalezar) ${
-                solid ? "translate-x-0 opacity-100 pt-0.5" : "-translate-x-4 opacity-0"
+                solid
+                  ? "translate-x-0 opacity-100 pt-0.5"
+                  : "-translate-x-4 opacity-0"
               }`}
             >
               Tejas Raman
@@ -122,7 +123,12 @@ export default function Contact() {
             <h2 className="text-white text-xl">tejassraman@gmail.com</h2>
           </div>
 
-          <div className="bg-[#1E6286]/80 rounded-lg p-8">
+          <div className="bg-[#1E6286] rounded-lg p-8">
+            {success && (
+              <div className="bg-[#6d6c9e] border border-green-400 text-[#61be3b] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+                Message sent successfully 🎉
+              </div>
+            )}
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div className="flex space-x-4">
                 <div className="flex-1">
@@ -197,7 +203,7 @@ export default function Contact() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-[#0096C7] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#0077A3] transition-colors duration-200"
+                  className="bg-[#0096C7] cursor-pointer text-white px-8 py-3 rounded-lg font-medium hover:bg-[#0077A3] transition-colors duration-200"
                 >
                   Send Message
                 </button>

@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import MobileFooter from "../../components/MobileComponents/MobileFooter";
@@ -23,6 +24,8 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function MobileContact() {
+  const [success, setSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -40,7 +43,9 @@ export default function MobileContact() {
         },
       })
       .then(() => {
+        setSuccess(true);
         reset();
+        setTimeout(() => setSuccess(false), 5000);
         console.log("Message sent successfully");
       })
       .catch((error) => {
@@ -58,6 +63,11 @@ export default function MobileContact() {
           <h2 className="text-white text-xl">tejassraman@gmail.com</h2>
         </div>
 
+        {success && (
+          <div className="bg-[#6d6c9e] border border-green-400 text-[#61be3b] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+            Message sent successfully 🎉
+          </div>
+        )}
         <form onSubmit={handleSubmit(onSubmit)} className="w-full">
           <div className="bg-[#1E6286] bg-opacity-80 rounded-lg p-6 space-y-4">
             <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
