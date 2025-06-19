@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -46,6 +46,10 @@ export default function Contact() {
   const contactHandler = () => {
     navigate("/Contact");
   };
+
+  useEffect(() => {
+    document.title = "Contact Me - Tejas";
+  }, []);
 
   const onSubmit = async (data: ContactFormData) => {
     setSending(true);

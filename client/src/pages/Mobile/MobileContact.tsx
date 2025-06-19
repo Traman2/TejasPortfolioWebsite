@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import MobileFooter from "../../components/MobileComponents/MobileFooter";
@@ -35,6 +35,10 @@ export default function MobileContact() {
     resolver: zodResolver(contactSchema),
   });
 
+  useEffect(() => {
+    document.title = "Home - Tejas";
+  }, []);
+
   const onSubmit = async (data: ContactFormData) => {
     setSending(true);
     axios
@@ -61,8 +65,12 @@ export default function MobileContact() {
 
       <div className="flex-1 px-6 py-8 mt-20">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-(family-name:--font-jaro) text-white mb-2">Contact Me</h1>
-          <h2 className="text-white text-xl font-(family-name:--font-lalezar)">tejassraman@gmail.com</h2>
+          <h1 className="text-3xl font-(family-name:--font-jaro) text-white mb-2">
+            Contact Me
+          </h1>
+          <h2 className="text-white text-xl font-(family-name:--font-lalezar)">
+            tejassraman@gmail.com
+          </h2>
         </div>
 
         {success && (

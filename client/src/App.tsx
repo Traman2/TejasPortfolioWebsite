@@ -10,6 +10,7 @@ import DesktopContact from "./pages/Desktop/Contact";
 import MobileHome from "./pages/Mobile/MobileHome";
 import MobileProject from "./pages/Mobile/MobileProjects";
 import MobileContact from "./pages/Mobile/MobileContact";
+import ScrollToTop from "./pages/ScrollToTop";
 // import Maintenance from "./Maintaince";
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
       {isMobile ? (
         <>
           <Router>
+            <ScrollToTop/>
             <Routes>
               <Route path="" element={<MobileHome />} />
               <Route path="Project" element={<MobileProject />} />

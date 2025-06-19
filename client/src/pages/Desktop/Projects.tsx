@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/DesktopComponents/Footer";
 
@@ -15,6 +15,10 @@ export default function Project() {
   const contactHandler = () => {
     navigate("/Contact");
   };
+
+  useEffect(() => {
+      document.title = "Projects - Tejas";
+    }, []);
 
   return (
     <div

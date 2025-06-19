@@ -9,10 +9,16 @@ export default function MobileProjectPreview() {
 
   return (
     <>
-      <div className="w-[90vw] mt-16">
-        <div className="flex items-center space-x-4 mb-8">
-          <img src="/pajamas--project.svg" alt="Projects" className="w-8 h-8" />
-          <h2 className="text-white text-2xl font-['Lalezar']">Projects</h2>
+      <div className="w-[90vw] mt-8">
+        <div className="flex items-center justify-center space-x-2 mb-8">
+          <img
+            src="/pajamas--project.svg"
+            alt="Connect"
+            className="w-10 h-10"
+          />
+          <h2 className="text-white text-4xl font-(family-name:--font-lalezar) mt-1">
+            Project
+          </h2>
         </div>
         <div className="space-y-6">
           <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-4 w-full">
@@ -37,8 +43,8 @@ export default function MobileProjectPreview() {
               </span>
             </div>
             <p className="text-white mt-3 text-lg">
-              Full stack app that uses mongodb and react for route
-              management ...
+              Full stack app that uses mongodb and react for route management
+              ...
             </p>
           </div>
 
@@ -90,8 +96,7 @@ export default function MobileProjectPreview() {
               </span>
             </div>
             <p className="text-white mt-3 text-lg">
-              Personal Web Portfolio to showcase academic achivements
-              and ...
+              Personal Web Portfolio to showcase academic achivements and ...
             </p>
           </div>
         </div>

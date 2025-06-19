@@ -1,7 +1,12 @@
 import MobileNavbar from "../../components/MobileComponents/MobileNavbar";
 import MobileFooter from "../../components/MobileComponents/MobileFooter";
+import { useEffect } from "react";
 
 export default function MobileProjects() {
+  useEffect(() => {
+    document.title = "Home - Tejas";
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-[#0F3462] flex flex-col">
       <MobileNavbar />
@@ -13,7 +18,9 @@ export default function MobileProjects() {
               alt="Projects"
               className="w-10 h-10"
             />
-            <h1 className="text-white text-4xl mb-0.5 font-(family-name:--font-jaro)">Projects</h1>
+            <h1 className="text-white text-4xl mb-0.5 font-(family-name:--font-jaro)">
+              Projects
+            </h1>
           </div>
           <h2 className="text-white text-2xl font-(family-name:--font-lalezar) mb-5 text-center">
             Showcase of Projects I've Worked On and Contributed To
@@ -50,7 +57,7 @@ export default function MobileProjects() {
                 authentication/authorization
               </p>
             </div>
-            
+
             <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-xl p-4 w-full">
               <h3 className="text-white text-2xl font-(family-name:--font-lalezar) mb-2">
                 TaskMasterAI
@@ -82,7 +89,7 @@ export default function MobileProjects() {
                 you gauge your knowledge.
               </p>
             </div>
-            
+
             <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-xl p-4 w-full">
               <h3 className="text-white text-2xl font-(family-name:--font-lalezar) mb-2">
                 Personal Portfolio
@@ -108,7 +115,7 @@ export default function MobileProjects() {
                 management of hosting and better insights on site activity
               </p>
             </div>
-            
+
             <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-xl p-4 w-full">
               <h3 className="text-white text-2xl font-(family-name:--font-lalezar) mb-2">
                 Arkos
