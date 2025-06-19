@@ -38,7 +38,7 @@ export default function MobileConnect() {
       <div className="text-white mb-8 w-full">
         {activeSection === "about" ? (
           <>
-            <p className="text-base leading-relaxed text-center">
+            <p className="text-base leading-relaxed">
               I am actively seeking internship opportunities for Summer 2026,
               with a focus on software development and engineering roles. For
               potential opportunities, please connect with me on{" "}
@@ -51,7 +51,7 @@ export default function MobileConnect() {
                 LinkedIn
               </a>
             </p>
-            <p className="text-base mt-4 leading-relaxed text-center">
+            <p className="text-base mt-4 leading-relaxed">
               If you would like to contact me directly or have any questions,
               please feel free to reach out through my contact page or directly
               via email at{" "}
