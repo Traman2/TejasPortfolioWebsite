@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
+import FormRecord from "../models/formRecord.js";
 
 const getMailStatus = async (req, res) => {
   res.send("Mail Server running successfully");
@@ -8,7 +9,6 @@ const getMailStatus = async (req, res) => {
 
 const sendMailHandler = async (req, res) => {
   const { name, email, message } = req.body;
-  console.log({user: process.env.EMAIL_USER});
   if (!name || !email || !message) {
     return res.status(400).json({ error: "Missing fields" });
   }
@@ -63,8 +63,11 @@ const sendMailHandler = async (req, res) => {
     </div>
       `,
     });
+    
+    const newRecord = new FormRecord({name, email, message})
+    const savedRecord = await newRecord.save();
 
-    res.status(200).json({ success: true, message: "Email sent successfully" });
+    res.status(200).json({ success: true, message: "Email sent successfully", object: savedRecord });
   } catch (error) {
     console.error("Nodemailer error:", error);
     res.status(500).json({ success: false, message: "Failed to send email" });
