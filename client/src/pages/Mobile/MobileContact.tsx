@@ -36,7 +36,7 @@ export default function MobileContact() {
   });
 
   useEffect(() => {
-    document.title = "Home - Tejas";
+    document.title = "Contact - Tejas";
   }, []);
 
   const onSubmit = async (data: ContactFormData) => {

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function MobileProjects() {
   useEffect(() => {
-    document.title = "Home - Tejas";
+    document.title = "Project - Tejas";
   }, []);
 
   return (
