@@ -71,19 +71,19 @@ export default function MobileConnect() {
             </p>
             <div className="mt-4 space-y-2 text-base">
               <p className="leading-relaxed">
-                <span className="font-semibold">Programming Languages:</span>{" "}
+                <span className="font-bold">Programming Languages:</span>{" "}
                 Java, C++, C#, Python
               </p>
               <p className="leading-relaxed">
-                <span className="font-semibold">Web Development:</span>{" "}
+                <span className="font-bold">Web Development:</span>{" "}
                 JavaScript, TypeScript
               </p>
               <p className="leading-relaxed">
-                <span className="font-semibold">Frontend Technologies:</span>{" "}
+                <span className="font-bold">Frontend Technologies:</span>{" "}
                 React.js, HTML5, CSS3, TailwindCSS
               </p>
               <p className="leading-relaxed">
-                <span className="font-semibold">Backend Development:</span>{" "}
+                <span className="font-bold">Backend Development:</span>{" "}
                 Node.js, Express.js
               </p>
             </div>

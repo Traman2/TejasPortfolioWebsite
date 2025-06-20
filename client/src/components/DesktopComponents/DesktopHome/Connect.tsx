@@ -81,23 +81,23 @@ export default function Connect() {
                   </p>
                   <div className="mt-4 space-y-2">
                     <p className="text-lg leading-relaxed">
-                      <span className="font-semibold">
+                      <span className="font-bold">
                         Programming Languages:
                       </span>{" "}
                       Java, C++, C#
                     </p>
                     <p className="text-lg leading-relaxed">
-                      <span className="font-semibold">Web Development:</span>{" "}
+                      <span className="font-bold">Web Development:</span>{" "}
                       JavaScript, TypeScript
                     </p>
                     <p className="text-lg leading-relaxed">
-                      <span className="font-semibold">
+                      <span className="font-bold">
                         Frontend Technologies:
                       </span>{" "}
                       React.js, HTML5, CSS3, TailwindCSS
                     </p>
                     <p className="text-lg leading-relaxed">
-                      <span className="font-semibold">
+                      <span className="font-bold">
                         Backend Development:
                       </span>{" "}
                       Node.js, Express.js
