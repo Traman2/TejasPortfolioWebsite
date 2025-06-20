@@ -15,9 +15,9 @@ export default function MobileConnect() {
       <div className="flex w-full mb-6 gap-2">
         <button
           onClick={() => setActiveSection("about")}
-          className={`text-white flex-1 text-lg px-4 py-3 rounded-lg font-semibold transition-colors ${
+          className={`text-white flex-1 text-lg px-4 py-3 rounded-lg font-semibold transition-all duration-200 ${
             activeSection === "about"
-              ? "bg-[#0077B6]"
+              ? "bg-[#0077B6] border-2 border-[#0077B6]"
               : "bg-transparent border-2 border-[#0077B6] hover:bg-[#0077B6]/50"
           }`}
         >
@@ -25,9 +25,9 @@ export default function MobileConnect() {
         </button>
         <button
           onClick={() => setActiveSection("skills")}
-          className={`text-white flex-1 text-lg px-4 py-3 rounded-lg font-semibold transition-colors ${
+          className={`text-white flex-1 text-lg px-4 py-3 rounded-lg font-semibold transition-all duration-200 ${
             activeSection === "skills"
-              ? "bg-[#0077B6]"
+              ? "bg-[#0077B6] border-2 border-[#0077B6]"
               : "bg-transparent border-2 border-[#0077B6] hover:bg-[#0077B6]/50"
           }`}
         >
