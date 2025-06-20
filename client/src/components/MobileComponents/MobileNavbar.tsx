@@ -38,7 +38,7 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full p-4 z-50">
+      <nav className="fixed top-0 w-full p-2 z-50">
         <div className="flex items-center justify-between">
           <div className={`flex items-center space-x-2 rounded-2xl px-2 py-2 ${showName ? "bg-[#174259]/90" : "bg-transparent"}`}>
             <img
@@ -54,11 +54,10 @@ export default function MobileNavbar() {
               Tejas Raman
             </span>
           </div>
-          <div className="flex items-center bg-[#174259]/90 rounded-2xl px-2 py-2">
+          <button onClick={toggleMenu} className="flex items-center cursor-pointer bg-[#174259]/90 rounded-2xl px-2 py-2">
             <span className="text-white text-sm font-(family-name:--font-lalezar) ml-1 pt-1 mr-2">Options</span>
-            <button
-              onClick={toggleMenu}
-              className="w-[30px] h-[30px] flex items-center justify-center transition-transform duration-300 hover:scale-110"
+            <div
+              className="w-[30px] h-[30px] flex items-center justify-center"
             >
               <img
                 src="/tdesign--menu-filled.svg"
@@ -67,8 +66,8 @@ export default function MobileNavbar() {
                   isMenuOpen ? "rotate-180" : "rotate-0"
                 }`}
               />
-            </button>
-          </div>
+            </div>
+          </button>
         </div>
       </nav>
 

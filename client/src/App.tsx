@@ -10,6 +10,7 @@ import DesktopContact from "./pages/Desktop/Contact";
 import MobileHome from "./pages/Mobile/MobileHome";
 import MobileProject from "./pages/Mobile/MobileProjects";
 import MobileContact from "./pages/Mobile/MobileContact";
+import ScrollToTop from "./pages/ScrollToTop";
 // import Maintenance from "./Maintaince";
 
 export default function App() {
@@ -21,29 +22,32 @@ export default function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return isMobile ? (
+  return (
     <>
       <Analytics />
       <SpeedInsights />
-      <Router>
-        <Routes>
-          <Route path="" element={<MobileHome />} />
-          <Route path="Project" element={<MobileProject />} />
-          <Route path="Contact" element={<MobileContact />} />
-        </Routes>
-      </Router>
-    </>
-  ) : (
-    <>
-      <Analytics />
-      <SpeedInsights />
-      <Router>
-        <Routes>
-          <Route path="" element={<DesktopHome />} />
-          <Route path="Project" element={<DesktopProject />} />
-          <Route path="Contact" element={<DesktopContact />} />
-        </Routes>
-      </Router>
+      {isMobile ? (
+        <>
+          <Router>
+            <ScrollToTop/>
+            <Routes>
+              <Route path="" element={<MobileHome />} />
+              <Route path="Project" element={<MobileProject />} />
+              <Route path="Contact" element={<MobileContact />} />
+            </Routes>
+          </Router>
+        </>
+      ) : (
+        <>
+          <Router>
+            <Routes>
+              <Route path="" element={<DesktopHome />} />
+              <Route path="Project" element={<DesktopProject />} />
+              <Route path="Contact" element={<DesktopContact />} />
+            </Routes>
+          </Router>
+        </>
+      )}
     </>
   );
 

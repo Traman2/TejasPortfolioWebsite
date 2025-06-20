@@ -1,10 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import Footer from "../../components/DesktopComponents/Footer";
+import axios from "axios";
+
+const contactFormSchema = z.object({
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .min(2, "Name must be at least 2 characters"),
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address"),
+  message: z
+    .string()
+    .min(1, "Message is required")
+    .min(10, "Message must be at least 10 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const [solid, setSolid] = useState(false);
   const navigate = useNavigate();
+  const [success, setSuccess] = useState(false);
+  const [sending, setSending] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+  });
 
   const projectHandler = () => {
     navigate("/Project");
@@ -16,8 +47,35 @@ export default function Contact() {
     navigate("/Contact");
   };
 
+  useEffect(() => {
+    document.title = "Contact Me - Tejas";
+  }, []);
+
+  const onSubmit = async (data: ContactFormData) => {
+    setSending(true);
+    axios
+      .post(`https://tejas-portfolio-website-2v7v.vercel.app/`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(() => {
+        setSuccess(true);
+        setSending(false);
+        reset();
+        setTimeout(() => setSuccess(false), 2000);
+        console.log("Message sent successfully");
+      })
+      .catch((error) => {
+        console.error("Upload error: ", error);
+      });
+  };
+
   return (
-    <div className="min-h-screen w-full bg-[#0F3462] flex flex-col" onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}>
+    <div
+      className=" fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462] flex flex-col"
+      onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}
+    >
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">
         <div className="max-w-[900px] mx-auto flex flex-row items-center justify-between px-6 space-y-0">
           <div
@@ -32,7 +90,9 @@ export default function Contact() {
             />
             <span
               className={`font-medium text-white text-[18px] ml-1 transition-all duration-300 ease-in-out transform font-(family-name:--font-lalezar) ${
-                solid ? "translate-x-0 opacity-100 pt-0.5" : "-translate-x-4 opacity-0"
+                solid
+                  ? "translate-x-0 opacity-100 pt-0.5"
+                  : "-translate-x-4 opacity-0"
               }`}
             >
               Tejas Raman
@@ -62,22 +122,117 @@ export default function Contact() {
           </div>
         </div>
       </nav>
-      <main className="flex-grow pt-45">
-        <div className="max-w-[900px] mx-auto p-5">
-          <div className="p-14 rounded-xl shadow-lg flex flex-col items-center bg-[#1E6286]">
-            <h1
-              className="text-5xl font-bold text-[#CAF0F8]"
-            >
-              Contact Form Coming Soon
+
+      <div className="flex-1 flex items-center justify-center pt-20">
+        <div className="max-w-[800px] w-full px-8">
+          <div className="text-center mb-8">
+            <h1 className="text-white text-3xl font-(family-name:--font-jaro) mb-2">
+              Contact Me
             </h1>
-            <p className="text-white text-lg mt-4 opacity-80">
-              Currently working on some changes
-            </p>
+            <h2 className="text-white text-xl font-(family-name:--font-lalezar)">
+              tejassraman@gmail.com
+            </h2>
+          </div>
+
+          {success && (
+            <div className="bg-[#6d6c9e] border-2 border-green-400 text-[#61be3b] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+              Message sent successfully 🎉
+            </div>
+          )}
+
+          {sending && (
+            <div className="bg-[#6d6c9e] border-2 border-gray-400 text-[#b0faff] px-4 py-3 rounded-lg mb-4 text-center font-bold">
+              Message Uploading...
+            </div>
+          )}
+
+          <div className="bg-[#1E6286] rounded-lg p-8">
+            <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+              <div className="flex space-x-4">
+                <div className="flex-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-white text-sm font-medium mb-2"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    {...register("name")}
+                    className={`w-full px-4 py-3 border-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-0 ${
+                      errors.name ? "border-red-500" : "border-[#0096C7]"
+                    }`}
+                    placeholder="Your name"
+                  />
+                  {errors.name && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.name.message}
+                    </p>
+                  )}
+                </div>
+                <div className="flex-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-white text-sm font-medium mb-2"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    {...register("email")}
+                    className={`w-full px-4 py-3 border-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-0 ${
+                      errors.email ? "border-red-500" : "border-[#0096C7]"
+                    }`}
+                    placeholder="Your email"
+                  />
+                  {errors.email && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-white text-sm font-medium mb-2"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  {...register("message")}
+                  className={`w-full px-4 py-3 border-2 rounded-lg bg-transparent text-white placeholder-gray-300 focus:outline-none focus:ring-0 resize-none ${
+                    errors.message ? "border-red-500" : "border-[#0096C7]"
+                  }`}
+                  placeholder="Your message"
+                ></textarea>
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
+
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="bg-[#0096C7] cursor-pointer text-white px-8 py-3 rounded-lg font-medium hover:bg-[#0077A3] transition-colors duration-200"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-      </main>
+      </div>
+
       <footer className="mt-auto">
-        <Footer/>
+        <Footer />
       </footer>
     </div>
   );

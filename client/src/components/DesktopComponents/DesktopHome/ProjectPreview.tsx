@@ -9,7 +9,7 @@ export default function ProjectPreview() {
 
   return (
     <>
-      <div className="max-w-[900px] mx-auto mt-20 mb-25">
+      <div className="max-w-[900px] mx-auto mt-18 mb-25">
         <div className="flex flex-row justify-between items-start px-6">
           <div className="w-auto">
             <div className="flex items-center space-x-4 mb-8">
@@ -18,12 +18,12 @@ export default function ProjectPreview() {
                 alt="Projects"
                 className="w-12 h-12"
               />
-              <h2 className="text-white text-5xl font-(family-name:--font-lalezar)">
+              <h2 className="text-white text-5xl font-(family-name:--font-lalezar) mt-2">
                 Projects
               </h2>
             </div>
             <div className="space-y-6">
-              <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-[550px]">
+              <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
                 <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                   Bank Simulator
                 </h3>
@@ -53,7 +53,7 @@ export default function ProjectPreview() {
                 </p>
               </div>
               
-              <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-[550px]">
+              <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
                 <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                   TaskMasterAI
                 </h3>
@@ -82,7 +82,7 @@ export default function ProjectPreview() {
                 </p>
               </div>
 
-              <div className="bg-[#0077B6]/50 rounded-2xl p-6 w-[550px]">
+              <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
                 <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                   Personal Portfolio
                 </h3>
