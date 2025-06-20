@@ -54,7 +54,7 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setSending(true);
     axios
-      .post(`https://tejas-portfolio-website-2v7v.vercel.app/`, data, {
+      .post(`https://tejas-portfolio-mail-server.vercel.app/`, data, {
         headers: {
           "Content-Type": "application/json",
         },
