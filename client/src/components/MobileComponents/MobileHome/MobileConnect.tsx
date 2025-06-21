@@ -110,17 +110,6 @@ export default function MobileConnect() {
             className="w-6 h-6 ml-2"
           />
         </a>
-        <a
-          href="/contact"
-          className="flex items-center justify-center bg-[#0077B6] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#005f8f] transition-colors w-full text-lg"
-        >
-          <img
-            src="/fluent-color--contact-card-48.svg"
-            alt="Contact"
-            className="w-6 h-6 mr-2"
-          />
-          <span>Contact Me</span>
-        </a>
       </div>
     </div>
   );

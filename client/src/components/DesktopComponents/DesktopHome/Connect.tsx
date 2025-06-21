@@ -127,17 +127,6 @@ export default function Connect() {
                   className="w-6 h-6 ml-2"
                 />
               </a>
-              <button
-                onClick={contactHandler}
-                className="flex items- cursor-pointer bg-[#0077B6] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#005f8f] transition-colors"
-              >
-                <img
-                  src="/fluent-color--contact-card-48.svg"
-                  alt="Contact"
-                  className="w-6 h-6 mr-2"
-                />
-                <span>Contact Me</span>
-              </button>
             </div>
           </div>
         </div>
