@@ -1,13 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Connect() {
-  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("about");
-
-  const contactHandler = () => {
-    navigate("/Contact");
-  };
 
   return (
     <>
