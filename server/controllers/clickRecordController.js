@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const sendClickMailHandler = async (req, res) => {
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const { deviceType } = req.body;
   if (!deviceType) {
     return res.status(400).json({ error: "Missing fields" });
@@ -35,6 +36,12 @@ const sendClickMailHandler = async (req, res) => {
             <div style="background-color: rgba(255, 255, 255, 0.25); padding: 20px; border-radius: 6px; margin-bottom: 15px;">
                 <p style="color: white; margin: 0; font-size: 16px;">
                     <strong style="color: #e0e0e0;">Device Type:</strong> ${deviceType}
+                </p>
+            </div>
+
+            <div style="background-color: rgba(255, 255, 255, 0.25); padding: 20px; border-radius: 6px; margin-bottom: 15px;">
+                <p style="color: white; margin: 0; font-size: 16px;">
+                    <strong style="color: #e0e0e0;">Device IP:</strong> ${ip}
                 </p>
             </div>
         </div>
