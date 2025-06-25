@@ -54,7 +54,7 @@ const sendClickMailHandler = async (req, res) => {
       `,
     });
 
-    const newRecord = new ClickRecord({ deviceType });
+    const newRecord = new ClickRecord({ deviceType, ip });
     const savedRecord = await newRecord.save();
 
     res
