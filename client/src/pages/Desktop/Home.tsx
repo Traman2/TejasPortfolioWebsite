@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Hero from "../../components/DesktopComponents/DesktopHome/Hero";
 import ProjectPreview from "../../components/DesktopComponents/DesktopHome/ProjectPreview";
@@ -25,11 +25,12 @@ export default function Home() {
     document.title = "Home - Tejas";
   }, []);
 
-  const hasSent = useRef(false);
 
   useEffect(() => {
-    if (hasSent.current) return;
-    hasSent.current = true;
+    const alreadySent = sessionStorage.getItem("clickLogged");
+
+  if (alreadySent) return; // prevent duplicate request
+  sessionStorage.setItem("clickLogged", "true");
     const browser = Bowser.getParser(window.navigator.userAgent);
     const deviceInfo = browser.getResult();
     axios
