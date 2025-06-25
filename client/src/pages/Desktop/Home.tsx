@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Hero from "../../components/DesktopComponents/DesktopHome/Hero";
 import ProjectPreview from "../../components/DesktopComponents/DesktopHome/ProjectPreview";
 import Connect from "../../components/DesktopComponents/DesktopHome/Connect";
 import Footer from "../../components/DesktopComponents/Footer";
+import axios from "axios";
+import Bowser from "bowser";
 
 export default function Home() {
   const [solid, setSolid] = useState(false);
@@ -23,6 +25,31 @@ export default function Home() {
     document.title = "Home - Tejas";
   }, []);
 
+  const hasSent = useRef(false);
+  
+  useEffect(() => {
+    if (hasSent.current) return;
+    hasSent.current = true;
+    const browser = Bowser.getParser(window.navigator.userAgent);
+    const deviceInfo = browser.getResult();
+    axios
+      .post(
+        `http://localhost:3000/click/`,
+        {
+          deviceType: `Browser: ${deviceInfo.browser.name}, Version: ${deviceInfo.browser.version},  OS: ${deviceInfo.os.name}`,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(() => {
+      })
+      .catch((error) => {
+        console.error("Upload error: ", error);
+      });
+  }, []);
 
   return (
     <div
@@ -43,7 +70,9 @@ export default function Home() {
             />
             <span
               className={`font-medium text-white text-[18px] ml-1 transition-all duration-300 ease-in-out transform font-(family-name:--font-lalezar) ${
-                solid ? "translate-x-0 opacity-100 pt-0.5" : "-translate-x-4 opacity-0"
+                solid
+                  ? "translate-x-0 opacity-100 pt-0.5"
+                  : "-translate-x-4 opacity-0"
               }`}
             >
               Tejas Raman
@@ -73,10 +102,10 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <Hero/>
-      <Connect/>
-      <ProjectPreview/>
-      <Footer/>
+      <Hero />
+      <Connect />
+      <ProjectPreview />
+      <Footer />
     </div>
   );
 }

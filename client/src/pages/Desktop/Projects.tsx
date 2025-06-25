@@ -87,7 +87,7 @@ export default function Project() {
           </h2>
           <hr className="w-full border-t-1 border-white mb-8" />
           <div className="space-y-6 w-full">
-            <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
+            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                 Bank Simulator
               </h3>
@@ -118,7 +118,7 @@ export default function Project() {
               </p>
             </div>
 
-            <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
+            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                 TaskMasterAI
               </h3>
@@ -150,7 +150,7 @@ export default function Project() {
               </p>
             </div>
 
-            <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
+            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                 Personal Portfolio
               </h3>
@@ -176,7 +176,7 @@ export default function Project() {
               </p>
             </div>
 
-            <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
+            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                 Arkos
               </h3>
@@ -208,7 +208,7 @@ export default function Project() {
               </p>
             </div>
 
-            <div className="bg-[#0077B6]/50 border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
+            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                 SignLang
               </h3>

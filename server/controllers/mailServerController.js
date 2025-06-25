@@ -23,7 +23,7 @@ const sendMailHandler = async (req, res) => {
     });
 
     await transporter.sendMail({
-      from: email,
+      from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       subject: `New Contact Form from ${name} - ${email}`,
       html: `
