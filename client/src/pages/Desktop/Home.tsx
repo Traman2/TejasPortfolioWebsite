@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   const hasSent = useRef(false);
-  
+
   useEffect(() => {
     if (hasSent.current) return;
     hasSent.current = true;
@@ -34,7 +34,7 @@ export default function Home() {
     const deviceInfo = browser.getResult();
     axios
       .post(
-        `http://localhost:3000/click/`,
+        `https://tejas-portfolio-mail-server.vercel.app/click`,
         {
           deviceType: `Browser: ${deviceInfo.browser.name}, Version: ${deviceInfo.browser.version},  OS: ${deviceInfo.os.name}`,
         },

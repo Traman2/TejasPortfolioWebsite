@@ -42,7 +42,7 @@ export default function MobileContact() {
   const onSubmit = async (data: ContactFormData) => {
     setSending(true);
     axios
-      .post(`https://tejas-portfolio-mail-server.vercel.app/`, data, {
+      .post(`https://tejas-portfolio-mail-server.vercel.app/form`, data, {
         headers: {
           "Content-Type": "application/json",
         },
