@@ -17,8 +17,8 @@ export default function Project() {
   };
 
   useEffect(() => {
-      document.title = "Projects - Tejas";
-    }, []);
+    document.title = "Projects - Tejas";
+  }, []);
 
   return (
     <div
@@ -29,7 +29,7 @@ export default function Project() {
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">
         <div className="max-w-[900px] mx-auto flex flex-row items-center justify-between px-6 space-y-0">
           <div
-            className={`flex items-center space-x-2 rounded-2xl px-2 py-2 ${
+            className={`flex items-center space-x-2 rounded-[40px] px-5 py-2 ${
               solid ? "bg-[#1E6286]/90" : "bg-transparent"
             }`}
           >
@@ -80,7 +80,9 @@ export default function Project() {
               alt="Projects"
               className="w-12 h-12"
             />
-            <h1 className="text-white text-5xl font-(family-name:--font-jaro) mb-1">Projects</h1>
+            <h1 className="text-white text-5xl font-(family-name:--font-jaro) mb-1">
+              Projects
+            </h1>
           </div>
           <h2 className="text-white text-2xl font-(family-name:--font-lalezar) mb-6 text-center">
             Showcase of Projects I've Worked On and Contributed To
@@ -89,7 +91,7 @@ export default function Project() {
           <div className="space-y-6 w-full">
             <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                Bank Simulator
+                Schedgy
               </h3>
               <div className="flex flex-wrap gap-2 max-w-[600px]">
                 <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
@@ -112,10 +114,18 @@ export default function Project() {
                 </span>
               </div>
               <p className="text-white mt-4">
-                Full stack app that uses mongodb and react for route management,
-                interactive user iterface, and jwt for
-                authentication/authorization
+                Schedgy is a full-stack productivity app for college students to
+                manage assignments, track expenses, view payroll dates, and
+                monitor finances from a unified dashboard.
               </p>
+              <a
+                href="https://github.com/Traman2/Schedgy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors mr-2"
+              >
+                Learn More
+              </a>
             </div>
 
             <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
@@ -143,11 +153,19 @@ export default function Project() {
                 </span>
               </div>
               <p className="text-white mt-4">
-                A student workflow/time management system that uses AI to create
+                A student workflow/time management web app that uses AI to create
                 a semester long study plan based off of course material, that
                 connects you to the best resources and creates quizzes to help
                 you gauge your knowledge.
               </p>
+              <a
+                href="https://github.com/NovaBoltSpider10/taskmaster-web-client/tree/dev/tejas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors mr-2"
+              >
+                Learn More
+              </a>
             </div>
 
             <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
@@ -174,6 +192,22 @@ export default function Project() {
                 MongoDB, and NodeMailer. Website is hosted on Vercel for easier
                 management of hosting and better insights on site activity
               </p>
+              <a
+                href="https://github.com/Traman2/TejasPortfolioWebsite"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 bg-[#023E8A] text-white px-4 py-2 rounded-lg shadow-md font-medium hover:bg-[#005f8f] transition-colors mr-2"
+              >
+                Learn More
+              </a>
+              <a
+                href="https://tejasraman.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 bg-[#379eff] text-white px-4 py-2 rounded-lg font-medium shadow-md hover:bg-[#5bb6ff] transition-colors"
+              >
+                View Website
+              </a>
             </div>
 
             <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
@@ -206,6 +240,14 @@ export default function Project() {
                 revenue and profit margins and also analyze Energy Consumption
                 and gets tips on how to further minimize emissions
               </p>
+              <a
+                href="https://github.com/Traman2/2025HackAI-Arkos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
+              >
+                Learn More
+              </a>
             </div>
 
             <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
@@ -231,6 +273,14 @@ export default function Project() {
                 and tensorflow.js to analyze the image and identify the hand
                 sign
               </p>
+              <a
+                href="https://github.com/Traman2/SignlangAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
+              >
+                Learn More
+              </a>
             </div>
           </div>
           <div className="flex justify-center mt-14">
@@ -239,10 +289,14 @@ export default function Project() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => projectHandler()}
-              className="bg-[#0077B6]/96 cursor-pointer text-white px-6 py-3 rounded-full font-semibold hover:bg-[#005f8f] transition-colors flex items-center gap-2"
+              className="bg-[#0077B6]/96 cursor-pointer text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-[#005f8f] transition-colors flex items-center gap-2"
             >
-              See More Projects on
-              <img src="/mdi--github.svg" alt="GitHub" className="w-6 h-6" />
+              <img
+                src="/mdi--github.svg"
+                alt="GitHub"
+                className="w-6 h-6 mr-2"
+              />
+              See More Projects on GitHub
             </a>
           </div>
         </div>

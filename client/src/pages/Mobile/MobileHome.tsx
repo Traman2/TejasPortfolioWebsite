@@ -17,7 +17,7 @@ export default function MobileHome() {
   useEffect(() => {
     const alreadySent = sessionStorage.getItem("clickLogged");
 
-  if (alreadySent) return; // prevent duplicate request
+  if (alreadySent) return;
   sessionStorage.setItem("clickLogged", "true");
     const browser = Bowser.getParser(window.navigator.userAgent);
     const deviceInfo = browser.getResult();

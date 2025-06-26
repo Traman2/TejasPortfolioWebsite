@@ -60,7 +60,7 @@ export default function Home() {
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">
         <div className="max-w-[900px] mx-auto flex flex-row items-center justify-between px-6 space-y-0">
           <div
-            className={`flex items-center space-x-2 rounded-2xl px-2 py-2 ${
+            className={`flex items-center space-x-2 rounded-[40px] px-5 py-2 ${
               solid ? "bg-[#1E6286]/90" : "bg-transparent"
             }`}
           >
