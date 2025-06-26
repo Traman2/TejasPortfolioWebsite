@@ -73,7 +73,7 @@ export default function Contact() {
 
   return (
     <div
-      className=" fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462] flex flex-col"
+      className=" fixed inset-0 min-h-screen w-full overflow-y-auto scrollbar-home bg-[#0F3462] flex flex-col"
       onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}
     >
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">

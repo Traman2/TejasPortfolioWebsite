@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div
-      className="fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462]"
+      className="fixed inset-0 min-h-screen w-full overflow-y-auto scrollbar-home bg-[#0F3462]"
       onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}
     >
       <nav className="fixed top-0 w-full p-4 z-50 mt-2">

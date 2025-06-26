@@ -5,3 +5,10 @@
   --font-konkhmer: "Konkhmer Sleokchher", sans-serif;
   --font-lalezar: "Lalezar",  sans-serif;
 }
+
+
+@layer utilities {
+  .scrollbar-home {
+    scrollbar-color: #0096C7 #1E6286;
+  }
+}

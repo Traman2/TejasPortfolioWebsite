@@ -22,7 +22,7 @@ export default function Project() {
 
   return (
     <div
-      className=" fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462] flex flex-col"
+      className=" fixed inset-0 min-h-screen w-full overflow-y-auto bg-[#0F3462] scrollbar-home flex flex-col"
       onScroll={(e) => setSolid(e.currentTarget.scrollTop > 120)}
     >
       {" "}
