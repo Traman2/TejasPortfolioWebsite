@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../components/DesktopComponents/Footer";
+import data from "../../../projectData.json";
 
 export default function Project() {
   const [solid, setSolid] = useState(false);
@@ -84,42 +85,31 @@ export default function Project() {
               Projects
             </h1>
           </div>
+          
           <h2 className="text-white text-2xl font-(family-name:--font-lalezar) mb-6 text-center">
             Showcase of Projects I've Worked On and Contributed To
           </h2>
           <hr className="w-full border-t-1 border-white mb-8" />
           <div className="space-y-6 w-full">
-            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
+            
+             {data.map((post) => (
+            <>
+              <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
               <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                Schedgy
+                {post.title}
               </h3>
               <div className="flex flex-wrap gap-2 max-w-[600px]">
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  React
+                {post.techs.map((tech) => (
+                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
+                  {tech}
                 </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  TailwindCSS
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Node
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Express
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  MongoDB
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  JwT Tokens
-                </span>
+                ))}
               </div>
               <p className="text-white mt-4">
-                Schedgy is a full-stack productivity app for college students to
-                manage assignments, track expenses, view payroll dates, and
-                monitor finances from a unified dashboard.
+                {post.description}
               </p>
               <a
-                href="https://github.com/Traman2/Schedgy"
+                href={post.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors mr-2"
@@ -127,161 +117,8 @@ export default function Project() {
                 Learn More
               </a>
             </div>
-
-            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
-              <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                TaskMasterAI
-              </h3>
-              <div className="flex flex-wrap gap-2 max-w-[600px]">
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  MongoDB
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  TailwindCSS
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  React
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Express
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Flask
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Python
-                </span>
-              </div>
-              <p className="text-white mt-4">
-                A student workflow/time management web app that uses AI to create
-                a semester long study plan based off of course material, that
-                connects you to the best resources and creates quizzes to help
-                you gauge your knowledge.
-              </p>
-              <a
-                href="https://github.com/NovaBoltSpider10/taskmaster-web-client/tree/dev/tejas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors mr-2"
-              >
-                Learn More
-              </a>
-            </div>
-
-            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
-              <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                Personal Portfolio
-              </h3>
-              <div className="flex flex-wrap gap-2 max-w-[600px]">
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  React
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  TailwindCSS
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Figma
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Vercel
-                </span>
-              </div>
-              <p className="text-white mt-4">
-                Web Portfolio to show my personal projects. Frontend uses
-                React.js and TailwindCSS. Backend uses Node.js, Express,js,
-                MongoDB, and NodeMailer. Website is hosted on Vercel for easier
-                management of hosting and better insights on site activity
-              </p>
-              <a
-                href="https://github.com/Traman2/TejasPortfolioWebsite"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 bg-[#023E8A] text-white px-4 py-2 rounded-lg shadow-md font-medium hover:bg-[#005f8f] transition-colors mr-2"
-              >
-                Learn More
-              </a>
-              <a
-                href="https://tejasraman.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 bg-[#379eff] text-white px-4 py-2 rounded-lg font-medium shadow-md hover:bg-[#5bb6ff] transition-colors"
-              >
-                View Website
-              </a>
-            </div>
-
-            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
-              <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                Arkos
-              </h3>
-              <div className="flex flex-wrap gap-2 max-w-[600px]">
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  TailwindCSS
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  RAG Model
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  React
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Express
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Flask
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  Python
-                </span>
-              </div>
-              <p className="text-white mt-4">
-                A web app that uses an AI powered RAG model to process financial
-                reports and lets users quickly look up details like annual
-                revenue and profit margins and also analyze Energy Consumption
-                and gets tips on how to further minimize emissions
-              </p>
-              <a
-                href="https://github.com/Traman2/2025HackAI-Arkos"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
-              >
-                Learn More
-              </a>
-            </div>
-
-            <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-full max-w-[870px] mx-auto">
-              <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                SignLang
-              </h3>
-              <div className="flex flex-wrap gap-2 max-w-[600px]">
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  HTML
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  CSS
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  JavaScript
-                </span>
-                <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                  TensorFlow.js
-                </span>
-              </div>
-              <p className="text-white mt-4">
-                An AI powered sign language recognizer using the users webcam
-                and tensorflow.js to analyze the image and identify the hand
-                sign
-              </p>
-              <a
-                href="https://github.com/Traman2/SignlangAI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 shadow-md bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
-              >
-                Learn More
-              </a>
-            </div>
+            </>
+          ))}
           </div>
           <div className="flex justify-center mt-14">
             <a

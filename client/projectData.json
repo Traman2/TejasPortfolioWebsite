@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Schedgy",
+    "techs": ["React", "TailwindCSS", "Node", "Express", "MongoDB", "JwT Tokens"],
+    "description": "Schedgy is a full-stack productivity app for college students to manage assignments, track expenses, view payroll dates, and monitor finances from a unified dashboard.",
+    "link": "https://github.com/Traman2/Schedgy"
+  },
+  {
+    "title": "California House Prediction Model",
+    "techs": ["Sckitlearn", "Python", "Flask", "React", "ML", "Random Forest"],
+    "description": "Introduction to a machine learning project built to reinforce my skills in regression models like Linear Regression and Random Forest. Focused on data preprocessing, feature engineering, model tuning, and deploying a trained .pkl model integrated with a React frontend.",
+    "link": "https://github.com/Traman2/CaliforniaHousePrediction"
+  },
+  {
+    "title": "TaskMasterAI",
+    "techs": ["MongoDB", "TailwindCSS", "React", "Express", "Flask", "Python"],
+    "description": "A student workflow/time management web app that uses AI to create a semester long study plan based off of course material, that connects you to the best resources and creates quizzes to help you gauge your knowledge.",
+    "link": "https://github.com/NovaBoltSpider10/taskmaster-web-client/tree/dev/tejas"
+  },
+  {
+    "title": "Personal Portfolio",
+    "techs": ["React", "TailwindCSS", "Figma", "Vercel"],
+    "description": "Web Portfolio to show my personal projects. Frontend uses React.js and TailwindCSS. Backend uses Node.js, Express.js, MongoDB, and NodeMailer. Website is hosted on Vercel for easier management of hosting and better insights on site activity.",
+    "link": "https://github.com/Traman2/TejasPortfolioWebsite"
+  },
+  {
+    "title": "Arkos",
+    "techs": ["TailwindCSS", "RAG Model", "React", "Express", "Flask", "Python"],
+    "description": "A web app that uses an AI powered RAG model to process financial reports and lets users quickly look up details like annual revenue and profit margins and also analyze Energy Consumption and get tips on how to further minimize emissions.",
+    "link": "https://github.com/Traman2/2025HackAI-Arkos"
+  },
+  {
+    "title": "SignLang",
+    "techs": ["HTML", "CSS", "JavaScript", "TensorFlow.js"],
+    "description": "An AI powered sign language recognizer using the user's webcam and TensorFlow.js to analyze the image and identify the hand sign.",
+    "link": "https://github.com/Traman2/SignlangAI"
+  }
+]

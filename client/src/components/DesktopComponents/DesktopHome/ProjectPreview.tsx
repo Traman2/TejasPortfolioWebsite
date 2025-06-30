@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import data from "../../../../projectData.json";
 
 export default function ProjectPreview() {
   const navigate = useNavigate();
@@ -23,37 +24,23 @@ export default function ProjectPreview() {
               </h2>
             </div>
             <div className="space-y-6">
-              <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
+              {data.map((post) => (
+                <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
                 <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                  Schedgy
+                  {post.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 max-w-[400px]">
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    React
+                  {post.techs.map((tech) => (
+                    <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
+                    {tech}
                   </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    TailwindCSS
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Node
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Express
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    MongoDB
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    JwT Tokens
-                  </span>
+                  ))}
                 </div>
                 <p className="text-white mt-4">
-                  Schedgy is a full-stack productivity app for college students
-                  to manage assignments, track expenses, view payroll dates, and
-                  monitor finances from a unified dashboard.
+                  {post.description}
                 </p>
                 <a
-                href="https://github.com/Traman2/Schedgy"
+                href={post.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center mt-4 bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
@@ -61,81 +48,7 @@ export default function ProjectPreview() {
                 Learn More
               </a>
               </div>
-
-              <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
-                <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                  TaskMasterAI
-                </h3>
-                <div className="flex flex-wrap gap-2 max-w-[400px]">
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    MongoDB
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    TailwindCSS
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    React
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Express
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Flask
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Python
-                  </span>
-                </div>
-                <p className="text-white mt-4">
-                  A student workflow/time management system that uses AI to
-                  create a semester long study plan based off of course
-                  material, that connects you to the best resources and creates
-                  quizzes to help you gauge your knowledge.
-                </p>
-                <a
-                href="https://github.com/NovaBoltSpider10/taskmaster-web-client/tree/dev/tejas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
-              >
-                Learn More
-              </a>
-              </div>
-
-              <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
-                <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
-                  Personal Portfolio
-                </h3>
-                <div className="flex flex-wrap gap-2 max-w-[400px]">
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    React
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    TailwindCSS
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Figma
-                  </span>
-                  <span className="bg-[#0E4C59] text-white px-3 py-1 rounded-full text-sm">
-                    Vercel
-                  </span>
-                </div>
-                <p className="text-white mt-4">
-                  Web Portfolio to show my personal projects. Frontend uses
-                  React.js and TailwindCSS. Backend uses Node.js, Express,js,
-                  MongoDB, and NodeMailer. Website is hosted on Vercel for
-                  easier management of hosting and better insights on site
-                  activity
-                </p>
-                <a
-                href="https://github.com/Traman2/TejasPortfolioWebsite"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-4 bg-[#023E8A] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#005f8f] transition-colors"
-              >
-                Learn More
-              </a>
-              </div>
+              ))}
             </div>
             <div className="flex justify-center mt-8">
               <button
