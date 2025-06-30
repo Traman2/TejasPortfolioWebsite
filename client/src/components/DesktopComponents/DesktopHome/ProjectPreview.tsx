@@ -24,7 +24,7 @@ export default function ProjectPreview() {
               </h2>
             </div>
             <div className="space-y-6">
-              {data.map((post) => (
+              {data.slice(0,3).map((post) => (
                 <div className="bg-[#0077B6] border-[#979595] border-3 rounded-2xl p-6 w-[550px]">
                 <h3 className="text-white text-3xl font-(family-name:--font-lalezar) mb-4">
                   {post.title}
