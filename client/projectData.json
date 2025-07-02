@@ -34,5 +34,11 @@
     "techs": ["HTML", "CSS", "JavaScript", "TensorFlow.js"],
     "description": "An AI powered sign language recognizer using the user's webcam and TensorFlow.js to analyze the image and identify the hand sign.",
     "link": "https://github.com/Traman2/SignlangAI"
+  },
+  {
+    "title": "Tower of Hanoi",
+    "techs": ["Java"],
+    "description": "This is a simple implementation of the Towers of Hanoi logic problem in C++ and a stack data structure created from scratch to represent the towers in this problem",
+    "link": "https://github.com/Traman2/TowerOfHanoi"
   }
 ]

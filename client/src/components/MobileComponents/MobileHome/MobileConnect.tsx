@@ -39,9 +39,9 @@ export default function MobileConnect() {
         {activeSection === "about" ? (
           <>
             <p className="text-base leading-relaxed">
-              I am actively seeking internship opportunities for Summer 2026,
-              with a focus on software development and engineering roles. For
-              potential opportunities, please connect with me on{" "}
+              I am currently seeking internship opportunities for Summer
+              2025, with a focus on Machine Learning and Software Development roles. 
+              For potential opportunities, please connect with me on{" "}
               <a
                 href="https://linkedin.com/in/tejas-raman-1a892b255/"
                 target="_blank"
@@ -52,9 +52,9 @@ export default function MobileConnect() {
               </a>
             </p>
             <p className="text-base mt-4 leading-relaxed">
-              If you would like to contact me directly or have any questions,
-              please feel free to reach out through my contact page or directly
-              via email at{" "}
+              If you would like to contact me directly or have any
+              questions, please feel free to reach out through my contact me
+              page or directly via email at{" "}
               <a
                 href="mailto:tejassraman@gmail.com"
                 className="text-[#0096C7] hover:text-[#00b4f0] transition-colors underline"
@@ -66,8 +66,7 @@ export default function MobileConnect() {
         ) : (
           <>
             <p className="text-base leading-relaxed">
-              My technical skils cover multiple programming languages and modern
-              web frameworks. I have strong proficiency in:
+              My technical skils cover multiple Programming languages and Web frameworks. I have a strong proficiency in:
             </p>
             <div className="mt-4 space-y-2 text-base">
               <p className="leading-relaxed">
@@ -84,13 +83,23 @@ export default function MobileConnect() {
               </p>
               <p className="leading-relaxed">
                 <span className="font-bold">Backend Development:</span>{" "}
-                Node.js, Express.js
+                Node.js, Express.js, MongoDB
+              </p>
+              <p className="leading-relaxed">
+                <span className="font-bold">ML and AI Libraries:</span>{" "}
+                Scikit-learn, Tensorflow, Matplotlib, Numpy, 
+              </p>
+              <p className="leading-relaxed">
+                <span className="font-bold">Integrated Development Enviornments (IDE):</span>{" "}
+                Intellij, PyCharm, Visual Studio, VS Code, GitHub, C-Lion, Eclipse
               </p>
             </div>
             <p className="text-base mt-4 leading-relaxed">
-              This portfolio website showcases my experience with React.js,
-              TailwindCSS, and Node.js, demonstrating my ability to create
-              responsive and modern web applications with backend server logic
+              I have completed numerous projects involving data
+              preprocessing and full stack application development. This
+              portfolio website itself demonstrates my experience with
+              React.js, Tailwind CSS, and Node.js, showcasing my ability to
+              build responsive web apps with backend logic.
             </p>
           </>
         )}

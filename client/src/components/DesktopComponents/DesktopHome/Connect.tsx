@@ -42,10 +42,10 @@ export default function Connect() {
               {activeSection === "about" ? (
                 <>
                   <p className="text-lg leading-relaxed">
-                    I am actively seeking internship opportunities for Summer
-                    2026, with a focus on software development and engineering
-                    roles. For potential opportunities, please connect with me
-                    on{" "}
+                    I am currently seeking internship opportunities for Summer
+                    2025, with a focus on Machine Learning and Software
+                    Development roles. For potential opportunities, please
+                    connect with me on{" "}
                     <a
                       href="https://linkedin.com/in/tejas-raman-1a892b255/"
                       target="_blank"
@@ -58,7 +58,7 @@ export default function Connect() {
                   <p className="text-lg mt-4 leading-relaxed">
                     If you would like to contact me directly or have any
                     questions, please feel free to reach out through my contact
-                    page or directly via email at{" "}
+                    me page or directly via email at{" "}
                     <a
                       href="mailto:tejassraman@gmail.com"
                       className="text-[#0096C7] hover:text-[#00b4f0] transition-colors"
@@ -70,38 +70,44 @@ export default function Connect() {
               ) : (
                 <>
                   <p className="text-lg leading-relaxed">
-                    My technical skils cover multiple programming languages and
-                    modern web frameworks. I have strong proficiency in:
+                    My technical skils cover multiple Programming languages and
+                    Web frameworks. I have a strong proficiency in:
                   </p>
                   <div className="mt-4 space-y-2">
                     <p className="text-lg leading-relaxed">
-                      <span className="font-bold">
-                        Programming Languages:
-                      </span>{" "}
-                      Java, C++, C#
+                      <span className="font-bold">Programming Languages:</span>{" "}
+                      Java, C++, C#, Python
                     </p>
                     <p className="text-lg leading-relaxed">
                       <span className="font-bold">Web Development:</span>{" "}
                       JavaScript, TypeScript
                     </p>
                     <p className="text-lg leading-relaxed">
-                      <span className="font-bold">
-                        Frontend Technologies:
-                      </span>{" "}
+                      <span className="font-bold">Frontend Technologies:</span>{" "}
                       React.js, HTML5, CSS3, TailwindCSS
                     </p>
                     <p className="text-lg leading-relaxed">
+                      <span className="font-bold">Backend Development:</span>{" "}
+                      Node.js, Express.js, MongoDB
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      <span className="font-bold">ML and AI Libraries:</span>{" "}
+                      Scikit-learn, Tensorflow, Matplotlib, Numpy,
+                    </p>
+                    <p className="text-lg leading-relaxed">
                       <span className="font-bold">
-                        Backend Development:
+                        Integrated Development Enviornments (IDE):
                       </span>{" "}
-                      Node.js, Express.js
+                      Intellij, PyCharm, Visual Studio, VS Code, GitHub, C-Lion,
+                      Eclipse
                     </p>
                   </div>
                   <p className="text-lg mt-4 leading-relaxed">
-                    This portfolio website showcases my experience with
-                    React.js, TailwindCSS, and Node.js, demonstrating my ability
-                    to create responsive and modern web applications with
-                    backend server logic
+                    I have completed numerous projects involving data
+                    preprocessing and full stack application development. This
+                    portfolio website itself demonstrates my experience with
+                    React.js, Tailwind CSS, and Node.js, showcasing my ability to
+                    build responsive web apps with backend logic.
                   </p>
                 </>
               )}
