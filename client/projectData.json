@@ -1,8 +1,8 @@
 [
   {
-    "title": "Schedgy",
+    "title": "ElevAIte",
     "techs": ["React", "TailwindCSS", "RAG Model", "Pinecone", "Node", "Express", "MongoDB", "JwT Tokens"],
-    "description": "Schedgy is a full-stack productivity app powered by a RAG based AI assistant that allows students to interact with a personal assistant to view and create classes, check bank balances, track expenses, and monitor internship statuses, all from a unified web app.",
+    "description": "ElevAIte is a full-stack productivity app powered by a RAG based AI assistant that allows students to interact with a personal assistant to view and create classes, check bank balances, track expenses, and monitor internship statuses, all from a unified web management platform.",
     "link": "https://github.com/Traman2/Schedgy"
   },
   {
