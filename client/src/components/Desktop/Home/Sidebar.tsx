@@ -89,7 +89,7 @@ export default function Sidebar() {
             href="/Tejas_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block py-2 bg-[#6DED97] align-middle px-8 my-4 rounded-xl text-lg font-semibold text-black hover:opacity-90 transition"
+            className="inline-block py-2 bg-[#6DED97] align-middle px-8 my-4 rounded-xl text-md font-semibold text-black hover:opacity-90 transition"
           >
             Download CV
           </a>
