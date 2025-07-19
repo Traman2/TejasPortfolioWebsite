@@ -12,7 +12,7 @@ export default function Sidebar() {
           <div className="text-xl text-white font-bold">Tejas Raman</div>
           <div className="text-[#E2CACA]">CS Major @UT Dallas</div>
         </div>
-        <div className="absolute left-1/4 top-[23%] -translate-x-1/6 bg-[#2F2F38] px-8 flex rounded-4xl gap-4 shadow-lg z-10">
+        <div className="absolute left-1/4 top-[184px] -translate-x-1/6 bg-[#2F2F38] px-8 flex rounded-4xl gap-4 shadow-lg z-10">
           <a
             className="rounded"
             href="https://github.com/traman2"
@@ -50,8 +50,8 @@ export default function Sidebar() {
           </a>
         </div>
         <div className="bg-[#17151D] px-3 flex-1 overflow-auto">
-          <div className="text-white font-bold mt-12 flex flex-col gap-1">
-            <h1 className="text-md mb-2">Navigation Menu</h1>
+          <div className="text-white font-bold mt-18 flex flex-col gap-2">
+            <h1 className="text-md mb-2 text-center">Navigation Menu</h1>
             <button>
               <div className="flex gap-4 rounded-xl bg-[#2F2F38] py-3 pl-3">
                 <img
@@ -82,13 +82,6 @@ export default function Sidebar() {
                 <p className="text-sm">Contact Me</p>
               </div>
             </button>
-          </div>
-          <div className="text-white font-bold mt-6">
-            <h1 className="text-md mb-2">Traman2 Github Stats</h1>
-            <img
-              src="https://github-readme-streak-stats.herokuapp.com?user=traman2&theme=radical&ring=ff0000&fire=ff0000&currStreakLabel=ffffff"
-              width="100%"
-            />
           </div>
         </div>
         <div className="self-center">
