@@ -15,7 +15,7 @@ export default function Analytics() {
             <p className="text-[#6DED97] font-bold text-5xl">392</p>
             <div className="flex gap-2 mt-3">
               <img
-                src="/icons/analytics/statsHead.svg"
+                src="/icons/analytics/eye.svg"
                 alt="Skill Sets Logo"
                 className="w-5 h-5"
               />
@@ -26,7 +26,7 @@ export default function Analytics() {
             <p className="text-[#6DED97] font-bold text-5xl">429</p>
             <div className="flex gap-2 mt-3">
               <img
-                src="/icons/analytics/statsHead.svg"
+                src="/icons/analytics/github.svg"
                 alt="Skill Sets Logo"
                 className="w-5 h-5"
               />
@@ -37,7 +37,7 @@ export default function Analytics() {
             <p className="text-[#6DED97] font-bold text-5xl">4<span className="text-4xl">+</span></p>
             <div className="flex gap-2 mt-3">
               <img
-                src="/icons/analytics/statsHead.svg"
+                src="/icons/analytics/code.svg"
                 alt="Skill Sets Logo"
                 className="w-5 h-5"
               />
@@ -48,7 +48,7 @@ export default function Analytics() {
             <p className="text-[#6DED97] font-bold text-5xl">290<span className="text-3xl">Mb</span></p>
             <div className="flex gap-2 mt-3">
               <img
-                src="/icons/analytics/statsHead.svg"
+                src="/icons/analytics/folders.svg"
                 alt="Skill Sets Logo"
                 className="w-5 h-5"
               />
@@ -62,7 +62,7 @@ export default function Analytics() {
             <p className="text-[#6DED97] font-bold text-5xl">289</p>
             <div className="flex gap-2 mt-2">
               <img
-                src="/icons/analytics/statsHead.svg"
+                src="/icons/analytics/click.svg"
                 alt="Skill Sets Logo"
                 className="w-5 h-5"
               />
