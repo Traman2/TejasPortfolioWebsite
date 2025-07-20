@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 export default function Analytics() {
+  const [clickCount, setClickCount] = useState(0);
+
   return (
     <>
       <div className="flex-1 bg-[#1D1C22] flex flex-col rounded-xl px-6 pt-6 pb-4 max-w-[390px]">
@@ -10,7 +14,7 @@ export default function Analytics() {
           />
           <h2 className="text-2xl font-bold text-[#CDD2D3]">Analytics</h2>
         </div>
-        <div className="grid grid-cols-2 mt-6 gap-6 pl-4 pr-6">
+        <div className="grid grid-cols-2 mt-6 gap-8 pl-4 pr-6">
           <div className="flex flex-col">
             <p className="text-[#6DED97] font-bold text-5xl">392</p>
             <div className="flex gap-2 mt-3">
@@ -45,7 +49,7 @@ export default function Analytics() {
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#6DED97] font-bold text-5xl">290<span className="text-3xl">Mb</span></p>
+            <p className="text-[#6DED97] font-bold text-5xl">29<span className="text-3xl">Mb</span></p>
             <div className="flex gap-2 mt-3">
               <img
                 src="/icons/analytics/folders.svg"
@@ -59,7 +63,7 @@ export default function Analytics() {
 
         <div className="bg-[#17151D] mt-auto p-5 items-center rounded-2xl flex justify-between">
           <div>
-            <p className="text-[#6DED97] font-bold text-5xl">289</p>
+            <p className="text-[#6DED97] font-bold text-5xl">{clickCount}</p>
             <div className="flex gap-2 mt-2">
               <img
                 src="/icons/analytics/click.svg"
@@ -69,7 +73,7 @@ export default function Analytics() {
               <p className="font-semibold text-white">Click Meter</p>
             </div>
           </div>
-          <button className="bg-[#343338] text-[#E5D7D7] font-bold px-5 py-2 rounded-3xl">
+          <button className="bg-[#343338] text-[#E5D7D7] font-bold px-5 py-2 rounded-3xl cursor-pointer hover:bg-[#232228] transition-colors duration-200" onClick={() => setClickCount(clickCount + 1)}>
             Click Me
           </button>
         </div>

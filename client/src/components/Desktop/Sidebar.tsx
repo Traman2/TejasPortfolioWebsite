@@ -1,4 +1,17 @@
-export default function Sidebar() {
+import { useNavigate } from "react-router-dom";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+interface Props {
+  activePage: string;
+}
+
+export default function Sidebar({ activePage }: Props) {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="w-[280px] h-full flex flex-col bg-[#1D1C22] relative rounded-xl">
@@ -52,8 +65,12 @@ export default function Sidebar() {
         <div className="bg-[#17151D] px-3 flex-1 overflow-auto">
           <div className="text-white font-bold mt-18 flex flex-col gap-2">
             <h1 className="text-md mb-2 text-center">Navigation Menu</h1>
-            <button>
-              <div className="flex gap-4 rounded-xl bg-[#2F2F38] py-3 pl-3">
+            <button onClick={() => navigate("/")}>
+              <div
+                className={`cursor-pointer flex gap-4 rounded-xl ${
+                  activePage === "" ? "bg-[#2F2F38]" : "hover:bg-[#2F2F38]"
+                } py-3 pl-3`}
+              >
                 <img
                   src="/icons/SidebarStats/home.svg"
                   alt="Logo 3"
@@ -62,8 +79,14 @@ export default function Sidebar() {
                 <p className="text-sm">Home</p>
               </div>
             </button>
-            <button>
-              <div className="flex gap-4 rounded-lg py-3 pl-3 hover:bg-[#2F2F38]">
+            <button onClick={() => navigate("/Project")}>
+              <div
+                className={`cursor-pointer flex gap-4 rounded-xl ${
+                  activePage === "Project"
+                    ? "bg-[#2F2F38]"
+                    : "hover:bg-[#2F2F38]"
+                } py-3 pl-3`}
+              >
                 <img
                   src="/icons/SidebarStats/folders.svg"
                   alt="Logo 3"
@@ -72,16 +95,23 @@ export default function Sidebar() {
                 <p className="text-sm">Projects</p>
               </div>
             </button>
-            <button>
-              <div className="flex gap-4 rounded-lg py-3 pl-3 hover:bg-[#2F2F38]">
-                <img
-                  src="/icons/SidebarStats/contact.svg"
-                  alt="Logo 3"
-                  className="w-5 h-5"
-                />
-                <p className="text-sm">Contact Me</p>
-              </div>
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button>
+                  <div className="flex gap-4 cursor-pointer rounded-lg py-3 pl-3 hover:bg-[#2F2F38]">
+                    <img
+                      src="/icons/SidebarStats/contact.svg"
+                      alt="Logo 3"
+                      className="w-5 h-5"
+                    />
+                    <p className="text-sm">Contact Me</p>
+                  </div>
+                </button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Coming Soon...</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </div>
         <div className="self-center">

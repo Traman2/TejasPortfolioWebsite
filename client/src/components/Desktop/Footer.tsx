@@ -9,7 +9,7 @@ export default function Footer() {
             alt="Skill Sets Logo"
             className="w-8 h-8"
           />
-          <p className="text-white leading-1"><span className="text-[8px]">Developed by</span> <br/> <span className="text-sm">Tejas Raman</span></p>
+          <p className="text-white leading-3"><span className="text-[9px]">Developed by</span> <br/> <span className="text-sm">Tejas Raman</span></p>
         </div>
 
         <p className="text-[#D4CBCB] text-sm">Created with React and TailwindCSS</p>
