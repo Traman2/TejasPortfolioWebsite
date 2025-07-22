@@ -10,7 +10,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
     const [closing, setClosing] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [messages, setMessages] = useState([
-        { sender: 'bot', text: 'Hello! How can I help you today?' },
+        { sender: 'bot', text: "Hello, I'm Jarvis! How can I help you today?" },
     ]);
     const [isThinking, setIsThinking] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
         setInputValue("");
         setIsThinking(true);
         console.log(messages);
-        axios.post('http://localhost:3000/rag/query', {
+        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
             history: messages,
             query: inputValue
         })
@@ -58,11 +58,11 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
             onClick={handleClose}
         >
             <div
-                className="relative bg-[#18181B] rounded-xl border border-[#fff]/20 shadow-2xl p-7 flex flex-col items-center justify-center h-[600px] w-[790px] overflow-y-auto"
+                className="relative bg-[#18181B] rounded-2xl border border-[#fff]/20 shadow-2xl p-7 flex flex-col items-center justify-center h-[600px] w-[790px] overflow-y-auto"
                 style={{}}
                 onClick={e => e.stopPropagation()}
             >
-                <div className="w-full bg-[#232326] rounded-4xl pb-5 pt-7 px-6 flex flex-col gap-4 mb-3 flex-1 overflow-y-auto scrollbar-hide">
+                <div className="w-full bg-[#232326] rounded-2xl pb-5 pt-7 px-6 flex flex-col gap-4 mb-3 flex-1 overflow-y-auto scrollbar-hide">
                     {messages.map((msg, idx) => (
                         <div key={idx} className={`flex items-start gap-3 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                             {msg.sender === 'bot' && (
@@ -84,7 +84,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                     )}
                     <div ref={messagesEndRef} />
                 </div>
-                <div className="w-full bg-[#131316] rounded-4xl py-5 px-6 flex flex-col gap-2">
+                <div className="w-full bg-[#131316] rounded-2xl py-5 px-6 flex flex-col gap-2">
                     <div className="flex items-center w-full">
                         <input
                             type="text"
@@ -95,7 +95,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                             onKeyDown={e => { if (e.key === 'Enter') handleSend(); }}
                         />
                     </div>
-                    <div className="border-b border-[#232326] min-w-[700px] my-1" />
+                    <div className="border-b border-[#232326] w-full my-1" />
                     <div className="flex items-center w-full mt-1">
                         {/* Close button */}
                         <button
@@ -105,7 +105,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                             Close
                         </button>
                         {/* Card with development notice */}
-                        <div className="bg-[#232326] rounded-lg px-3 flex items-center justify-start mr-3" style={{ height: '2rem', minWidth: 'fit-content' }}>
+                        <div className="rounded-lg px-3 flex items-center justify-start mr-3" style={{ backgroundColor: '#1a2238', height: '2rem', minWidth: 'fit-content' }}>
                             <img src="/icons/footer/infoi.svg" alt="info" className="w-4 h-4 mr-2" />
                             <span className="text-xs text-gray-300">Responses may be inaccurate, Still in Dev</span>
                         </div>

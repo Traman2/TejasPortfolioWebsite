@@ -115,14 +115,28 @@ export default function Sidebar({ activePage }: Props) {
           </div>
         </div>
         <div className="self-center">
-          <a
-            href="/Tejas_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block py-2 bg-[#6DED97] align-middle px-8 my-4 rounded-xl text-md font-semibold text-black hover:opacity-90 transition"
-          >
-            Download CV
-          </a>
+          <div className="relative flex items-center justify-center">
+            <span
+              className="absolute rounded-xl animate-pulse z-0"
+              style={{
+                top: '16px',
+                left: '1px',
+                right: '1px',
+                bottom: '16px',
+                boxShadow: '0 0 8px 2px #6DED97',
+                opacity: 0.7,
+                pointerEvents: 'none',
+              }}
+            ></span>
+            <a
+              href="/Tejas_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block py-2 bg-[#6DED97] align-middle px-8 my-4 rounded-xl text-md font-semibold text-black hover:opacity-90 transition z-10"
+            >
+              Download CV
+            </a>
+          </div>
         </div>
       </div>
     </>

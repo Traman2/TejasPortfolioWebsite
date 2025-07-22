@@ -299,7 +299,7 @@ export default function Skillset({ openModal }: SkillsetProps) {
             className="cursor-pointer flex items-center gap-3 py-2 bg-[#6DED97] px-6 rounded-xl text-sm font-semibold text-black hover:opacity-90 transition"
             onClick={openModal}
           >
-            <span>Have Any Questions?</span>
+            <span>Have Any Questions? Ask Jarvis</span>
           </button>
         </div>
       </div>
