@@ -23,7 +23,7 @@ function App() {
     const deviceInfo = browser.getResult();
     axios
       .post(
-        `https://tejas-portfolio-mail-server.vercel.app/click`,
+        `https://tejas-portfolio-website-server.vercel.app/click`,
         {
           deviceType: `Browser: ${deviceInfo.browser.name}, Version: ${deviceInfo.browser.version},  OS: ${deviceInfo.os.name}`,
         },

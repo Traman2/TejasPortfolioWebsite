@@ -16,7 +16,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("MongoDB Connection failed", err));
   
-app.use(express.json({ origin: "https://tejasraman.com" }));
+app.use(express.json());
 app.use("/", mailRoutes);
 
 app.listen(PORT, () => {
