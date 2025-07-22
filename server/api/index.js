@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 
 //Route files
 import mailRoutes from "../routes/mailServerRoutes.js";
+import ragChatBotRoutes from "../routes/ragChatBotRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ mongoose
   
 app.use(express.json());
 app.use("/", mailRoutes);
+app.use("/rag", ragChatBotRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on PORT ${PORT}...`);

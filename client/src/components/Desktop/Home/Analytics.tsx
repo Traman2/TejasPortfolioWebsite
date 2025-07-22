@@ -16,7 +16,7 @@ export default function Analytics() {
         </div>
         <div className="grid grid-cols-2 mt-6 gap-8 pl-4 pr-6">
           <div className="flex flex-col">
-            <p className="text-[#6DED97] font-bold text-5xl">392</p>
+            <p className="text-[#6DED97] font-bold text-5xl max-[1360px]:text-4xl">392</p>
             <div className="flex gap-2 mt-3">
               <img
                 src="/icons/analytics/eye.svg"
@@ -27,7 +27,7 @@ export default function Analytics() {
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#6DED97] font-bold text-5xl">429</p>
+            <p className="text-[#6DED97] font-bold text-5xl max-[1360px]:text-4xl">429</p>
             <div className="flex gap-2 mt-3">
               <img
                 src="/icons/analytics/github.svg"
@@ -38,7 +38,7 @@ export default function Analytics() {
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#6DED97] font-bold text-5xl">4<span className="text-4xl">+</span></p>
+            <p className="text-[#6DED97] font-bold text-5xl max-[1360px]:text-4xl">4<span className="text-4xl max-[1360px]:text-2xl">+</span></p>
             <div className="flex gap-2 mt-3">
               <img
                 src="/icons/analytics/code.svg"
@@ -49,7 +49,7 @@ export default function Analytics() {
             </div>
           </div>
           <div className="flex flex-col">
-            <p className="text-[#6DED97] font-bold text-5xl">29<span className="text-3xl">Mb</span></p>
+            <p className="text-[#6DED97] font-bold text-5xl max-[1360px]:text-4xl">29<span className="text-3xl max-[1360px]:text-xl">Mb</span></p>
             <div className="flex gap-2 mt-3">
               <img
                 src="/icons/analytics/folders.svg"
@@ -63,7 +63,7 @@ export default function Analytics() {
 
         <div className="bg-[#17151D] mt-auto p-5 items-center rounded-2xl flex justify-between">
           <div>
-            <p className="text-[#6DED97] font-bold text-5xl">{clickCount}</p>
+            <p className="text-[#6DED97] font-bold text-5xl max-[1360px]:text-4xl">{clickCount}</p>
             <div className="flex gap-2 mt-2">
               <img
                 src="/icons/analytics/click.svg"

@@ -4,7 +4,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-export default function Skillset() {
+interface SkillsetProps {
+  openModal?: () => void;
+}
+
+export default function Skillset({ openModal }: SkillsetProps) {
   return (
     <>
       <div className="flex-2 bg-[#1D1C22] rounded-xl py-6 px-12">
@@ -289,6 +293,14 @@ export default function Skillset() {
             please feel free to reach out through my contact me page or directly
             via email at tejassraman@gmail.com
           </p>
+        </div>
+        <div className="mt-8">
+          <button
+            className="cursor-pointer flex items-center gap-3 py-2 bg-[#6DED97] px-6 rounded-xl text-sm font-semibold text-black hover:opacity-90 transition"
+            onClick={openModal}
+          >
+            <span>Have Any Questions?</span>
+          </button>
         </div>
       </div>
     </>

@@ -4,12 +4,16 @@ import Skillset from "../components/Desktop/Home/Skillsset.tsx";
 import ProjectsPreview from "../components/Desktop/Home/ProjectsPreview.tsx";
 import Footer from "../components/Desktop/Footer.tsx";
 
-export default function Home() {
+interface HomeProps {
+  openModal?: () => void;
+}
+
+export default function Home({ openModal }: HomeProps) {
   return (
     <>
       <Hero />
       <div className="flex gap-2 mt-2">
-        <Skillset />
+        <Skillset openModal={openModal} />
         <Analytics />
       </div>
       <ProjectsPreview />

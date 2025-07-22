@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import Sidebar from "../components/Desktop/Sidebar.tsx";
 import Home from "./Home.tsx";
 import Project from "./Project.tsx";
+import ChatbotModal from "./ChatbotModal";
 
 interface Props {
   page: string;
 }
-export default function SocketLayout({ page } : Props) {
+export default function SocketLayout({ page }: Props) {
   const [activePage, setActivePage] = useState(page);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     setActivePage(page);
@@ -15,13 +17,15 @@ export default function SocketLayout({ page } : Props) {
 
   function renderPage() {
     switch (activePage) {
-      case "Project" :
-        return <Project/>
+      case "Project":
+        return <Project />
 
       default:
-        return <Home/>
+        // Pass openModal to Home
+        return <Home openModal={() => setModalOpen(true)} />
     }
   }
+
   return (
     <>
       <div className="bg-[#090419] h-screen w-screen p-2 flex gap-2">
@@ -31,6 +35,9 @@ export default function SocketLayout({ page } : Props) {
           {renderPage()}
         </div>
       </div>
+      {modalOpen && (
+        <ChatbotModal onClose={() => setModalOpen(false)} />
+      )}
     </>
   );
 }
