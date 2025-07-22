@@ -2,8 +2,8 @@ import { ragChatbot } from "../services/ragChatbot.js";
 
 const ragQueryCall = async (req, res) => {
     try {
-        const { query } = req.body;
-        const data = await ragChatbot(query);
+        const { history, query } = req.body;
+        const data = await ragChatbot(query, history);
         res.status(200).json({ message: data });
     } catch (error) {
         res

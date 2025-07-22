@@ -1,32 +1,87 @@
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 dotenv.config();
+import { Pinecone } from '@pinecone-database/pinecone';
 
+//NLP Model
 const genAI = new GoogleGenAI(process.env.GOOGLE_API_KEY);
 
-export const ragChatbot = async (query) => {
-    const airesponse = await genAI.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: query,
-        config: {
-          systemInstruction: `
-            You are an intelligent AI chatbot that can answer questions about my personal website. Act like your name is Jarvis and you are a personal answering assistant.
-            You can answer questions about my skills, projects, and other information.
-            You can also answer questions about my resume.
-            You can also answer questions about my contact information.
-            You can also answer questions about my social media.
-            You can also answer questions about my blog.
-            You can also answer questions about my projects.
-            You can also answer questions about my skills.
+//Vector Database Store
+const pc = new Pinecone({
+  apiKey: process.env.PINECONE_API_KEY
+});
 
-            This is a test beta so make up responses. My name is Tejas Raman. I am a student at the University of Texas at Dallas. I am majoring in Computer Science
-            Do not format the text, return it as plain text
+//Stringify history
+function historyToString(history) {
+  return history
+    .map(item => `${item.sender}: ${item.text}`)
+    .join('\n');
+}
 
-            If user asks any thing about project portfolio or skills set, answer saying My RAG context model is still being trained
-            `.trim(),
-        },
-      });
+export const ragChatbot = async (query, history = []) => {
+  const indexName = "vectordb";
+  const namespace = "portfolio-store-9817";
+  const index = pc.index(indexName).namespace(namespace);
 
-      return airesponse.text;
+  //Search vector store
+  const vectordbResponse = await index.searchRecords({
+    query: {
+      topK: 100,
+      inputs: { text: query },
+    },
+    fields: ["chunk_text", "type"],
+  });
+
+  const hits = vectordbResponse.result.hits.filter((hit) => hit._score > 0.2);
+
+  const context = hits
+    .map((chunk, index) => {
+      return `# Record ${index + 1}\nType: ${chunk.fields.type}\nName: ${chunk.fields.name
+        }\nContent: ${chunk.fields.chunk_text}`;
+    })
+    .join("\n\n");
+  //Generate Response
+  const airesponse = await genAI.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: query,
+    config: {
+      systemInstruction: `
+        Hey! You're Jarvis — a friendly, intelligent AI assistant who acts like Tejas Raman's personal chatbot and close friend of the user.
+
+        Your job is to help users who visit Tejas's website and want to learn more about:
+        - His **resume** and background
+        - His **contact information**
+        - His **coding projects** and portfolio
+        - What **skills each project applies or demonstrates**
+
+        You know Tejas well because you've read his resume and projects. When the user asks a question, use the context provided below to give helpful, clear answers.
+        However, **if the user asks specifically about a project or how a skill applies to a project, respond with a richer, more detailed explanation
+
+        Always answer in **plain text** — no formatting, no HTML, no Markdown.  
+        Be **friendly and conversational** like you're chatting with someone you know.  
+        If you're not sure or the info isn't in the context, say so politely.
+
+        ---
+
+        Example Responses:
+        - “Yeah! TaskMasterAI was actually part of a mentorship at UT Dallas. It uses RAG models and helps students with planning.”
+        - “Tejas is currently majoring in Computer Science at UTD — he's into full-stack dev and AI stuff.”
+        - “Looks like I don't have that info yet, but I'll let Tejas know to add it!”
+
+        ---
+
+        Always answer in one paragraph — no formatting, no HTML, no Markdown
+        Use the following context to answer the user's questions, also look at the history and answer if users response is chained:
+
+        === CONTEXT ===
+        ${context}
+
+        ===History ===
+        ${historyToString(history)}
+      `.trim()
+    },
+  });
+
+  return airesponse.text;
 }
 

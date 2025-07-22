@@ -18,7 +18,7 @@ export default function ProjectsPreview() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {
             projects.slice(0,3).map((proj) => (
-              <ProjectCard {...proj}/>
+              <ProjectCard key={proj.title} {...proj}/>
             ))
           }
 

@@ -36,8 +36,9 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
         setMessages(prev => [...prev, { sender: 'user', text: inputValue }]);
         setInputValue("");
         setIsThinking(true);
-
-        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
+        console.log(messages);
+        axios.post('http://localhost:3000/rag/query', {
+            history: messages,
             query: inputValue
         })
         .then(response => {
