@@ -10,7 +10,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
     const [closing, setClosing] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [messages, setMessages] = useState([
-        { sender: 'bot', text: "Hello, I'm Jarvis! How can I help you today?" },
+        { sender: 'bot', text: "Hello, I'm Jarvis! Ask me anything about Tejas's Portfolio and Resume?" },
     ]);
     const [isThinking, setIsThinking] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);

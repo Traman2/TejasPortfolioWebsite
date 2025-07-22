@@ -29,7 +29,7 @@ export default function SocketLayout({ page }: Props) {
   return (
     <>
       <div className="bg-[#090419] h-screen w-screen p-2 flex gap-2">
-        <Sidebar activePage={activePage} />
+        <Sidebar activePage={activePage} openModal={() => setModalOpen(true)} />
 
         <div className="flex-1 rounded-md overflow-y-auto scrollbar-hide h-full">
           {renderPage()}
