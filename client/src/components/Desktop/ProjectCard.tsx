@@ -59,14 +59,49 @@ export default function ProjectCard({
         <div className="px-6 pb-6 pt-4 flex flex-col">
           <div className="text-lg font-semibold text-white mb-3">{title}</div>
           <div className="flex flex-wrap gap-2 mb-4">
-            {techStack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-full bg-[#0E4C59] text-white px-3 py-1 text-xs font-medium"
-              >
-                {tech}
-              </span>
-            ))}
+            {techStack.map((tech) => {
+              const iconMap: Record<string, string> = {
+                node: 'nodejs.svg',
+                "scikit-learn": 'scikitlearn.svg',
+                pycharm: 'pycharm.svg',
+                python: 'python.svg',
+                react: 'react.svg',
+                tailwindcss: 'tailwindcss.svg',
+                tensorflow: 'tensorflow.svg',
+                typescript: 'typescript.svg',
+                visualstudio: 'visualstudio.svg',
+                vscode: 'vscode.svg',
+                Javascipt: 'javascript.svg',
+                matplotlib: 'matplotlib.svg',
+                mongodb: 'mongodb.svg',
+                figma: 'figma.svg',
+                git: 'git.svg',
+                intellij: 'intellij.svg',
+                express: 'express.svg',
+                clion: 'clion.svg',
+                cplusplus: 'cplusplus.svg',
+                csharp: 'csharp.svg',
+              };
+              const normalized = tech.toLowerCase().replace(/\s+/g, '');
+              const iconFile = iconMap[normalized] || iconMap[tech.toLowerCase()];
+              return iconFile ? (
+                <span key={tech} className="rounded-full bg-[#0E4C59] text-white px-3 py-1 text-xs font-medium flex items-center gap-1">
+                  <img
+                    src={`/icons/techstack/${iconFile}`}
+                    alt={tech}
+                    className="w-4 h-4 mr-1 inline-block"
+                  />
+                  {tech}
+                </span>
+              ) : (
+                <span
+                  key={tech}
+                  className="rounded-full bg-[#0E4C59] text-white px-3 py-1 text-xs font-medium"
+                >
+                  {tech}
+                </span>
+              );
+            })}
           </div>
           <div className="text-[#CDD2D3] mt-2 text-sm">{description}</div>
         </div>

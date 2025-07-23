@@ -18,22 +18,22 @@ export default function Hero({ openModal }: HeroProps) {
         <p className="text-xl text-white font-bold">Learn, Code, Create</p>
         <p className="text-[#B4B4B4] mt-6">I'm a Junior at UT Dallas studying Computer Science and enjoy playing videogames and going to the gym to stay in shape. In my free time, I enjoy {" "}
           <span
-            className="text-[#6DED97] cursor-pointer hover:opacity-80 transition"
+            className="text-[#6DED97] underline cursor-pointer hover:opacity-80 transition"
             onClick={() => navigate("/Project")}
           >
             programming
           </span>{" "}
-          new games and creating new apps, and websites to help automate my life. 
+          new apps and AI tools to help automate people's life
           
           <br/>
           <br/>
-          Check out my Personal AI Advisor, {" "}
+          Don't believe me? Check out {" "}
           <span
-            className="text-[#6DED97] cursor-pointer hover:opacity-80 transition"
+            className="text-[#6DED97] underline cursor-pointer hover:opacity-80 transition"
             onClick={openModal}
           >
             Jarvis
-          </span>, to see where I apply my skills to my various projects!
+          </span>, a custom AI Chatbot I made to help you learn more about me and my projects!
         </p>
       </div>
       <div className="flex items-center justify-center pr-12">

@@ -1,10 +1,9 @@
 [
-    {
+  {
     "imageURL": "/projectImages/ElevAIteLandingPage.png",
     "title": "ElevAIte",
     "techStack": ["React", "TailwindCSS", "RAG Model", "Pinecone", "Node", "Express", "MongoDB", "JwT Tokens"],
-    "description":
-      "ElevAIte is a full-stack productivity app powered by a RAG based AI assistant that allows students to interact with a personal assistant to view and create classes, check bank balances, track expenses, and monitor internship statuses, all from a unified web management platform.",
+    "description": "Inspired by a limitation in Notion's chatbot, ElevAIte it offers a smarter, AI-driven productivity assistant. ElevAIte is a full-stack MERN app powered by a RAG model that lets students manage class schedules and balance sheets using natural language.",
     "githubURL": "https://github.com/Traman2/ElevAIte",
     "value": "web"
   },
@@ -12,8 +11,7 @@
     "imageURL": "/projectImages/HousePredictionHeatMap.png",
     "title": "House Prediction Model",
     "techStack": ["Scikit-Learn", "Python", "Flask", "React", "Random Forest"],
-    "description":
-      "Introduction to a machine learning project built to reinforce my skills in regression models like Linear Regression and Random Forest. Focused on data preprocessing, feature engineering, model tuning, and deploying a trained .pkl model integrated with a React frontend",
+    "description": "This project strengthened my skills in regression techniques like Linear Regression and Random Forest. It covers data preprocessing, one-hot encoding, feature engineering, and model deployment with a React frontend using serialized `.pkl` models.",
     "githubURL": "https://github.com/Traman2/CaliforniaHousePrediction",
     "value": "ml"
   },
@@ -21,8 +19,7 @@
     "imageURL": "/projectImages/jacketPred.png",
     "title": "StyleScan",
     "techStack": ["Python", "Resnet50", "OpenCV", "Matplotlib", "NumPy", "Pillow (PIL)", "Grad-CAM"],
-    "description":
-      "StyleScan is a deep learning-based clothing analysis tool that classifies apparel images into 15 unique fashion categories using a convolutional neural network and Grad-CAM visualizations.  Built with PyTorch and OpenCV, this project helps explore how AI models “see” fashion and interpret image  features.",
+    "description": "StyleScan is a deep learning tool that classifies apparel images into 15 fashion categories using a convolutional neural network. It uses Grad-CAM visualizations to show how the model interprets image features, enhancing transparency in AI decision-making.",
     "githubURL": "https://github.com/Traman2/StyleScan",
     "value": "ml"
   },
@@ -30,16 +27,15 @@
     "imageURL": "/projectImages/taskmaster.png",
     "title": "TaskMasterAI",
     "techStack": ["React", "TailwindCSS", "Node", "Express", "MongoDB", "Gemini API", "RAG"],
-    "description":
-      "Collaborated with a team of 5 fellow programmers as part of the AI Society's Mentorship Program to develop an AI-powered student workflow system that generates semester-long study plans based on course materials, recommends personalized learning resources, and creates dynamic quizzes to assess knowledge retention",
+    "description": "As a mentee in the AI Society’s Mentorship Program, I helped build TaskMasterAI, an AI-powered student workflow platform that creates personalized study plans and dynamic quizzes. The project won 2nd place at AI Mentorship Night.",
     "githubURL": "https://github.com/NovaBoltSpider10/Taskmaster.ai",
     "value": "web"
   },
   {
     "imageURL": "/projectImages/arkos.png",
     "title": "Arkos (HackAI 2025)",
-    "techStack": ["TailwindCSS", "RAG Model", "React", "Express", "Flask", "Python"],
-    "description": "A web app that uses an AI powered RAG model to process financial reports and lets users quickly look up details like annual revenue and profit margins",
+    "techStack": ["TailwindCSS", "Chroma DB", "Gemini API", "RAG Model", "React", "Express", "Flask", "Python"],
+    "description": "Arkos uses a RAG model to analyze financial reports and lets users query key metrics like revenue and profit margins via natural language. The backend uses Flask and Python with Gemini API and Chroma DB for document retrieval.",
     "githubURL": "https://github.com/Traman2/2025HackAI-Arkos",
     "value": "web"
   },
@@ -47,8 +43,7 @@
     "imageURL": "/projectImages/personalBanker.png",
     "title": "Bank Siumulator",
     "techStack": ["React", "MongoDB", "TailwindCSS", "Gemini API", "Google Cloud", "OCR", "MongoDB", "Jwt Token"],
-    "description":
-    "Full stack app that uses mongodb and react for route management, interactive user iterface, and jwt for authentication/authorization",
+    "description": "Bank Simulator is a full-stack app with React and MongoDB featuring JWT-based authentication and secure routing. It integrates Gemini API for AI features, Google Cloud hosting, and OCR for enhanced data processing.",
     "githubURL": "https://github.com/Traman2/Personal-Banker",
     "value": "web"
   },
@@ -56,7 +51,7 @@
     "imageURL": "/projectImages/25finhack.png",
     "title": "Insurance Prediction (FinHack 2025)",
     "techStack": ["React", "Python", "Tensorflow", "TailwindCSS", "Flask"],
-    "description": "Insurance Prediction Model that uses linear regression to predict the health insurance price of a person in a given area. Created for the 2025 Finhack competition",
+    "description": "This health insurance price prediction model uses TensorFlow linear regression served via Flask and a React frontend. Created for FinHack 2025, it predicts insurance costs based on individual and regional data.",
     "githubURL": "https://github.com/Traman2/25FinHack",
     "value": "ml"
   },
@@ -64,9 +59,8 @@
     "imageURL": "/projectImages/signlang.png",
     "title": "SignLangAI (HackUTD 2024)",
     "techStack": ["HTML", "CSS", "Javascipt", "Tensorflow", "MobileNet"],
-    "description": "An AI powered sign language recognizer using the users webcam and tensorflow.js to analyze the image and identify the hand sign",
+    "description": "SignLangAI uses TensorFlow.js and MobileNet to recognize sign language in real-time via webcam. Built with HTML, CSS, and JavaScript, it demonstrates in-browser deep learning for accessible communication tools.",
     "githubURL": "https://github.com/Traman2/SignlangAI",
     "value": "web"
   }
-
 ]
