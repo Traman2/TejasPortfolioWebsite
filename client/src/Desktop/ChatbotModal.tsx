@@ -42,7 +42,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
         setInputValue("");
         setIsThinking(true);
         console.log(messages);
-        axios.post('http://localhost:3000/rag/query', {
+        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
             history: messages,
             query: inputValue
         })
@@ -120,7 +120,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                                         setShowCarousel(false);
                                         setMessages(prev => [...prev, { sender: 'user', text: label }]);
                                         setIsThinking(true);
-                                        axios.post('http://localhost:3000/rag/query', {
+                                        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
                                             history: [...messages, { sender: 'user', text: label }],
                                             query: label
                                         })
