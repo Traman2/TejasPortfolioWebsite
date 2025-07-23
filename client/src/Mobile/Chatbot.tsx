@@ -101,44 +101,44 @@ export default function Chatbot() {
             </div>
 
             <div className="w-full flex flex-col justify-center mt-auto pb-4 px-3 bg-[#0C1313]">
-            {showCarousel && (
-                <div className="w-full overflow-x-auto scrollbar-hide mb-2">
-                    <div className="flex flex-nowrap items-center gap-3 min-w-full">
-                        {carouselButtons.map((label) => (
-                            <button
-                                key={label}
-                                className={`px-4 h-8 rounded-lg cursor-pointer text-xs font-medium transition-colors whitespace-nowrap bg-[#2d2d31] text-gray-200 hover:bg-blue-500`}
-                                style={{ minWidth: 'fit-content' }}
-                                onClick={() => {
-                                    setShowCarousel(false);
-                                    setMessages(prev => [...prev, { sender: 'user', text: label }]);
-                                    setIsThinking(true);
-                                    axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
-                                        history: [...messages, { sender: 'user', text: label }],
-                                        query: label
-                                    })
-                                        .then(response => {
-                                            speakText(response.data.message);
-                                            setMessages(prev => [...prev, { sender: 'bot', text: response.data.message }]);
-                                            setIsThinking(false);
+                {showCarousel && (
+                    <div className="w-full overflow-x-auto scrollbar-hide mb-2">
+                        <div className="flex flex-nowrap items-center gap-3 min-w-full">
+                            {carouselButtons.map((label) => (
+                                <button
+                                    key={label}
+                                    className={`px-4 h-8 rounded-lg cursor-pointer text-xs font-medium transition-colors whitespace-nowrap bg-[#2d2d31] text-gray-200 hover:bg-blue-500`}
+                                    style={{ minWidth: 'fit-content' }}
+                                    onClick={() => {
+                                        setShowCarousel(false);
+                                        setMessages(prev => [...prev, { sender: 'user', text: label }]);
+                                        setIsThinking(true);
+                                        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
+                                            history: [...messages, { sender: 'user', text: label }],
+                                            query: label
                                         })
-                                        .catch(error => {
-                                            console.error('Error fetching response:', error);
-                                            setMessages(prev => [...prev, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again.' }]);
-                                            setIsThinking(false);
-                                        });
-                                }}
-                            >
-                                {label}
-                            </button>
-                        ))}
+                                            .then(response => {
+                                                speakText(response.data.message);
+                                                setMessages(prev => [...prev, { sender: 'bot', text: response.data.message }]);
+                                                setIsThinking(false);
+                                            })
+                                            .catch(error => {
+                                                console.error('Error fetching response:', error);
+                                                setMessages(prev => [...prev, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again.' }]);
+                                                setIsThinking(false);
+                                            });
+                                    }}
+                                >
+                                    {label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
                 <div className="flex items-center gap-2 bg-[#232326] rounded-3xl shadow-lg px-3 py-2 mx-4 w-full max-w-xl" style={{ margin: '0 auto' }}>
                     <input
                         type="text"
-                        placeholder="Enter your message here"
+                        placeholder="Ask Something Yourself"
                         className="flex-1 bg-transparent outline-none text-white placeholder:text-gray-400 text-base px-2"
                         value={inputValue}
                         onChange={e => setInputValue(e.target.value)}
