@@ -69,15 +69,14 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
 
     return (
         <div
-            className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 transition-opacity duration-100 ${visible && !closing ? 'opacity-100' : 'opacity-0'}`}
+            className={`fixed inset-0 z-50 flex items-center justify-center bg-black/60 transition-opacity duration-100 backdrop-blur ${visible && !closing ? 'opacity-100' : 'opacity-0'}`}
             onClick={handleClose}
         >
             <div
-                className="relative bg-[#232326] rounded-3xl border border-[#fff]/10 shadow-2xl p-7 flex flex-col items-center justify-center h-[600px] w-[790px] overflow-y-auto"
+                className="relative bg-[#232326] rounded-xl border border-[#fff]/10 shadow-2xl p-7 flex flex-col items-center justify-center h-[600px] w-[790px] overflow-y-auto"
                 style={{}}
                 onClick={e => e.stopPropagation()}
             >
-                {/* Jarvis AI Header */}
                 <div className="w-full flex flex-col items-start">
                     <h2 className="text-2xl font-semibold text-white tracking-wide mb-3">Jarvis AI</h2>
                     <div className="w-full border-b border-[#36363B]" />
