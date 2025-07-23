@@ -11,7 +11,7 @@ interface HomeProps {
 export default function Home({ openModal }: HomeProps) {
   return (
     <>
-      <Hero />
+      <Hero openModal={openModal} />
       <div className="flex gap-2 mt-2">
         <Skillset openModal={openModal} />
         <Analytics />

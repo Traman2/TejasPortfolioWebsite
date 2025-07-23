@@ -22,11 +22,13 @@ export default function Skillset({ openModal }: SkillsetProps) {
         </div>
         <div className="max-w-[500px]">
           <p className="text-[#CDD2D3] mt-4">
-            My technical skils cover multiple Programming languages and Web
-            frameworks. I have a strong proficiency in:
+            So far I have created many projects that use MERN Stack (a tech stack that uses MongoDB, Express.js, React, and Node.js for Full Stack Web Development), and I am currently learning how to use the .NET Framework to create desktop applications. I have also designed and developed an AI Chat Advisor called Jarvis to help you out with any questions you have about my projects or my skills.
+            <br/>
+            <br/>
+            I have worked on many projects with a Team and by myself. You can check out my various examples in my Project Portfolio section or my GitHub profile.Some of my skills set include:
           </p>
         </div>
-        <div className="mt-6 space-y-5">
+        <div className="mt-2 space-y-5">
           <div className="flex items-center">
             <span className="text-[#fff] font-bold mr-2">
               Programming Languages:
@@ -289,12 +291,10 @@ export default function Skillset({ openModal }: SkillsetProps) {
         </div>
         <div className="max-w-[500px]">
           <p className="text-[#CDD2D3] mt-7">
-            If you would like to contact me directly or have any questions,
-            please feel free to reach out through my contact me page or directly
-            via email at tejassraman@gmail.com
+            If you would like to contact me directly or have any questions, please feel free to reach out through my contact me page or directly via email at tejassraman@gmail.com
           </p>
         </div>
-        <div className="mt-8">
+        <div className="mt-4">
           <button
             className="cursor-pointer flex items-center gap-3 py-2 bg-[#6DED97] px-6 rounded-xl text-sm font-semibold text-black hover:opacity-90 transition"
             onClick={openModal}

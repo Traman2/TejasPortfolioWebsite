@@ -66,17 +66,21 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                     {messages.map((msg, idx) => (
                         <div key={idx} className={`flex items-start gap-3 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                             {msg.sender === 'bot' && (
-                                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">B</div>
+                                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                                    <img src="/icons/SidebarStats/aiStars.svg" alt="AI Stars" className="w-5 h-5" />
+                                </div>
                             )}
                             <div className={`px-4 py-2 rounded-2xl text-white text-base max-w-[70%] ${msg.sender === 'user' ? 'bg-[#36363B]' : 'bg-[#18181B]'}`}>{msg.text}</div>
                             {msg.sender === 'user' && (
-                                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-lg">U</div>
+                                <div className="w-8 h-8 rounded-full bg-[#6DED97]/60 flex items-center justify-center text-white font-bold text-lg">🫵</div>
                             )}
                         </div>
                     ))}
                     {isThinking && (
                         <div className="flex items-center gap-3 justify-start">
-                            <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">B</div>
+                            <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                                <img src="/icons/SidebarStats/aiStars.svg" alt="AI Stars" className="w-5 h-5" />
+                            </div>
                             <div className="flex items-center h-8">
                                 <span className="w-3 h-3 rounded-full bg-blue-400 animate-pulse block"></span>
                             </div>

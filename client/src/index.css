@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -5,6 +6,10 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+:root {
+  --font-zen: 'Zen Dots', cursive;
 }
 
 @theme inline {
