@@ -92,7 +92,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                             )}
                             <div className={`px-4 py-2 rounded-2xl text-white text-base max-w-[70%] ${msg.sender === 'user' ? 'bg-[#36363B]' : 'bg-[#18181B]'}`}>{msg.text}</div>
                             {msg.sender === 'user' && (
-                                <div className="w-8 h-8 rounded-full bg-[#6DED97]/60 flex items-center justify-center text-white font-bold text-lg">🫵</div>
+                                <div className="w-8 h-8 rounded-full bg-[#6DED97]/20 flex items-center justify-center text-white font-bold text-lg">🫵</div>
                             )}
                         </div>
                     ))}
