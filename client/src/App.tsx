@@ -10,7 +10,7 @@ import Projects from "./Mobile/Projects";
 function App() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 868);
+    const handleResize = () => setIsMobile(window.innerWidth < 1250);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

@@ -146,7 +146,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                     <div className="flex items-center w-full">
                         <input
                             type="text"
-                            placeholder="Enter your message here"
+                            placeholder="Ask Something Yourself. I can answer anything related to Tejas' Career"
                             className="flex-1 bg-transparent outline-none text-white placeholder:text-gray-400 text-base"
                             value={inputValue}
                             onChange={e => setInputValue(e.target.value)}
