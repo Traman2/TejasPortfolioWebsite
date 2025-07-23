@@ -1,5 +1,6 @@
-
+import { useNavigate } from "react-router-dom";
 export default function MobileSkills() {
+    const navigate = useNavigate();
     return (
         <div className="bg-[#1D1C22] rounded-lg p-5 mb-3">
             <div className="flex items-center mb-3">
@@ -58,6 +59,7 @@ export default function MobileSkills() {
             </p>
             <div className="mt-6 flex justify-center">
                 <button
+                onClick={() => navigate('Chatbot')}
                     className="flex items-center gap-2 py-2 px-4 bg-[#6DED97] rounded-2xl text-xs font-semibold text-black shadow font-bold transition-colors duration-200 hover:bg-[#4ec87a] focus:outline-none"
                 >
                     <span>Have Any Questions? Ask Jarvis</span>

@@ -36,7 +36,6 @@ export default function Hero({ openModal }: HeroProps) {
           </span>, to see where I apply my skills to my various projects!
         </p>
       </div>
-      {/* Right Container */}
       <div className="flex items-center justify-center pr-12">
         <img
           src="/icons/header/computerHero.svg"

@@ -4,6 +4,8 @@ import MobileHome from "./Mobile/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Bowser from "bowser";
+import Chatbot from "./Mobile/Chatbot";
+import Projects from "./Mobile/Projects";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -45,6 +47,8 @@ function App() {
         <>
           <Router>
             <Routes>
+              <Route path="/Projects" element={<Projects />} />
+              <Route path="/Chatbot" element={<Chatbot />} />
               <Route path="" element={<MobileHome />} />
             </Routes>
           </Router>
@@ -54,7 +58,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="" element={<SocketLayout page="" />} />
-              <Route path="Project" element={<SocketLayout page="Project" />} />
+              <Route path="/Project" element={<SocketLayout page="Project" />} />
             </Routes>
           </Router>
         </>

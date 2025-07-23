@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function MobileHero() {
+    const navigate = useNavigate();
     return (
         <div
             className="rounded-lg p-5 mb-3"
@@ -15,17 +18,14 @@ export default function MobileHero() {
                 </div>
             </div>
             <p className="text-[#B4B4B4] text-sm mt-9">
-                I'm a Junior at UT Dallas studying Computer Science and enjoy playing videogames and going to the gym to stay in shape. In my free time, I enjoy {" "}
-                <span
-                    className="text-[#6DED97] cursor-pointer hover:opacity-80 transition"
-                >
-                    programming
-                </span>
+                I'm a Junior at UT Dallas studying Computer Science and enjoy playing videogames and going to the gym to stay in shape. In my free time, I enjoy programming
+
                 {" "}
                 new games and creating new apps, and websites to help automate my life.
                 <br />
                 <br />
                 Check out my Personal AI Advisor, <span
+                    onClick={() => navigate('Chatbot')}
                     className="text-[#6DED97] cursor-pointer hover:opacity-80 transition"
                 >Jarvis</span>, to see where I apply my skills to my various projects!
             </p>

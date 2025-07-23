@@ -167,7 +167,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                         </div>
                         <div className="flex-1" />
                         <button
-                            className={`ml-2 rounded-full w-8 h-8 flex items-center justify-center transition-colors ${speakerOn ? 'bg-[#AAFF00]/80' : 'bg-red-600/80'} cursor-pointer`}
+                            className={`ml-2 rounded-full w-8 h-8 flex items-center justify-center transition-colors ${speakerOn ? 'bg-[#AAFF00]/60' : 'bg-red-600/60'} cursor-pointer`}
                             onClick={() => setSpeakerOn((prev) => !prev)}
                             type="button"
                         >
