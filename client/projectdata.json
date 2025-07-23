@@ -3,7 +3,7 @@
     "imageURL": "/projectImages/ElevAIteLandingPage.png",
     "title": "ElevAIte",
     "techStack": ["React", "TailwindCSS", "RAG Model", "Pinecone", "Node", "Express", "MongoDB", "JwT Tokens"],
-    "description": "Inspired by a limitation in Notion's chatbot, ElevAIte it offers a smarter, AI-driven productivity assistant. ElevAIte is a full-stack MERN app powered by a RAG model that lets students manage class schedules and balance sheets using natural language.",
+    "description": "Inspired by a limitation in Notion's chatbot, ElevAIte it offers a smarter, AI-driven productivity assistant. ElevAIte is a full-stack MERN app powered by a RAG model that lets students manage class schedules and balance sheets using natural language queries.",
     "githubURL": "https://github.com/Traman2/ElevAIte",
     "value": "web"
   },
@@ -27,7 +27,7 @@
     "imageURL": "/projectImages/taskmaster.png",
     "title": "TaskMasterAI",
     "techStack": ["React", "TailwindCSS", "Node", "Express", "MongoDB", "Gemini API", "RAG"],
-    "description": "As a mentee in the AI Society’s Mentorship Program, I helped build TaskMasterAI, an AI-powered student workflow platform that creates personalized study plans and dynamic quizzes. The project won 2nd place at AI Mentorship Night.",
+    "description": "As a mentee in the AI Society's Mentorship Program, I helped build TaskMasterAI, an AI-powered student workflow platform that creates personalized study plans and dynamic quizzes. The project won 2nd place at AI Mentorship Night.",
     "githubURL": "https://github.com/NovaBoltSpider10/Taskmaster.ai",
     "value": "web"
   },
