@@ -10,7 +10,7 @@ export default function Home() {
     }, []);
   
     return (
-      <div style={{ height: "calc(var(--vh, 1vh) * 100)" }} className="min-h-screen bg-[#0C1313] p-3 pb-18">
+      <div className="min-h-screen bg-[#0C1313] p-3 pb-18">
         <MobileHero/>
         <MobileSkills/>
         <MobileFooter/>
