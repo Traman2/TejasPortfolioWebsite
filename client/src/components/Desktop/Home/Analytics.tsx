@@ -6,7 +6,7 @@ export default function Analytics() {
   return (
     <>
       <div className="flex-1 bg-[#1D1C22] flex flex-col rounded-xl px-6 pt-6 pb-4 max-w-[390px]">
-        <div className="flex gap-4 pl-4 justify-start md:justify-center lg:justify-center xl:justify-start">
+        <div className="flex gap-4 pl-4 md:pl-0 lg:pl-0 xl:pl-4 justify-start md:justify-center lg:justify-center xl:justify-start">
           <img
             src="/icons/analytics/statsHead.svg"
             alt="Skill Sets Logo"
