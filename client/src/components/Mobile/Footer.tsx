@@ -1,7 +1,7 @@
 
 export default function MobileFooter() {
     return (
-        <div className="mt-2 rounded-lg bg-[#17151D] px-6 py-4 text-base flex flex-col items-center">
+        <div className="rounded-lg bg-[#17151D] px-6 py-4 text-base flex flex-col items-center">
           <hr className="w-12 border-t-2 border-[#fff] mb-3 opacity-60" />
           <div className="bg-[#3D3C3C] px-2 py-1 rounded-lg flex gap-1 mb-2 items-center">
             <img

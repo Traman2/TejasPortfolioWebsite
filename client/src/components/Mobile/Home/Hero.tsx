@@ -1,7 +1,7 @@
 export default function MobileHero() {
     return (
         <div
-            className="rounded-lg p-5"
+            className="rounded-lg p-5 mb-3"
             style={{ background: 'linear-gradient(to bottom, #343338, #1D1C22)' }}
         >
             <div className="flex flex-row items-center justify-between">
