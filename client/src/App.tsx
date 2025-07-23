@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SocketLayout from "./Desktop/SocketLayout";
-import Construction from "./Mobile/Construction";
+import MobileHome from "./Mobile/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Bowser from "bowser";
@@ -43,7 +43,11 @@ function App() {
     <>
       {isMobile ? (
         <>
-          <Construction />
+          <Router>
+            <Routes>
+              <Route path="" element={<MobileHome />} />
+            </Routes>
+          </Router>
         </>
       ) : (
         <>

@@ -42,7 +42,7 @@ export const ragChatbot = async (query, history = []) => {
     .join("\n\n");
   //Generate Response
   const airesponse = await genAI.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.5-flash-lite",
     contents: query,
     config: {
       systemInstruction: `

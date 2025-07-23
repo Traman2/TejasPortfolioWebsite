@@ -26,7 +26,7 @@ export default function ProjectsPreview() {
         <div className="flex justify-center mt-6 ">
           <button
             onClick={() => navigate("/Project")}
-            className="cursor-pointer bg-[#6DED97] px-6 py-2 shadow-lg text-sm rounded-4xl font-bold"
+            className="cursor-pointer bg-[#6DED97] px-6 py-2 shadow-lg text-sm rounded-3xl font-bold transition-transform transition-colors duration-200 hover:bg-[#4ec87a] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#6DED97]/50"
           >
             Click to view more
           </button>
