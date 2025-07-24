@@ -15,8 +15,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
     ]);
     const [isThinking, setIsThinking] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
-    const [showCarousel, setShowCarousel] = useState(true);
-    const carouselButtons = ["Summarise Tejas' Resume", "What Projects uses React and Node?", "How many Projects uses Computer Vision?", "How many Programming Languages does Tejas know?"];
+    const [carouselButtons, setCarouselButtons] = useState(["Summarise Tejas' Resume", "What Projects uses React and Node?", "How many Projects uses Computer Vision?", "How many Programming Languages does Tejas know?"]);
     const [speakerOn, setSpeakerOn] = useState(false);
 
     useEffect(() => {
@@ -37,18 +36,18 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
 
     const handleSend = () => {
         if (!inputValue) return;
-        setShowCarousel(false); // Hide carousel on send
         setMessages(prev => [...prev, { sender: 'user', text: inputValue }]);
         setInputValue("");
         setIsThinking(true);
         console.log(messages);
-        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
+        axios.post('http://localhost:3000/rag/query', {
             history: messages,
             query: inputValue
         })
             .then(response => {
-                speakText(response.data.message);
-                setMessages(prev => [...prev, { sender: 'bot', text: response.data.message }]);
+                speakText(response.data.answer);
+                setCarouselButtons(response.data.suggestions)
+                setMessages(prev => [...prev, { sender: 'bot', text: response.data.answer }]);
                 setIsThinking(false);
             })
             .catch(error => {
@@ -107,25 +106,25 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                     )}
                     <div ref={messagesEndRef} />
                 </div>
-                {showCarousel && (
                     <div className="w-full overflow-x-auto scrollbar-hide mb-3">
                         <div className="flex flex-nowrap items-center gap-3 min-w-full">
-                            {carouselButtons.map((label) => (
+                            {carouselButtons && carouselButtons.map((label) => (
                                 <button
                                     key={label}
                                     className={`px-4 h-8 rounded-lg cursor-pointer text-xs font-medium transition-colors whitespace-nowrap bg-[#2d2d31] text-gray-200 hover:bg-blue-500`}
                                     style={{ minWidth: 'fit-content' }}
                                     onClick={() => {
-                                        setShowCarousel(false);
                                         setMessages(prev => [...prev, { sender: 'user', text: label }]);
                                         setIsThinking(true);
-                                        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
+                                        axios.post('http://localhost:3000/rag/query', {
                                             history: [...messages, { sender: 'user', text: label }],
                                             query: label
                                         })
                                             .then(response => {
-                                                speakText(response.data.message);
-                                                setMessages(prev => [...prev, { sender: 'bot', text: response.data.message }]);
+                                                speakText(response.data.answer);
+                                                console.log(response.data.suggested_replies)
+                                                setCarouselButtons(response.data.suggestions)
+                                                setMessages(prev => [...prev, { sender: 'bot', text: response.data.answer }]);
                                                 setIsThinking(false);
                                             })
                                             .catch(error => {
@@ -140,7 +139,6 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                             ))}
                         </div>
                     </div>
-                )}
                 <div className="w-full bg-[#131316] rounded-2xl py-5 px-6 flex flex-col gap-2">
                     <div className="flex items-center w-full">
                         <input

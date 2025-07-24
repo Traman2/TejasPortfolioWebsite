@@ -12,12 +12,16 @@
   "type": "module",
   "dependencies": {
     "@google/genai": "^1.10.0",
+    "@langchain/core": "^0.3.66",
+    "@langchain/google-genai": "^0.2.15",
     "@pinecone-database/pinecone": "^6.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^5.1.0",
+    "langchain": "^0.3.30",
     "mongoose": "^8.16.0",
     "nodemailer": "^7.0.3",
-    "serverless-http": "^3.2.0"
+    "serverless-http": "^3.2.0",
+    "zod": "^4.0.8"
   }
 }
