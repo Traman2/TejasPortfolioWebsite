@@ -23,7 +23,8 @@ function MiniProjectCard({ imageURL, title, githubURL }: Project) {
                 <div className="text-xs font-semibold text-white truncate">{title}</div>
                 <div className="flex gap-2 mt-1">
                     <a href={githubURL} target="_blank" rel="noopener noreferrer">
-                        <img src="/icons/analytics/github.svg" alt="GitHub" className="w-4 h-4" />
+                    <img src="/icons/analytics/github.svg" alt="View Resume" className="w-4 h-4 inline-block" />
+                    <span className="ml-1 text-xs text-blue-400">Open Github Repo</span>
                     </a>
                 </div>
             </div>
