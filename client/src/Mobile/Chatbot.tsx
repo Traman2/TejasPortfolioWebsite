@@ -4,12 +4,11 @@ import axios from "axios";
 
 export default function Chatbot() {
     const navigate = useNavigate();
-    const carouselButtons = ["Summarise Tejas' Resume", "What Projects uses React and Node?", "How many Projects uses Computer Vision?", "How many Programming Languages does Tejas know?"];
+    const [carouselButtons, setCarouselButtons] = useState(["Summarise Tejas' Resume", "What Projects uses React and Node?", "How many Projects uses Computer Vision?", "How many Programming Languages does Tejas know?"])
     const [inputValue, setInputValue] = useState("");
-    const [showCarousel, setShowCarousel] = useState(true);
     const [speakerOn, setSpeakerOn] = useState(false);
     const [messages, setMessages] = useState([
-        { sender: 'bot', text: "Hello, I'm Jarvis! Ask me anything about Tejas's Portfolio and Resume? If you can't see the input field, try scrolling down. Mobile Dev is kinda weird" },
+        { sender: 'bot', text: "Hello, I'm Jarvis! Ask me anything about Tejas's Portfolio and Resume? If you can't see the input field, try scrolling down. Mobile Dev is kinda weird", cards: [""] },
     ]);
     const [isThinking, setIsThinking] = useState(false);
     const messagesEndRef = useRef(null);
@@ -22,7 +21,7 @@ export default function Chatbot() {
 
     const handleSend = () => {
         if (!inputValue) return;
-        setMessages(prev => [...prev, { sender: 'user', text: inputValue }]);
+        setMessages(prev => [...prev, { sender: 'user', text: inputValue, cards: [""] }]);
         setInputValue("");
         setIsThinking(true);
         axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
@@ -31,12 +30,13 @@ export default function Chatbot() {
         })
             .then(response => {
                 speakText(response.data.message);
-                setMessages(prev => [...prev, { sender: 'bot', text: response.data.message }]);
+                setCarouselButtons(response.data.suggestions);
+                setMessages(prev => [...prev, { sender: 'bot', text: response.data.answer, cards: response.data.cards }]);
                 setIsThinking(false);
             })
             .catch(error => {
                 console.error('Error fetching response:', error);
-                setMessages(prev => [...prev, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again.' }]);
+                setMessages(prev => [...prev, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again.', cards: [""] }]);
                 setIsThinking(false);
             });
     };
@@ -101,7 +101,7 @@ export default function Chatbot() {
             </div>
 
             <div className="w-full flex flex-col justify-center mt-auto pb-4 px-3 bg-[#0C1313]">
-                {showCarousel && (
+                
                     <div className="w-full overflow-x-auto scrollbar-hide mb-2">
                         <div className="flex flex-nowrap items-center gap-3 min-w-full">
                             {carouselButtons.map((label) => (
@@ -110,21 +110,21 @@ export default function Chatbot() {
                                     className={`px-4 h-8 rounded-lg cursor-pointer text-xs font-medium transition-colors whitespace-nowrap bg-[#2d2d31] text-gray-200 hover:bg-blue-500`}
                                     style={{ minWidth: 'fit-content' }}
                                     onClick={() => {
-                                        setShowCarousel(false);
-                                        setMessages(prev => [...prev, { sender: 'user', text: label }]);
+                                        setMessages(prev => [...prev, { sender: 'user', text: label, cards: [""] }]);
                                         setIsThinking(true);
                                         axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
-                                            history: [...messages, { sender: 'user', text: label }],
+                                            history: [...messages, { sender: 'user', text: label, cards: [""] }],
                                             query: label
                                         })
                                             .then(response => {
+                                                setCarouselButtons(response.data.suggestions);
                                                 speakText(response.data.message);
-                                                setMessages(prev => [...prev, { sender: 'bot', text: response.data.message }]);
+                                                setMessages(prev => [...prev, { sender: 'bot', text: response.data.answer, cards: response.data.cards }]);
                                                 setIsThinking(false);
                                             })
                                             .catch(error => {
                                                 console.error('Error fetching response:', error);
-                                                setMessages(prev => [...prev, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again.' }]);
+                                                setMessages(prev => [...prev, { sender: 'bot', text: 'Sorry, I encountered an error. Please try again.', cards: [""] }]);
                                                 setIsThinking(false);
                                             });
                                     }}
@@ -134,7 +134,6 @@ export default function Chatbot() {
                             ))}
                         </div>
                     </div>
-                )}
                 <div className="flex items-center gap-2 bg-[#232326] rounded-3xl shadow-lg px-3 py-2 mx-4 w-full max-w-xl" style={{ margin: '0 auto' }}>
                     <input
                         type="text"
