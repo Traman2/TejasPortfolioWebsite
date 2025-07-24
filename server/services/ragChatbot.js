@@ -77,7 +77,6 @@ export const ragChatbot = async (query, history = []) => {
     ---
 
     Example Responses:
-    - “Yeah! TaskMasterAI was actually part of a mentorship at UT Dallas. It uses RAG models and helps students with planning.”
     - “Tejas is currently majoring in Computer Science at UTD — he's into full-stack dev and AI stuff.”
     - “Looks like I don't have that info yet, but I'll let Tejas know to add it!”
 
