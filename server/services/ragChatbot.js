@@ -5,25 +5,35 @@ import { z } from "zod";
 import dotenv from "dotenv";
 dotenv.config();
 
+// Intelligent card
+const CardEnum = z.enum([
+  "ResumeCard", 
+  "ElevAIteCard", 
+  "TaskMasterCard", 
+  "HousePredictionModelCard", 
+  "StyleScanCard", 
+  "ArkosCard", 
+  "BankSimulatorCard", 
+  "InsurancePredictionCard", 
+  "SignLangCard"
+]);
+
 //Structured output
 const ResponseFormatter = z.object({
   answer: z.string().describe("The answer to the user's question"),
   suggested_replies: z
     .array(z.string())
-    .describe("An array of suggested replies for the user's next message"),
+    .describe("An array of suggested replies for the user's next message based of last user query"),
+  card_enum: z
+    .array(CardEnum)
+    .max(2)
+    .describe("Up to 2 cards can be shown. Select from avaliable enum. If Suggesting the same card again from your revious reply, return empty array")
 });
 
 //Vector Database Store
 const pc = new Pinecone({
   apiKey: process.env.PINECONE_API_KEY
 });
-
-//Stringify history -- helper function
-function historyToString(history) {
-  return history
-    .map(item => `${item.sender}: ${item.text}`)
-    .join('\n');
-}
 
 export const ragChatbot = async (query, history = []) => {
 
@@ -56,7 +66,7 @@ export const ragChatbot = async (query, history = []) => {
   });
 
   //Bind formating tool with model
-  const modelWithStructure  = model.withStructuredOutput(ResponseFormatter);
+  const modelWithStructure = model.withStructuredOutput(ResponseFormatter);
 
   const systemInstruction = `
     Hey! You're Jarvis — a friendly, intelligent AI assistant who acts like Tejas Raman's personal chatbot and close friend of the user.
@@ -87,17 +97,21 @@ export const ragChatbot = async (query, history = []) => {
 
     === CONTEXT ===
     ${context}
+  `.trim()
 
-    ===History ===
-    ${historyToString(history)}`
-  .trim()
+  const formattedHistory = history.map((h) => ({
+    role: h.sender === "user" ? "user" : "assistant",
+    content: h.text,
+    cards: Array.isArray(h.cards) ? h.cards : []
+  }));
 
-  const llmRes = await modelWithStructure .invoke([
+  console.log(formattedHistory);
+
+  const llmRes = await modelWithStructure.invoke([
     { role: "system", content: systemInstruction },
+    ...formattedHistory,
     { role: "user", content: query }
   ])
-
-  console.log(llmRes);
 
   return llmRes;
 }

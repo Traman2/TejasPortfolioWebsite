@@ -4,7 +4,7 @@ const ragQueryCall = async (req, res) => {
     try {
         const { history, query } = req.body;
         const data = await ragChatbot(query, history);
-        res.status(200).json({ answer: data.answer, suggestions: data.suggested_replies });
+        res.status(200).json({ answer: data.answer, cards: data.card_enum, suggestions: data.suggested_replies });
     } catch (error) {
         res
             .status(400)

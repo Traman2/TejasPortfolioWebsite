@@ -24,17 +24,10 @@ export default function Hero({ openModal }: HeroProps) {
             programming
           </span>{" "}
           new apps and AI tools to help automate people's life
-          
-          <br/>
-          <br/>
-          Don't believe me? Check out {" "}
-          <span
-            className="text-[#6DED97] underline cursor-pointer hover:opacity-80 transition"
-            onClick={openModal}
-          >
-            Jarvis
-          </span>, a custom AI Chatbot I made to help you learn more about me and my projects!
         </p>
+        <button onClick={openModal} className="text-[#FFF] cursor-pointer shadow-xl hover:bg-[#2642de] transition-colors duration-200 mt-5 text-sm rounded-3xl px-5 py-1 bg-[#2236a9]">
+          Want to learn more? Check out Jarvis AI
+        </button>
       </div>
       <div className="flex items-center justify-center pr-12">
         <img
