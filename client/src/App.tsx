@@ -6,6 +6,7 @@ import axios from "axios";
 import Bowser from "bowser";
 import Chatbot from "./Mobile/Chatbot";
 import Projects from "./Mobile/Projects";
+import { backendDomain } from "./lib/backendDomain";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,7 +26,7 @@ function App() {
     const deviceInfo = browser.getResult();
     axios
       .post(
-        `https://tejas-portfolio-website-server.vercel.app/click`,
+        `${backendDomain}/click`,
         {
           deviceType: `Browser: ${deviceInfo.browser.name}, Version: ${deviceInfo.browser.version},  OS: ${deviceInfo.os.name}`,
         },

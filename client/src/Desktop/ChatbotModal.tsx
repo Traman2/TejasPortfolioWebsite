@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import projects from "../../projectdata.json";
+import { backendDomain } from "@/lib/backendDomain";
 
 interface ChatbotModalProps {
     onClose: () => void;
@@ -12,7 +13,6 @@ interface Project {
     githubURL: string;
 }
 
-const hosturl = "https://tejas-portfolio-website-server.vercel.app"; // RAG Server URL
 
 // Mini Project card
 function MiniProjectCard({ imageURL, title, githubURL }: Project) {
@@ -85,7 +85,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
         setMessages(prev => [...prev, { sender: 'user', text: inputValue, cards: [""] }]);
         setInputValue("");
         setIsThinking(true);
-        axios.post(`${hosturl}/rag/query`, {
+        axios.post(`${backendDomain}/rag/query`, {
             history: messages,
             query: inputValue
         })
@@ -188,7 +188,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                                 onClick={() => {
                                     setMessages(prev => [...prev, { sender: 'user', text: label, cards: [""] },]);
                                     setIsThinking(true);
-                                    axios.post(`${hosturl}/rag/query`, {
+                                    axios.post(`${backendDomain}/rag/query`, {
                                         history: [...messages, { sender: 'user', text: label, cards: [""] }],
                                         query: label
                                     })

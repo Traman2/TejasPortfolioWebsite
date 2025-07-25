@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import { backendDomain } from "@/lib/backendDomain";
 
 export default function Chatbot() {
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function Chatbot() {
         setMessages(prev => [...prev, { sender: 'user', text: inputValue, cards: [""] }]);
         setInputValue("");
         setIsThinking(true);
-        axios.post('https://tejas-portfolio-website-server.vercel.app/rag/query', {
+        axios.post(`${backendDomain}/rag/query`, {
             history: messages,
             query: inputValue
         })
