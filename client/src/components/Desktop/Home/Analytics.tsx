@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { backendDomain } from "@/lib/backendDomain";
 export default function Analytics() {
   const [clickCount, setClickCount] = useState(0);
   const [siteViews, setSiteViews] = useState(null);
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/views')
+      .get(`${backendDomain}/views`)
       .then((response) => {
         if (response.data) {
           setSiteViews(response.data.data);
