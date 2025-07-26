@@ -23,8 +23,8 @@ function MiniProjectCard({ imageURL, title, githubURL }: Project) {
                 <div className="text-xs font-semibold text-white truncate">{title}</div>
                 <div className="flex gap-2 mt-1">
                     <a href={githubURL} target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/analytics/github.svg" alt="View Resume" className="w-4 h-4 inline-block" />
-                    <span className="ml-1 text-xs text-blue-400">Open Github Repo</span>
+                        <img src="/icons/analytics/github.svg" alt="View Resume" className="w-4 h-4 inline-block" />
+                        <span className="ml-1 text-xs text-blue-400">Open Github Repo</span>
                     </a>
                 </div>
             </div>
@@ -114,7 +114,15 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                 onClick={e => e.stopPropagation()}
             >
                 <div className="w-full flex flex-col items-start">
-                    <h2 className="text-2xl font-semibold text-white tracking-wide mb-3">Jarvis AI</h2>
+                    <div className="flex flex-row gap-3 mb-3">
+                        <img
+                        src="/icons/SidebarStats/aiStars.svg"
+                        alt="Logo 3"
+                        className="w-7 h-7 mt-0.5"
+                    />
+                    <h2 className="text-2xl font-semibold text-white tracking-wide">Jarvis AI</h2>
+                    </div>
+                    
                     <div className="w-full border-b border-[#36363B]" />
                 </div>
                 <div className="w-full bg-[#232326] pb-5 pt-7 flex flex-col gap-4 mb-3 rounded-b-2xl flex-1 overflow-y-auto scrollbar-hide">
@@ -127,7 +135,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                             )}
                             <div className={`px-4 py-2 rounded-2xl text-white text-base max-w-[70%] ${msg.sender === 'user' ? 'bg-[#36363B]' : 'bg-[#18181B]'}`}>{msg.text}
                                 {/* Relevant Data Cards (bot res only)*/}
-                                {msg.sender === 'bot' && Array.isArray(msg.cards) && msg.cards.filter(card => card && card !== "").length > 0 &&(
+                                {msg.sender === 'bot' && Array.isArray(msg.cards) && msg.cards.filter(card => card && card !== "").length > 0 && (
                                     <>
                                         <br />
                                         <br />
@@ -243,7 +251,7 @@ const ChatbotModal: React.FC<ChatbotModalProps> = ({ onClose }) => {
                     </div>
                 </div>
                 <div className="w-full flex justify-start px-1 mt-2">
-                    <span className="text-xs text-gray-300">Model: gemini-2.5-flash-lite. Vector Database: Pinecone. Text-embedding-model: llama-text-embed-v2</span>
+                    <span className="text-xs text-gray-300">Model: gemini-2.5-flash-lite. Vector Database: Pinecone. Text-embedding-model: NVIDIA llama-text-embed-v2</span>
                 </div>
             </div>
         </div>

@@ -105,8 +105,6 @@ export const ragChatbot = async (query, history = []) => {
     cards: Array.isArray(h.cards) ? h.cards : []
   }));
 
-  console.log(formattedHistory);
-
   const llmRes = await modelWithStructure.invoke([
     { role: "system", content: systemInstruction },
     ...formattedHistory,

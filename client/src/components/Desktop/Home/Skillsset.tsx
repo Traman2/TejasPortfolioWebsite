@@ -22,10 +22,10 @@ export default function Skillset({ openModal }: SkillsetProps) {
         </div>
         <div className="max-w-[500px]">
           <p className="text-[#CDD2D3] mt-4">
-            So far I have created many projects that use MERN Stack (a tech stack that uses MongoDB, Express.js, React, and Node.js for Full Stack Web Development), and I am currently learning how to use the .NET Framework to create desktop applications. I have also designed and developed an AI Chat Advisor called Jarvis to help you out with any questions you have about my projects or my skills.
+            I have created many projects using the MERN Stack (a tech stack that uses MongoDB, Express.js, React, and Node.js for full-stack web development), and I am currently learning how to use the .NET Framework to create desktop applications. You can learn more about where I've applied these skills with Jarvis
             <br/>
             <br/>
-            I have worked on many projects with a Team and by myself. You can check out my various examples in my Project Portfolio section or my GitHub profile.Some of my skills set include:
+            I have worked on many projects both with a team and independently. You can check out various examples in my Project Portfolio section or on my GitHub profile. Some of my skill sets include:
           </p>
         </div>
         <div className="mt-2 space-y-5">
@@ -291,7 +291,7 @@ export default function Skillset({ openModal }: SkillsetProps) {
         </div>
         <div className="max-w-[500px]">
           <p className="text-[#CDD2D3] mt-7">
-            If you would like to contact me directly or have any questions, please feel free to reach out through my contact me page or directly via email at tejassraman@gmail.com
+            If you would like to contact me directly or have any questions, please feel free to reach out through my Linkedin or directly via email at <a href="mailto:tejassraman@gmail.com" className="underline text-gray-300 hover:text-gray-400">tejassraman@gmail.com</a>
           </p>
         </div>
         <div className="mt-4">

@@ -1,7 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Analytics() {
   const [clickCount, setClickCount] = useState(0);
+  const [siteViews, setSiteViews] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/views')
+      .then((response) => {
+        if (response.data) {
+          setSiteViews(response.data.data);
+        } else {
+          console.error("Unexpected response format:", response.data);
+        }
+      })
+  }, []);
 
   return (
     <>
@@ -17,7 +31,7 @@ export default function Analytics() {
         <div className="flex flex-row justify-between lg:flex-col lg:items-center xl:flex-row xl:justify-between md:flex-col md:items-center lg:mb-10 md:mb-10 mt-6 pl-4 pr-6 gap-4 md:gap-8 lg:gap-8">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col">
-              <p className="text-[#6DED97] font-bold text-5xl">392</p>
+              <p className="text-[#6DED97] font-bold text-5xl">{siteViews ?? " "}</p>
               <div className="flex gap-2 mt-3">
                 <img
                   src="/icons/analytics/eye.svg"

@@ -1,4 +1,5 @@
 import ClickRecord from "../models/clickRecord.js";
+import Analytics from "../models/analytics.js";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
@@ -9,6 +10,12 @@ const sendClickMailHandler = async (req, res) => {
   if (!deviceType) {
     return res.status(400).json({ error: "Missing fields" });
   }
+
+  await Analytics.findOneAndUpdate(
+    {},
+    { $inc: { clickMeter: 1 } },
+    { upsert: true, new: true }
+  );
 
   try {
     const transporter = nodemailer.createTransport({
@@ -70,4 +77,18 @@ const sendClickMailHandler = async (req, res) => {
   }
 };
 
-export { sendClickMailHandler };
+const getViewsHandler = async (req, res) => {
+  try {
+    const analytics = await Analytics.findOne({});
+    if (!analytics) {
+      return res.status(404).json({ error: "Analytics record not found" });
+    }
+    res.status(200).json({ success: true, data: analytics.clickMeter });
+  } catch (error) {
+    console.error("Error fetching analytics:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+export { sendClickMailHandler, getViewsHandler };
+
