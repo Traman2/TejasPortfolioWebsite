@@ -3,7 +3,7 @@ import axios from "axios";
 import { backendDomain } from "@/lib/backendDomain";
 export default function Analytics() {
   const [clickCount, setClickCount] = useState(0);
-  const [siteViews, setSiteViews] = useState(null);
+  const [siteViews, setSiteViews] = useState(0);
 
   useEffect(() => {
     axios
