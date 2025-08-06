@@ -6,8 +6,8 @@
   --font-footer: "Anonymous Pro", monospace;
   --font-heading: "Press Start 2P", system-ui;
 
-  --color-background: #E9E9E9;
-  --color-primary: #FF8040;
+  --color-background: #FFD8D8;
+  --color-primary: #ED3500;
   --color-secondary: #0046FF;
   --color-accent: #001BB7;
 }
@@ -24,7 +24,7 @@
 
 .scrollbar-primary {
   scrollbar-width: thin;
-  scrollbar-color: #FF8040 #E9E9E9;
+  scrollbar-color: #ED3500 #FFD8D8;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

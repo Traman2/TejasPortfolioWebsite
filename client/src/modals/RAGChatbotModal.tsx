@@ -96,8 +96,6 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
         }
     };
 
-
-
     return (
         <div
             className={`fixed inset-0 z-50 flex items-center cursor-main justify-center bg-black/60 transition-opacity duration-100 backdrop-blur ${visible && !closing ? 'opacity-100' : 'opacity-0'}`}

@@ -59,7 +59,7 @@ export default function Home() {
                             </div>
 
                             <div className="w-full">
-                                <h2 className="font-heading text-2xl mt-4 mb-2 text-secondary">Fun Facts</h2>
+                                <h2 className="font-heading text-2xl mt-4 mb-2 text-secondary">Stats</h2>
                                 <div className="flex gap-3">
                                     <div className="flex-1 bg-primary rounded-xl px-8 py-6 flex gap-2 items-start">
                                         <p className="font-heading text-4xl text-white leading-none">494</p>
