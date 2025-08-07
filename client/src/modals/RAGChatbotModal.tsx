@@ -20,6 +20,8 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputValue, setInputValue] = useState("");
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const [isThinking, setIsThinking] = useState(false);
+    const thinkingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
     const [premadePrompts, setPrompts] = useState([
         "Summarize Tejas' Resume",
         "What Programming Languages does Tejas know?",
@@ -39,7 +41,7 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
                 block: 'end'
             });
         }
-    }, [messages]);
+    }, [messages, isThinking]);
 
 
     const handleClose = () => {
@@ -65,22 +67,30 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
             addMessage(messageText, true, [""]);
             setInputValue("");
 
+            // Start a delay for showing the thinking animation
+            thinkingTimeoutRef.current = setTimeout(() => {
+                setIsThinking(true);
+            }, 200); // Delay in ms before showing "Jarvis is thinking..."
+
             axios
                 .post(`${backendDomain}/rag/query`, {
                     history: (messages.length > 0 ? [{ sender: 'bot', text: "There is no history" }] : messages),
                     query: messageText
                 })
                 .then(response => {
+                    clearTimeout(thinkingTimeoutRef.current!);
+                    setIsThinking(false);
                     setPrompts(response.data.suggestions);
                     addMessage(response.data.answer, false, response.data.suggestions);
                 })
                 .catch(error => {
+                    clearTimeout(thinkingTimeoutRef.current!);
+                    setIsThinking(false);
                     console.error('Error fetching response:', error);
                     addMessage("Sorry, I encountered an error. Please try again.", false, [""]);
                 });
         }
     };
-
     //Content in Input handler
     const handleInputSubmit = () => {
         handleSendMessage(inputValue);
@@ -127,16 +137,26 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
                             <p className="text-gray-500 text-sm font-footer">The conversation is empty. Please ask me something</p>
                         </div>
                     ) : (
-                        messages.map((message, index) => (
-                            <div key={index} className={`flex w-full ${message.sender === "user" ? 'justify-end' : 'justify-start'}`}>
-                                <div className={`max-w-[80%] p-3 rounded-lg ${message.sender === "user"
-                                    ? 'bg-secondary text-white'
-                                    : 'bg-accent text-gray-100'
-                                    }`}>
-                                    <p className="text-sm font-footer">{message.text}</p>
+                        <>
+                            {messages.map((message, index) => (
+                                <div key={index} className={`flex w-full ${message.sender === "user" ? 'justify-end' : 'justify-start'}`}>
+                                    <div className={`max-w-[80%] p-3 rounded-lg ${message.sender === "user"
+                                        ? 'bg-secondary text-white'
+                                        : 'bg-accent text-gray-100'
+                                        }`}>
+                                        <p className="text-sm font-footer">{message.text}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))
+                            ))}
+                            {isThinking && (
+                                <div className="flex w-full justify-start">
+                                    <div className="max-w-[80%] p-3 rounded-lg bg-accent text-gray-100 animate-pulse">
+                                        <p className="text-sm font-footer opacity-70">Jarvis is thinking...</p>
+                                    </div>
+                                </div>
+                            )}
+                        </>
+
                     )}
                     <div ref={messagesEndRef} />
                 </div>

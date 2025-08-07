@@ -42,12 +42,12 @@ export default function Home() {
                                         href="/Tejas_Resume.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-[#D9D9D9] hover:bg-primary/90 transition-colors cursor-pointer px-4 py-1 rounded-xl font-primary text-[20px] flex items-center gap-2"
+                                        className="bg-[#f5f3f3] shadow-md hover:text-white hover:bg-secondary transition-colors cursor-pointer px-4 py-1 rounded-xl font-primary text-[20px] flex items-center gap-2"
                                     >
                                         <img src="/icons/Home/pdf.svg" alt="PDF" className="w-4 h-4" />
                                         <p>My Resume</p>
                                     </a>
-                                    <button onClick={() => setModalOpen(true)} className="bg-[#D9D9D9] hover:bg-primary/90 transition-colors cursor-pointer px-4 py-1 rounded-xl font-primary text-[20px] flex items-center gap-2">
+                                    <button onClick={() => setModalOpen(true)} className="bg-[#f5f3f3] hover:text-white shadow-md hover:bg-primary/90 transition-colors cursor-pointer px-4 py-1 rounded-xl font-primary text-[20px] flex items-center gap-2">
                                         <img src="/icons/Home/aiStars.svg" alt="AI" className="w-4 h-4" />
                                         <p>Ask Jarvis for more info</p>
                                     </button>
