@@ -12,6 +12,8 @@ interface Message {
     cards: string[];
 }
 
+//Add Cards feature later
+
 export default function ChatbotModal({ onClose }: ChatbotModalProps) {
     const [visible, setVisible] = useState(false);
     const [closing, setClosing] = useState(false);
