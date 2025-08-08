@@ -1,6 +1,6 @@
 # Tejas Portfolio Website
 
-Web Portfolio to show my personal projects. Frontend uses React.js and TailwindCSS. Backend uses Node.js, Express,js, MongoDB, and NodeMailer. Website is hosted on Vercel for easier management of hosting and better insights on site activity
+Web Portfolio to show my personal projects. Frontend uses React.js and TailwindCSS. Backend uses Node.js, Express,js, MongoDB, and NodeMailer. Website is hosted on Vercel for easier management of hosting and better insights on site activity. RAG Server uses LangChain for LLM Orchestration and gemini-2.5-flash-lite for the NLP Processing. Text embedding model is NVIDIA's llama-text-embed-v2. 
 
 ## Technologies Used
 
@@ -11,8 +11,9 @@ Web Portfolio to show my personal projects. Frontend uses React.js and TailwindC
 - **React Router** - Client side routing for different pages
 - **Nodemailer** - Securely send email notificatons using SMTP about when visitor fills out contact form
 - **Express** - Backend Web Application Framework for handling API requests
+- **LangChain** - RAG Orchestration Framework to handle the different parts of the RAG Pipeline
 
-## Project Structure
+## Project Structure (Not Updated)
 
 ```
 client/
@@ -41,6 +42,15 @@ server/
 
 - Node.js (Latest LTS version recommended)
 - npm or yarn
+
+### Using Docker for fast preview on local machine
+
+1. Run the cmd:
+   ```bash
+   docker compose up --build
+   ```
+
+2. That's it
 
 ### Installation
 

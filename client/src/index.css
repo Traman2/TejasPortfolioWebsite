@@ -13,6 +13,14 @@
 }
 
 @layer utilities {
+  @keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+  .animate-blink {
+    animation: blink 2s step-start infinite;
+  }
+
   .cursor-main {
     cursor: url('/icons/cursor/cursor-click.png') 0 0, auto;
   }
@@ -21,6 +29,7 @@
     cursor: url('/icons/cursor/cursor.png') 0 0, auto;
   }
 }
+
 
 .scrollbar-primary {
   scrollbar-width: thin;

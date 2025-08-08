@@ -35,7 +35,7 @@ export default function Home() {
                     <div className="flex-1 mx-12 ">
                         <div className="px-40 flex flex-wrap gap-8">
                             <div className="flex-3">
-                                <h1 className="font-heading text-5xl leading-relaxed text-secondary">Hello, <br /> I'm Tejas</h1>
+                                <h1 className="font-heading text-5xl leading-relaxed text-secondary">Hello, <br /> I'm Tejas<span className="ml-1 text-secondary animate-blink">_</span></h1>
                                 <p className="font-primary text-xl">{"<p>"}Sophomore Computer Science Major at UT Dallas. Like to learning new programming tools every week and use all my knowledge to make impactful applications. In my free time I play video games, go to the gym and play basketball{"</p>"}</p>
                                 <div className="flex mt-5 gap-4">
                                     <a
