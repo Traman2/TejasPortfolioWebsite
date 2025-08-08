@@ -19,9 +19,9 @@
     },
     {
       "imageURL": "/projectImages/jacketPred.png",
-      "title": "StyleScan",
+      "title": "ThreadSight",
       "techStack": ["Python", "Resnet50", "OpenCV", "Matplotlib", "NumPy", "Pillow (PIL)", "Grad-CAM"],
-      "description": "StyleScan is a deep learning tool that classifies apparel images into 15 fashion categories using a convolutional neural network. It uses Grad-CAM visualizations to show how the model interprets image features, enhancing transparency in AI decision-making. This tool combines OpenCV, Matplotlib, and other Python libraries to deliver interpretable and accurate fashion classification",
+      "description": "ThreadSight is a deep learning tool that classifies apparel images into 15 fashion categories using a convolutional neural network. It uses Grad-CAM visualizations to show how the model interprets image features, enhancing transparency in AI decision-making. This tool combines OpenCV, Matplotlib, and other Python libraries to deliver interpretable and accurate fashion classification",
       "githubURL": "https://github.com/Traman2/StyleScan",
       "categories": ["Computer Vision", "Deep Learning"],
       "keyFeatures": ["CNN-based image classification for 15 fashion categories", "Grad-CAM visualizations for model interpretability"]
@@ -30,7 +30,7 @@
       "imageURL": "/projectImages/taskmaster.png",
       "title": "TaskMasterAI",
       "techStack": ["React", "TailwindCSS", "Node", "Express", "MongoDB", "Gemini API", "RAG"],
-      "description": "Built as part of the AI Society’s Mentorship Program, TaskMasterAI is an AI-driven student workflow platform that generates personalized study plans and dynamic quizzes tailored to each user's needs. It also features a friend match making algrothim to help students find other students with similar interests and goals. The platform uses a RAG model to analyze user data and utilizes the Gemini API for natural language processing, providing an all in one academic productivity tool to students for free.",
+      "description": "Built as part of the AI Society's Mentorship Program, TaskMasterAI is an AI-driven student workflow platform that generates personalized study plans and dynamic quizzes tailored to each user's needs. It also features a friend match making algrothim to help students find other students with similar interests and goals. The platform uses a RAG model to analyze user data and utilizes the Gemini API for natural language processing, providing an all in one academic productivity tool to students for free.",
       "githubURL": "https://github.com/NovaBoltSpider10/Taskmaster.ai",
       "categories": ["Education", "AI Integration"],
       "keyFeatures": ["AI-powered personalized study plan generation", "Dynamic quiz creation with adaptive learning"]
