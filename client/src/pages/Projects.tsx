@@ -64,7 +64,7 @@ export default function Projects() {
                                                 <h1 className="text-lg h-14 text-secondary text-center font-heading py-3 pt-4 pl-8 border-b-2 border-dashed border-primary">{activeProject.title}</h1>
                                                 <div className="px-8 pt-6 flex-auto h-80 overflow-y-auto scrollbar-primary">
                                                     <div className="flex gap-4">
-                                                        <div className="flex-8 bg-[#D9D9D9] rounded-lg px-4 flex items-center">
+                                                        <div className="flex-8 bg-[#f5f3f3] shadow-md rounded-lg px-4 flex items-center">
                                                             <img src={activeProject.imageURL} className="object-cover rounded-lg my-4" />
                                                         </div>
 
@@ -72,13 +72,13 @@ export default function Projects() {
                                                             <h2 className="font-primary text-2xl">Skills and Technologies</h2>
                                                             <div className="flex gap-2 flex-wrap ">
                                                                 {activeProject.techStack.map((tech) => (
-                                                                    <p className="font-footer bg-[#D9D9D9] px-4 py-1 rounded-xl">{tech}</p>
+                                                                    <p className="font-footer bg-[#f5f3f3] shadow-md px-4 py-1 rounded-xl">{tech}</p>
                                                                 ))}
                                                             </div>
                                                             <h2 className="font-primary text-2xl mt-4">Categories</h2>
                                                             <div className="flex gap-2 flex-wrap ">
                                                             {activeProject.categories.map((categ) => (
-                                                                    <p className="font-footer bg-[#D9D9D9] px-4 py-1 rounded-xl">{categ}</p>
+                                                                    <p className="font-footer bg-[#f5f3f3] shadow-md px-4 py-1 rounded-xl">{categ}</p>
                                                                 ))}
                                                             </div>
                                                         </div>

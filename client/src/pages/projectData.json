@@ -12,7 +12,7 @@
       "imageURL": "/projectImages/HousePredictionHeatMap.png",
       "title": "House Prediction Model",
       "techStack": ["Scikit-Learn", "Python", "Flask", "React", "Random Forest"],
-      "description": "This project strengthened my skills in regression techniques like Linear Regression and Random Forest. It covers data preprocessing, one-hot encoding, feature engineering, and model deployment with a React frontend using serialized `.pkl` models.",
+      "description": "This project enhanced my expertise in regression techniques, including Linear Regression and Random Forest. The trained model is deployed via a Flask backend with a React frontend, enabling users to predict housing prices in California using serialized .pkl models for efficient inference.",
       "githubURL": "https://github.com/Traman2/CaliforniaHousePrediction",
       "categories": ["Machine Learning", "Data Science"],
       "keyFeatures": ["Regression model using Random Forest and Linear Regression", "Full-stack deployment with React frontend and Flask backend"]
@@ -21,7 +21,7 @@
       "imageURL": "/projectImages/jacketPred.png",
       "title": "StyleScan",
       "techStack": ["Python", "Resnet50", "OpenCV", "Matplotlib", "NumPy", "Pillow (PIL)", "Grad-CAM"],
-      "description": "StyleScan is a deep learning tool that classifies apparel images into 15 fashion categories using a convolutional neural network. It uses Grad-CAM visualizations to show how the model interprets image features, enhancing transparency in AI decision-making.",
+      "description": "StyleScan is a deep learning tool that classifies apparel images into 15 fashion categories using a convolutional neural network. It uses Grad-CAM visualizations to show how the model interprets image features, enhancing transparency in AI decision-making. This tool combines OpenCV, Matplotlib, and other Python libraries to deliver interpretable and accurate fashion classification",
       "githubURL": "https://github.com/Traman2/StyleScan",
       "categories": ["Computer Vision", "Deep Learning"],
       "keyFeatures": ["CNN-based image classification for 15 fashion categories", "Grad-CAM visualizations for model interpretability"]
@@ -30,7 +30,7 @@
       "imageURL": "/projectImages/taskmaster.png",
       "title": "TaskMasterAI",
       "techStack": ["React", "TailwindCSS", "Node", "Express", "MongoDB", "Gemini API", "RAG"],
-      "description": "As a mentee in the AI Society's Mentorship Program, I helped build TaskMasterAI, an AI-powered student workflow platform that creates personalized study plans and dynamic quizzes. The project won 2nd place at AI Mentorship Night.",
+      "description": "Built as part of the AI Society’s Mentorship Program, TaskMasterAI is an AI-driven student workflow platform that generates personalized study plans and dynamic quizzes tailored to each user's needs. It also features a friend match making algrothim to help students find other students with similar interests and goals. The platform uses a RAG model to analyze user data and utilizes the Gemini API for natural language processing, providing an all in one academic productivity tool to students for free.",
       "githubURL": "https://github.com/NovaBoltSpider10/Taskmaster.ai",
       "categories": ["Education", "AI Integration"],
       "keyFeatures": ["AI-powered personalized study plan generation", "Dynamic quiz creation with adaptive learning"]
@@ -39,7 +39,7 @@
       "imageURL": "/projectImages/arkos.png",
       "title": "Arkos (HackAI 2025)",
       "techStack": ["TailwindCSS", "Chroma DB", "Gemini API", "RAG Model", "React", "Express", "Flask", "Python"],
-      "description": "Arkos uses a RAG model to analyze financial reports and lets users query key metrics like revenue and profit margins via natural language. The backend uses Flask and Python with Gemini API and Chroma DB for document retrieval.",
+      "description": "Arkos leverages a RAG model to analyze financial reports, allowing users to query key metrics such as revenue and profit margins using natural language. The backend, developed with Flask and Python, integrates the Gemini API and Chroma DB for efficient document retrieval, making complex financial data easily accessible through conversational queries.",
       "githubURL": "https://github.com/Traman2/2025HackAI-Arkos",
       "categories": ["Finance", "Data Analysis"],
       "keyFeatures": ["RAG-powered financial document analysis", "Natural language querying for financial metrics"]
@@ -57,7 +57,7 @@
       "imageURL": "/projectImages/25finhack.png",
       "title": "Insurance Prediction (FinHack 2025)",
       "techStack": ["React", "Python", "Tensorflow", "TailwindCSS", "Flask"],
-      "description": "This health insurance price prediction model uses TensorFlow linear regression served via Flask and a React frontend. Created for FinHack 2025, it predicts insurance costs based on individual and regional data.",
+      "description": "Developed for FinHack 2025, this project predicts health insurance costs using a TensorFlow-powered linear regression model served through a Flask API. The React frontend provides a user-friendly interface, enabling predictions based on individual health data and regional factors for personalized insurance pricing.",
       "githubURL": "https://github.com/Traman2/25FinHack",
       "categories": ["Machine Learning", "Healthcare"],
       "keyFeatures": ["TensorFlow linear regression for insurance cost prediction", "React frontend with Flask API integration"]
@@ -66,7 +66,7 @@
       "imageURL": "/projectImages/signlang.png",
       "title": "SignLangAI (HackUTD 2024)",
       "techStack": ["HTML", "CSS", "Javascipt", "Tensorflow", "MobileNet"],
-      "description": "SignLangAI uses TensorFlow.js and MobileNet to recognize sign language in real-time via webcam. Built with HTML, CSS, and JavaScript, it demonstrates in-browser deep learning for accessible communication tools.",
+      "description": "SignLangAI is a real-time sign language recognition app built with HTML, CSS, and JavaScript. Utilizing TensorFlow.js and MobileNet, it processes webcam input directly in the browser, enabling accessible and instant translation of sign language gestures without the need for external software or hardware.",
       "githubURL": "https://github.com/Traman2/SignlangAI",
       "categories": ["Accessibility", "Computer Vision"],
       "keyFeatures": ["Real-time sign language recognition via webcam", "In-browser deep learning with TensorFlow.js and MobileNet"]
