@@ -1,12 +1,63 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RAGChatbotModal from "../modals/RAGChatbotModal";
+import { backendDomain } from "../lib/domainName";
+import Bowser from "bowser";
+import axios from "axios";
 
 
 export default function Home() {
     const navigate = useNavigate();
     useEffect(() => {
         document.title = "1. Home - Tejas Raman";
+    }, []);
+
+    useEffect(() => {
+        const loggedKey = "homeClickLogged";
+        const inFlightKey = "homeClickInFlight";
+
+        if (sessionStorage.getItem(loggedKey) === "true") return;
+        if (sessionStorage.getItem(inFlightKey) === "true") return;
+
+        sessionStorage.setItem(inFlightKey, "true");
+
+        const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+        const parsed = Bowser.parse(userAgent);
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(userAgent);
+        const deviceType = isMobile ? "Mobile" : "Desktop";
+
+        const browserName = parsed.browser?.name ?? "Unknown";
+        const browserVersion = parsed.browser?.version ?? "Unknown";
+        const osName = parsed.os?.name ?? "Unknown";
+        const osVersion = parsed.os?.versionName ?? parsed.os?.version ?? "Unknown";
+        const platformType = parsed.platform?.type ?? "Unknown";
+
+        const logClick = async () => {
+            try {
+                let clientIp: string | undefined = undefined;
+                try {
+                    const ipRes = await axios.get("https://api.ipify.org?format=json");
+                    clientIp = ipRes.data?.ip;
+                } catch {}
+
+                await axios.post(`${backendDomain}/click`, {
+                    deviceType,
+                    clientIp,
+                    browserName,
+                    browserVersion,
+                    osName,
+                    osVersion,
+                    platformType,
+                });
+                sessionStorage.setItem(loggedKey, "true");
+            } catch (_) {
+                
+            } finally {
+                sessionStorage.removeItem(inFlightKey);
+            }
+        };
+
+        logClick();
     }, []);
     const [modalOpen, setModalOpen] = useState(false);
 
@@ -22,9 +73,12 @@ export default function Home() {
                     <button onClick={() => navigate("/Projects")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         Projects
                     </button>
-                    <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
-                        About
+                    <button onClick={() => setModalOpen(true)} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                       Jarvis
                     </button>
+                    {/* <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                        About
+                    </button> */}
                     <button onClick={() => navigate("/Contact")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         Contact Me
                     </button>
@@ -33,7 +87,7 @@ export default function Home() {
                 <div className="flex-1 flex border-y-2 border-dashed border-primary justify-center items-center">
                     {/* Main Content */}
                     <div className="flex-1 mx-12 ">
-                        <div className="px-40 flex flex-wrap gap-8 max-w-350 mx-auto">
+                        <div className="flex flex-wrap gap-8 w-280 mx-auto">
                             <div className="flex-3">
                                 <h1 className="font-heading text-5xl leading-relaxed text-secondary">Hello, <br /> I'm Tejas<span className="ml-1 text-secondary animate-blink">_</span></h1>
                                 <p className="font-primary text-xl">{"<p>"}Sophomore Computer Science Major at UT Dallas. Like to learning new programming tools every week and use all my knowledge to make impactful applications. In my free time I play video games, go to the gym and play basketball{"</p>"}</p>

@@ -1,12 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import RAGChatbotModal from "../modals/RAGChatbotModal";
 export default function About() {
     const navigate = useNavigate();
     useEffect(() => {
         document.title = "3. About - Tejas Raman";
     }, []);
-
+    const [modalOpen, setModalOpen] = useState(false);
     return (
         <>
             {/* Horizontal Lines Y Lines*/}
@@ -19,9 +19,12 @@ export default function About() {
                     <button onClick={() => navigate("/Projects")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         Projects
                     </button>
-                    <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
-                        About
+                    <button onClick={() => setModalOpen(true)} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                       Jarvis
                     </button>
+                    {/* <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                        About
+                    </button> */}
                     <button onClick={() => navigate("/Contact")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         Contact Me
                     </button>
@@ -42,6 +45,9 @@ export default function About() {
                     <p className="font-footer">Tejas Raman. Copyright 2025</p>
                 </div>
             </div>
+            {modalOpen && (
+                <RAGChatbotModal onClose={() => setModalOpen(false)} />
+            )}
         </>
     )
 }

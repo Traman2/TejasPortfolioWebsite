@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectData from "./projectData.json"
-
+import RAGChatbotModal from "../modals/RAGChatbotModal";
 interface Project {
     imageURL: string;
     title: string;
@@ -18,7 +18,7 @@ export default function Projects() {
         document.title = "2. Projects - Tejas Raman";
     }, []);
     const [activeProject, setActiveProject] = useState<Project | null>(null)
-
+    const [modalOpen, setModalOpen] = useState(false);
     return (
         <>
             {/* Horizontal Lines Y Lines*/}
@@ -31,9 +31,12 @@ export default function Projects() {
                     <button onClick={() => navigate("/Projects")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         Projects
                     </button>
-                    <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
-                        About
+                    <button onClick={() => setModalOpen(true)} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                       Jarvis
                     </button>
+                    {/* <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                        About
+                    </button> */}
                     <button onClick={() => navigate("/Contact")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         Contact Me
                     </button>
@@ -43,7 +46,7 @@ export default function Projects() {
                     {/* Main Content */}
                     <div className="flex-1 mx-12">
                         <div className="flex flex-col px-12 py-6 h-full">
-                            <div className="flex gap-8 flex-1">
+                            <div className="flex gap-4 flex-1">
                                 <div className="flex-2 border-2 border-dashed border-primary">
                                     <h1 className="text-lg text-secondary font-heading py-3 border-b-2 border-dashed border-primary flex items-center justify-center gap-4">
                                         <img src="/icons/Projects/folder.svg" alt="Projects folder" className="w-7 h-7" />
@@ -116,6 +119,9 @@ export default function Projects() {
                     <p className="font-footer">Tejas Raman. Copyright 2025</p>
                 </div>
             </div>
+            {modalOpen && (
+                <RAGChatbotModal onClose={() => setModalOpen(false)} />
+            )}
         </>
     )
 }
