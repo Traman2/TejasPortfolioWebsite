@@ -65,7 +65,7 @@ export default function Home() {
         <>
             {/* Horizontal Lines Y Lines*/}
             <div className="absolute inset-0 border-dashed border-x-2 border-primary mx-12 pointer-events-none"></div>
-            <div className="w-screen h-screen bg-background flex flex-col cursor-main">
+            <div className="w-screen h-screen bg-background flex flex-col cursor-main overflow-x-hidden">
                 <div className=" flex justify-center gap-12">
                     <button onClick={() => navigate("/")} className="cursor-pointer hover:underline my-3 font-heading text-accent">
                         Home
@@ -84,10 +84,10 @@ export default function Home() {
                     </button>
                 </div>
                 {/* l-Nothing | Center-Main Content | R-Nothing */}
-                <div className="flex-1 flex border-y-2 border-dashed border-primary justify-center items-center">
+                <div className="flex-1 flex border-y-2 border-dashed border-primary justify-center items-center overflow-hidden">
                     {/* Main Content */}
                     <div className="flex-1 mx-12 ">
-                        <div className="flex flex-wrap gap-8 w-280 mx-auto">
+                        <div className="flex flex-wrap gap-8 w-280 mx-auto origin-top md:scale-100 max-md:scale-[0.9] max-sm:scale-[0.8] transition-transform">
                             <div className="flex-3">
                                 <h1 className="font-heading text-5xl leading-relaxed text-secondary">Hello, <br /> I'm Tejas<span className="ml-1 text-secondary animate-blink">_</span></h1>
                                 <p className="font-primary text-xl">{"<p>"}Sophomore Computer Science Major at UT Dallas. Like to learning new programming tools every week and use all my knowledge to make impactful applications. In my free time I play video games, go to the gym and play basketball{"</p>"}</p>

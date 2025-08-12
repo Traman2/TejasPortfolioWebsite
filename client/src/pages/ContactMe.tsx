@@ -85,12 +85,12 @@ export default function ContactMe() {
                     </button>
                 </div>
                 {/* l-Nothing | Center-Main Content | R-Nothing */}
-                <div className="flex-1 flex border-y-2 border-dashed border-primary">
+                <div className="flex-1 flex border-y-2 border-dashed border-primary overflow-hidden">
                     {/* Main Content */}
                     <div className="flex-1 mx-12 flex justify-center items-center">
-                        <div className="flex gap-24 px-24 items-start pb-16 max-w-330">
+                        <div className="flex gap-24 px-24 items-start mt-8 pb-12 max-w-330">
                             <div className="flex-5">
-                                <p className="font-heading text-2xl text-secondary">Thanks for visiting<span className="ml-1 text-secondary animate-blink">_</span></p>
+                                <p className="font-heading text-2xl ml-[-6px] text-secondary">Thanks for visiting<span className="ml-1 text-secondary animate-blink">_</span></p>
                                 <p className="mt-3 font-primary text-xl">Before you go, checkout my other links or see more projects on my Github profile. If you want to reach out to work on a project or have a simple chat, you can fill out the contact form or email me directly at tejassraman@gmail.com and I’ll try to get back within 24hrs. Thank you</p>
                                 <p className="font-heading text-2xl text-secondary mt-16">Connect With me</p>
                                 <div className="flex mt-3 gap-4">
