@@ -71,11 +71,11 @@ export default function ContactMe() {
                     <button onClick={() => navigate("/")} className="cursor-pointer hover:underline my-3 font-heading text-accent">
                         Home
                     </button>
-                    <button onClick={() => navigate("/Projects")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
-                        Projects
-                    </button>
                     <button onClick={() => setModalOpen(true)} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                        Jarvis
+                    </button>
+                    <button onClick={() => navigate("/Projects")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
+                        Projects
                     </button>
                     {/* <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         About
