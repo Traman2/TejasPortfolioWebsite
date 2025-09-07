@@ -132,7 +132,7 @@ export default function Projects() {
                                                     </ul>
                                                     <div className="pb-6">
                                                         <h2 className="font-primary text-2xl mt-4">Links</h2>
-                                                        <a href={activeProject.githubURL} target="_blank" rel="noopener noreferrer" className="bg-[#2D2D76] px-4 py-1 text-white rounded-xl inline-flex gap-2 font-primary hover:text-black hover:bg-primary transition-colors cursor-pointer text-lg w-fit"><img src="icons/analytics/github.svg" className="w-5" /> Github Repository</a>
+                                                        <a href={activeProject.githubURL} target="_blank" rel="noopener noreferrer" className="bg-[#2D2D76] px-4 py-1 text-white rounded-xl inline-flex gap-2 font-primary hover:text-black hover:bg-primary transition-colors cursor-pointer text-lg w-fit"><img src="/icons/analytics/github.svg" className="w-5" /> Github Repository</a>
                                                     </div>
                                                 </div>
                                             </>
