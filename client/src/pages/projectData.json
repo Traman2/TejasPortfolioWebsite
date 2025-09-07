@@ -1,5 +1,6 @@
 [
     {
+      "pathname": "elevaite",
       "imageURL": "/projectImages/ElevAIteLandingPage.png",
       "title": "ElevAIte",
       "techStack": ["React", "TailwindCSS", "RAG Model", "Pinecone", "Node", "Express", "MongoDB", "JwT Tokens"],
@@ -9,6 +10,7 @@
       "keyFeatures": ["All in one Planner/Budget Manager/Academic Productivity Tool", "Create new reminders, transactions, classes and tasks with the Personal AI Advisor Chatbot"]
     },
     {
+      "pathname": "houseprediction",
       "imageURL": "/projectImages/HousePredictionHeatMap.png",
       "title": "House Prediction Model",
       "techStack": ["Scikit-Learn", "Python", "Flask", "React", "Random Forest"],
@@ -18,6 +20,7 @@
       "keyFeatures": ["Regression model using Random Forest and Linear Regression", "Full-stack deployment with React frontend and Flask backend"]
     },
     {
+      "pathname": "threadsight",
       "imageURL": "/projectImages/jacketPred.png",
       "title": "ThreadSight",
       "techStack": ["Python", "Resnet50", "OpenCV", "Matplotlib", "NumPy", "Pillow (PIL)", "Grad-CAM"],
@@ -27,6 +30,7 @@
       "keyFeatures": ["CNN-based image classification for 15 fashion categories", "Grad-CAM visualizations for model interpretability"]
     },
     {
+      "pathname": "taskmasterai",
       "imageURL": "/projectImages/taskmaster.png",
       "title": "TaskMasterAI",
       "techStack": ["React", "TailwindCSS", "Node", "Express", "MongoDB", "Gemini API", "RAG"],
@@ -36,6 +40,7 @@
       "keyFeatures": ["AI-powered personalized study plan generation", "Dynamic quiz creation with adaptive learning"]
     },
     {
+      "pathname": "arkos",
       "imageURL": "/projectImages/arkos.png",
       "title": "Arkos (HackAI 2025)",
       "techStack": ["TailwindCSS", "Chroma DB", "Gemini API", "RAG Model", "React", "Express", "Flask", "Python"],
@@ -45,6 +50,7 @@
       "keyFeatures": ["RAG-powered financial document analysis", "Natural language querying for financial metrics"]
     },
     {
+      "pathname": "personalbanker",
       "imageURL": "/projectImages/personalBanker.png",
       "title": "Bank Siumulator",
       "techStack": ["React", "MongoDB", "TailwindCSS", "Gemini API", "Google Cloud", "OCR", "MongoDB", "Jwt Token"],
@@ -54,6 +60,7 @@
       "keyFeatures": ["JWT-based secure authentication and routing", "AI-powered features with OCR document processing"]
     },
     {
+      "pathname": "25finhack",
       "imageURL": "/projectImages/25finhack.png",
       "title": "Insurance Prediction (FinHack 2025)",
       "techStack": ["React", "Python", "Tensorflow", "TailwindCSS", "Flask"],
@@ -63,6 +70,7 @@
       "keyFeatures": ["TensorFlow linear regression for insurance cost prediction", "React frontend with Flask API integration"]
     },
     {
+      "pathname": "signlang",
       "imageURL": "/projectImages/signlang.png",
       "title": "SignLangAI (HackUTD 2024)",
       "techStack": ["HTML", "CSS", "Javascipt", "Tensorflow", "MobileNet"],

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProjectData from "./projectData.json"
 import RAGChatbotModal from "../modals/RAGChatbotModal";
 interface Project {
@@ -19,6 +19,24 @@ export default function Projects() {
     }, []);
     const [activeProject, setActiveProject] = useState<Project | null>(null)
     const [modalOpen, setModalOpen] = useState(false);
+    const { projectName } = useParams();
+
+    useEffect(() => {
+        if (projectName) {
+            const found = ProjectData.find((e) => e.pathname === projectName);
+            setActiveProject(found || null);
+        } else {
+            setActiveProject(null);
+        }
+    }, [projectName]);
+
+    const hasExtra = ProjectData.length > 7;
+    const mainProjects = hasExtra
+        ? ProjectData.slice(0, ProjectData.length - 1)
+        : ProjectData;
+    const lastProject = hasExtra ? ProjectData[ProjectData.length - 1] : null;
+
+
     return (
         <>
             {/* Horizontal Lines Y Lines*/}
@@ -32,7 +50,7 @@ export default function Projects() {
                         Projects
                     </button>
                     <button onClick={() => setModalOpen(true)} className="cursor-pointer hover:underline font-heading my-3 text-accent">
-                       Jarvis
+                        Jarvis
                     </button>
                     {/* <button onClick={() => navigate("/About")} className="cursor-pointer hover:underline font-heading my-3 text-accent">
                         About
@@ -52,11 +70,29 @@ export default function Projects() {
                                         <img src="/icons/Projects/folder.svg" alt="Projects folder" className="w-7 h-7" />
                                         <p className="pt-1">Project Selection</p>
                                     </h1>
+
                                     <div className="flex flex-col items-start">
-                                        {ProjectData.slice(0, 7).map((Project, index) => (
-                                            <button onClick={() => setActiveProject(Project)} key={index} className="cursor-pointer hover:bg-accent hover:text-white transition-colors py-1 border-b-2 border-dashed border-primary w-full text-left pl-8 text-xl font-primary ">{index + 1}. {Project.title}</button>
+                                        {/* Main projects */}
+                                        {mainProjects.map((proj, index) => (
+                                            <button
+                                                key={proj.pathname}
+                                                onClick={() => navigate(`/Projects/${proj.pathname}`)}
+                                                className="cursor-pointer hover:bg-accent hover:text-white transition-colors py-1 border-b-2 border-dashed border-primary w-full text-left pl-8 text-xl font-primary "
+                                            >
+                                                {index + 1}. {proj.title}
+                                            </button>
                                         ))}
-                                        <button onClick={() => setActiveProject(ProjectData[ProjectData.length - 1])} className="cursor-pointer hover:bg-accent hover:text-white transition-colors py-1 w-full text-left pl-8 text-xl font-primary ">{ProjectData.length}. {ProjectData[ProjectData.length - 1].title}</button>
+
+                                        {/* Last project (only if >7 total) */}
+                                        {lastProject && (
+                                            <button
+                                                key={lastProject.pathname}
+                                                onClick={() => navigate(`/Projects/${lastProject.pathname}`)}
+                                                className="cursor-pointer hover:bg-accent hover:text-white transition-colors py-1 w-full text-left pl-8 text-xl font-primary "
+                                            >
+                                                {ProjectData.length}. {lastProject.title}
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="flex-3 border-2 border-dashed border-primary flex flex-col">
@@ -80,7 +116,7 @@ export default function Projects() {
                                                             </div>
                                                             <h2 className="font-primary text-2xl mt-4">Categories</h2>
                                                             <div className="flex gap-2 flex-wrap ">
-                                                            {activeProject.categories.map((categ) => (
+                                                                {activeProject.categories.map((categ) => (
                                                                     <p className="font-footer bg-[#f5f3f3] shadow-md px-4 py-1 rounded-xl">{categ}</p>
                                                                 ))}
                                                             </div>
@@ -108,7 +144,7 @@ export default function Projects() {
                                                     <p className="text-gray-500 text-sm font-footer">Please select a Project from the menu to get started</p>
                                                 </div>
                                             </>
-                                    )}
+                                        )}
                                 </div>
                             </div>
                         </div>
