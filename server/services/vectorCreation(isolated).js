@@ -92,10 +92,10 @@ async function uploadChunks() {
 
   try {
     const response = await index.upsertRecords(records);
-    console.log("✅ Successfully uploaded records to Pinecone.");
+    console.log("Successfully uploaded records to Pinecone.");
     console.log("Response:", response);
   } catch (error) {
-    console.error("❌ Failed to upload records to Pinecone.");
+    console.error("Failed to upload records to Pinecone.");
     console.error(error);
   }
 }

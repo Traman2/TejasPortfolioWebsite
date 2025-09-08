@@ -11,29 +11,49 @@ Web Portfolio to show my personal projects. Frontend uses React.js and TailwindC
 - **React Router** - Client side routing for different pages
 - **Nodemailer** - Securely send email notificatons using SMTP about when visitor fills out contact form
 - **Express** - Backend Web Application Framework for handling API requests
-- **LangChain** - RAG Orchestration Framework to handle the different parts of the RAG Pipeline
+- **LangChain** - RAG Orchestration Framework to vectorize my resume, projects and the chat history
 
-## Project Structure (Not Updated)
+## Project Structure
 
 ```
-client/
-├── src/
-│   ├── pages/                       # Page components
-│   ├── App.tsx                      # Main application component
-│   ├── main.tsx                     # Application entry point
-│   └── index.css                    # Global styles
-├── public/                          # Static assets
-└── package.json                     # Project dependencies and scripts
-server/
-├── api/
-│   └── index.js                     # Express server
-├── controllers/
-│   └── mailServerController.js      # Controller Logic
-├── models/
-│   └── formRecord.js                # Form Schema
-├── routes/
-│   └── mailServerRoutes.js          # Mailserver Routes
-└── package.json                     # Project dependencies and scripts
+├── .gitignore
+├── README.md
+├── client/
+│   ├── .dockerignore
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public/
+│   │   ├── Tejas_Resume.pdf
+│   │   ├── icons/
+│   │   │   ├── infoi.svg
+│   │   │   ├── mainHero.svg
+│   │   │   └── techstack/
+│   │   ├── projectImages/
+│   │   ├── robots.txt
+│   │   └── sitemap.xml
+│   ├── src/
+│   │   ├── lib/
+│   │   ├── modals/
+│   │   ├── pages/
+│   │   └── vite-env.d.ts
+├── docker-compose.yml
+└── server/
+    ├── .dockerignore
+    ├── Dockerfile
+    ├── api/
+    ├── controllers/
+    ├── models/
+    ├── package-lock.json
+    ├── package.json
+    ├── routes/
+    ├── services/
+    └── vercel.json
+
 ```
 
 ## Getting Started
