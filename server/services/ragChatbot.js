@@ -5,28 +5,12 @@ import { z } from "zod";
 import dotenv from "dotenv";
 dotenv.config();
 
-// Intelligent card
-const CardEnum = z.enum([
-  "ResumeCard",
-  "TaskMasterCard", 
-  "HousePredictionModelCard", 
-  "StyleScanCard", 
-  "ArkosCard", 
-  "BankSimulatorCard", 
-  "InsurancePredictionCard", 
-  "SignLangCard"
-]);
-
 //Structured output
 const ResponseFormatter = z.object({
   answer: z.string().describe("The answer to the user's question"),
   suggested_replies: z
     .array(z.string())
     .describe("An array of suggested replies for the user's next message based of last user query"),
-  card_enum: z
-    .array(CardEnum)
-    .max(2)
-    .describe("Up to 2 cards can be shown. Select from avaliable enum. If Suggesting the same card again from your revious reply, return empty array")
 });
 
 //Vector Database Store
