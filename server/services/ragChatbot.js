@@ -7,8 +7,7 @@ dotenv.config();
 
 // Intelligent card
 const CardEnum = z.enum([
-  "ResumeCard", 
-  "ElevAIteCard", 
+  "ResumeCard",
   "TaskMasterCard", 
   "HousePredictionModelCard", 
   "StyleScanCard", 
@@ -101,8 +100,7 @@ export const ragChatbot = async (query, history = []) => {
 
   const formattedHistory = history.map((h) => ({
     role: h.sender === "user" ? "user" : "assistant",
-    content: h.text,
-    cards: Array.isArray(h.cards) ? h.cards : []
+    content: h.text
   }));
 
   const llmRes = await modelWithStructure.invoke([

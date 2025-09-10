@@ -9,7 +9,6 @@ interface ChatbotModalProps {
 interface Message {
     sender: string;
     text: string;
-    cards: string[];
 }
 
 //Add Cards feature later
@@ -52,11 +51,10 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
     };
 
     //Helper function: Add new message to array useState
-    const addMessage = (text: string, isUser: boolean, cards: string[]) => {
+    const addMessage = (text: string, isUser: boolean) => {
         const newMessage: Message = {
             sender: (isUser ? "user" : "bot"),
-            text,
-            cards: (cards.length > 0 ? cards : [""])
+            text
         };
         setMessages(prev => [...prev, newMessage]);
     };
@@ -64,7 +62,7 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
     // Message Handler
     const handleSendMessage = (messageText: string) => {
         if (messageText.trim()) {
-            addMessage(messageText, true, [""]);
+            addMessage(messageText, true);
             setInputValue("");
 
             // Start a delay for showing the thinking animation
@@ -81,13 +79,13 @@ export default function ChatbotModal({ onClose }: ChatbotModalProps) {
                     clearTimeout(thinkingTimeoutRef.current!);
                     setIsThinking(false);
                     setPrompts(response.data.suggestions);
-                    addMessage(response.data.answer, false, response.data.suggestions);
+                    addMessage(response.data.answer, false,);
                 })
                 .catch(error => {
                     clearTimeout(thinkingTimeoutRef.current!);
                     setIsThinking(false);
                     console.error('Error fetching response:', error);
-                    addMessage("Sorry, I encountered an error. Please try again.", false, [""]);
+                    addMessage("Sorry, I encountered an error. Please try again.", false);
                 });
         }
     };
