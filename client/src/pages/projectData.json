@@ -1,15 +1,5 @@
 [
     {
-      "pathname": "elevaite",
-      "imageURL": "/projectImages/ElevAIteLandingPage.png",
-      "title": "ElevAIte",
-      "techStack": ["React", "TailwindCSS", "RAG Model", "Pinecone", "Node", "Express", "MongoDB", "JwT Tokens"],
-      "description": "Inspired by a limitation of Notion's chatbot, ElevAIte offers a smarter, AI Powered event generator. ElevAIte is a full-stack MERN app powered by a RAG model created with LangChain that lets students create class schedules and balance sheets using natural language queries. Using the Gemini API to process user queries and the RAG AI Pipeline to provide the LLM with context of the user's data, ElevAIte can automate your calendar, summarize your purchases, add new transactions to your budget, and manage what jobs/internships you applied to for you.",
-      "githubURL": "https://github.com/Traman2/ElevAIte",
-      "categories": ["Productivity", "Automation"],
-      "keyFeatures": ["All in one Planner/Budget Manager/Academic Productivity Tool", "Create new reminders, transactions, classes and tasks with the Personal AI Advisor Chatbot"]
-    },
-    {
       "pathname": "houseprediction",
       "imageURL": "/projectImages/HousePredictionHeatMap.png",
       "title": "House Prediction Model",
