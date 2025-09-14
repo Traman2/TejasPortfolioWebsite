@@ -68,6 +68,16 @@
       "githubURL": "https://github.com/Traman2/SignlangAI",
       "categories": ["Accessibility", "Computer Vision"],
       "keyFeatures": ["Real-time sign language recognition via webcam", "In-browser deep learning with TensorFlow.js and MobileNet"]
+    },
+    {
+      "pathname": "figmadesigns",
+      "imageURL": "/projectImages/figma.jpg",
+      "title": "Figma Designs",
+      "techStack": ["Figma"],
+      "description": "Collection of all the prototype designs I've made on figma",
+      "githubURL": "https://github.com/Traman2/FigmaDesigns",
+      "categories": ["UI/UX", "Design"],
+      "keyFeatures": ["Clean UI Designs", "Accessible color schemes"]
     }
   ]
   
