@@ -92,7 +92,7 @@ export default function Home() {
                                 <h1 className="font-heading text-5xl leading-relaxed text-secondary">Hello, <br /> I'm Tejas<span className="ml-1 text-secondary animate-blink">_</span></h1>
                                 <p className="font-primary text-xl">{"<p>"}Sophomore Computer Science Major at UT Dallas. Like to learning new programming tools every week and use all my knowledge to make impactful applications. In my free time I play video games, go to the gym and play basketball{"</p>"}</p>
                                 <div className="flex mt-5 gap-4">
-                                    <a
+                                    {/* <a
                                         href="/Tejas_Resume.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -100,7 +100,7 @@ export default function Home() {
                                     >
                                         <img src="/icons/Home/pdf.svg" alt="PDF" className="w-4 h-4" />
                                         <p>My Resume</p>
-                                    </a>
+                                    </a> */}
                                     <button onClick={() => setModalOpen(true)} className="bg-[#f5f3f3] hover:text-white shadow-md hover:bg-primary/90 transition-colors cursor-pointer px-4 py-1 rounded-xl font-primary text-[20px] flex items-center gap-2">
                                         <img src="/icons/Home/aiStars.svg" alt="AI" className="w-4 h-4" />
                                         <p>Ask Jarvis for more info</p>
