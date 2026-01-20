@@ -38,7 +38,9 @@ export default function Home() {
                 try {
                     const ipRes = await axios.get("https://api.ipify.org?format=json");
                     clientIp = ipRes.data?.ip;
-                } catch {}
+                } catch {
+                    console.log("Error in fetching stuff");
+                }
 
                 await axios.post(`${backendDomain}/click`, {
                     deviceType,
@@ -50,8 +52,6 @@ export default function Home() {
                     platformType,
                 });
                 sessionStorage.setItem(loggedKey, "true");
-            } catch (_) {
-                
             } finally {
                 sessionStorage.removeItem(inFlightKey);
             }
