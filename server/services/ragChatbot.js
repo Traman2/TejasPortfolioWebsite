@@ -44,7 +44,7 @@ export const ragChatbot = async (query, history = []) => {
 
   // Langchain structured output LLM Call 
   const model = new ChatGoogleGenerativeAI({
-    model: "Gemini-3.1-Flash-Lite",
+    model: "gemini-3.1-flash-lite",
     temperature: 0
   });
 
